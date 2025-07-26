@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"dog_bowl_spr",
-    "path":"sprites/dog_bowl_spr/dog_bowl_spr.yy",
+    "name":"dog_bowl_spr_1",
+    "path":"sprites/dog_bowl_spr_1/dog_bowl_spr_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

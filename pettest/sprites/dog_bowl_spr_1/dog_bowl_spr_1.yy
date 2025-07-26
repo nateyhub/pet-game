@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"dog_bowl_spr",
+  "%Name":"dog_bowl_spr_1",
   "bboxMode":0,
   "bbox_bottom":46,
   "bbox_left":0,
@@ -24,9 +24,9 @@
     {"$GMImageLayer":"","%Name":"38d44d05-1424-4f8f-9c1e-c838357207ac","blendMode":0,"displayName":"default","isLocked":false,"name":"38d44d05-1424-4f8f-9c1e-c838357207ac","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"cf098d63-d081-4fb5-b5a6-d94a91b1459f","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"cf098d63-d081-4fb5-b5a6-d94a91b1459f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"dog_bowl_spr",
+  "name":"dog_bowl_spr_1",
   "nineSlice":null,
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -74,14 +74,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6646f277-c388-4709-9d35-e61475b0e177","path":"sprites/dog_bowl_spr/dog_bowl_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6646f277-c388-4709-9d35-e61475b0e177","path":"sprites/dog_bowl_spr_1/dog_bowl_spr_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"bb2003b8-0735-4a34-93e6-3f9092af0c76","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
-    "yorigin":0,
+    "xorigin":24,
+    "yorigin":27,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
