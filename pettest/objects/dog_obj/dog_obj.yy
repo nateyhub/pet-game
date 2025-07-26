@@ -53,8 +53,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"dog_spr",
-    "path":"sprites/dog_spr/dog_spr.yy",
+    "name":"dog_idle_spr",
+    "path":"sprites/dog_idle_spr/dog_idle_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,

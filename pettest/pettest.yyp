@@ -53,7 +53,7 @@
     {"id":{"name":"dog_bowl_empty_spr","path":"sprites/dog_bowl_empty_spr/dog_bowl_empty_spr.yy",},},
     {"id":{"name":"dog_bowl_level_2_spr","path":"sprites/dog_bowl_level_2_spr/dog_bowl_level_2_spr.yy",},},
     {"id":{"name":"dog_bowl_spr","path":"sprites/dog_bowl_spr/dog_bowl_spr.yy",},},
-    {"id":{"name":"dog_spr","path":"sprites/dog_spr/dog_spr.yy",},},
+    {"id":{"name":"dog_idle_spr","path":"sprites/dog_idle_spr/dog_idle_spr.yy",},},
     {"id":{"name":"dog_toy_cheap","path":"sprites/dog_toy_cheap/dog_toy_cheap.yy",},},
     {"id":{"name":"ground_spr","path":"sprites/ground_spr/ground_spr.yy",},},
     {"id":{"name":"test_spr","path":"sprites/test_spr/test_spr.yy",},},
