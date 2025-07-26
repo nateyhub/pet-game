@@ -15,6 +15,7 @@ var _yinput = _down - _up
 if(_xinput != 0 or _yinput != 0) {
 	//the player is moving
 	isMoving = true
+	sprite_index = dog_walk_spr
 	switch(_xinput) {
 		case -1:
 			//player is facing left
@@ -33,6 +34,7 @@ if(_xinput != 0 or _yinput != 0) {
 	}
 } else {
 	isMoving = false
+	sprite_index = dog_idle_spr
 }
 
 
