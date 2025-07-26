@@ -25,3 +25,5 @@ drawNeed(470,50,600,80,dog_obj.fun, "Fun")
 
 //health
 drawNeed(470,90,600,120,dog_obj.health, "Health")
+
+draw_sprite(heart_spr, image_index, 12, 12)
