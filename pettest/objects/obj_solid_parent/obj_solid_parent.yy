@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"Object1",
+  "%Name":"obj_solid_parent",
   "eventList":[],
   "managed":true,
-  "name":"Object1",
+  "name":"obj_solid_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"pettest",
-    "path":"pettest.yyp",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

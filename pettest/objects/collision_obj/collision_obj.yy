@@ -1,15 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"ground_obj",
+  "%Name":"collision_obj",
   "eventList":[],
   "managed":true,
-  "name":"ground_obj",
+  "name":"collision_obj",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_solid_parent",
+    "path":"objects/obj_solid_parent/obj_solid_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
