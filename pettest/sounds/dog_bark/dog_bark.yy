@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"dog_bark",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.17623582,
+  "name":"dog_bark",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"dog_bark.wav",
+  "type":0,
+  "volume":1.0,
+}

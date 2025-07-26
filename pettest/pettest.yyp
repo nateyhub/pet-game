@@ -47,6 +47,7 @@
     {"id":{"name":"test_path","path":"paths/test_path/test_path.yy",},},
     {"id":{"name":"GameRoom","path":"rooms/GameRoom/GameRoom.yy",},},
     {"id":{"name":"tilesTestRoom","path":"rooms/tilesTestRoom/tilesTestRoom.yy",},},
+    {"id":{"name":"dog_bark","path":"sounds/dog_bark/dog_bark.yy",},},
     {"id":{"name":"overworld_melody","path":"sounds/overworld_melody/overworld_melody.yy",},},
     {"id":{"name":"carpet_spr_1","path":"sprites/carpet_spr_1/carpet_spr_1.yy",},},
     {"id":{"name":"carpet_spr","path":"sprites/carpet_spr/carpet_spr.yy",},},
@@ -81,8 +82,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"tilesTestRoom","path":"rooms/tilesTestRoom/tilesTestRoom.yy",},},
     {"roomId":{"name":"GameRoom","path":"rooms/GameRoom/GameRoom.yy",},},
+    {"roomId":{"name":"tilesTestRoom","path":"rooms/tilesTestRoom/tilesTestRoom.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
