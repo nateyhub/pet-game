@@ -1,0 +1,1 @@
+audio_play_sound(overworld_melody, 1000, true)
