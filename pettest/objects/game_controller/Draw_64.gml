@@ -1,29 +1,27 @@
-//hunger box
-draw_rectangle(10,10,140,40,true)
-//hunger bar
-draw_rectangle(160,10,160 + (2*dog_obj.hunger),40,false)
-//hunger string
-draw_text(20,14,"Hunger:" + string(dog_obj.hunger))
+function drawNeed(x_start, y_start, x_end, y_end, need, needName) {
+	// draw the name of the need (eg "Hunger")
+	draw_text(x_start+10,y_start+4,needName + ":" + string(need))
+	//draw box outline to wrap around text
+	draw_rectangle(x_start,y_start,x_end,y_end,true)
+	//draw status bar
+	draw_rectangle(x_start+150,y_start,(x_end + 20) + (2*need), y_end,false)
+}
 
+//hunger box
+drawNeed(10,10,140,40,dog_obj.hunger, "Hunger")
 
 //hygiene box
-draw_rectangle(10,50,140,80,true)
-//hygiene bar
-draw_rectangle(160,50, 160 + (2*dog_obj.hygiene),80,false)
-//hygiene string
-draw_text(20,54,"Hygiene:" + string(dog_obj.hygiene))
+drawNeed(10,50,140,80,dog_obj.hygiene, "Hygiene")
 
 //energy box
-draw_rectangle(10,90,140,120,true)
-//energy bar
-draw_rectangle(160,90, 160 + (2*dog_obj.energy),120,false)
-//energy  string
-draw_text(20,94,"Energy:" + string(dog_obj.energy))
+drawNeed(10,90,140,120,dog_obj.energy, "Energy")
 
-//hunger box
-draw_rectangle(470,10,600,40,true)
-//hunger bar
-draw_rectangle(620,10,620 + (2*dog_obj.bladder),40,false)
-//hunger string
-draw_text(480,14,"Bladder:" + string(dog_obj.bladder))
+//COLUMN 2
+//bladder
+drawNeed(470,10,600,40,dog_obj.bladder, "Bladder")
 
+//fun
+drawNeed(470,50,600,80,dog_obj.fun, "Fun")
+
+//health
+drawNeed(470,90,600,120,dog_obj.health, "Health")
