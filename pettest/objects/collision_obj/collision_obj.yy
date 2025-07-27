@@ -40,5 +40,5 @@
     "path":"sprites/ground_spr/ground_spr.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

@@ -8,6 +8,8 @@ var _down = keyboard_check(vk_down)
 var _xinput = _right - _left
 var _yinput = _down - _up
 
+
+
 //ENABLE THIS TO SEE DIRECTION:
 //show_debug_message("y: " + string(_yinput) + " x: " + string(_xinput))
 
@@ -38,7 +40,13 @@ if(_xinput != 0 or _yinput != 0) {
 }
 
 
-
+show_debug_message(_xinput == 1 and _yinput == 1)
+// normalise the input vector if not zero
+var _length = sqrt(sqr(_xinput) + sqr(_yinput))
+if(_length != 0) {
+	_xinput /= _length
+	_yinput /= _length
+}
 
 
 // handle collisions against any objects that have obj_solid_parent as a parent
