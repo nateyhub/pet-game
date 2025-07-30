@@ -8,8 +8,6 @@ var _down = keyboard_check(vk_down)
 var _xinput = _right - _left
 var _yinput = _down - _up
 
-
-
 //ENABLE THIS TO SEE DIRECTION:
 //show_debug_message("y: " + string(_yinput) + " x: " + string(_xinput))
 
@@ -18,6 +16,8 @@ if(_xinput != 0 or _yinput != 0) {
 	//the player is moving
 	isMoving = true
 	sprite_index = dog_walk_spr
+	_movement_counter++
+	show_debug_message("Movement counter:" + string(_movement_counter))
 	switch(_xinput) {
 		case -1:
 			//player is facing left
@@ -34,13 +34,21 @@ if(_xinput != 0 or _yinput != 0) {
 			isMoving = true
 			break
 	}
+	if(_movement_counter > 200) {
+		show_debug_message("Dog has walked continuously for too long" + string(_movement_counter) + ": now draining energy")
+		//drain energy
+		global.pet_needs.energy.value--
+		//reset counter
+		_movement_counter = 0
+	}
 } else {
 	isMoving = false
+	_movement_counter = 0
 	sprite_index = dog_idle_spr
 }
 
 
-show_debug_message(_xinput == 1 and _yinput == 1)
+//show_debug_message(_xinput == 1 and _yinput == 1)
 // normalise the input vector if not zero
 var _length = sqrt(sqr(_xinput) + sqr(_yinput))
 if(_length != 0) {

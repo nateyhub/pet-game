@@ -40,12 +40,14 @@ if(_xinput != 0 or _yinput != 0) {
 }
 
 
-show_debug_message(_xinput == 1 and _yinput == 1)
+//show_debug_message(_xinput == 1 and _yinput == 1)
 // normalise the input vector if not zero
-var _length = sqrt(sqr(_xinput) + sqr(_yinput))
+//var _length = sqrt(sqr(_xinput) + sqr(_yinput))
 //if(_length != 0) {
 //	_xinput /= _length
 //	_yinput /= _length
+//	show_debug_message("normalised:" + string(_xinput), string(_yinput))
+	
 //}
 
 

@@ -1,7 +1,3 @@
-if(energy > 1) {
-	energy -= 1
-} else {
-	energy = 0
-}
-
-alarm[0] = 500
+//drain ENERGY every 5 seconds
+drainNeed("energy", 1)
+setAlarmBySeconds(needAlarms.ENERGY, 5)
