@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"bball_success_trigger_obj",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"door_obj",
+  "eventList":[],
   "managed":true,
-  "name":"bball_success_trigger_obj",
+  "name":"door_obj",
   "overriddenProperties":[],
   "parent":{
-    "name":"bball_objs",
-    "path":"folders/Objects/bball_objs.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,9 +28,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite26",
-    "path":"sprites/Sprite26/Sprite26.yy",
+    "name":"Sprite42",
+    "path":"sprites/Sprite42/Sprite42.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

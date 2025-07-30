@@ -17,16 +17,16 @@ if(_xinput != 0 or _yinput != 0) {
 	isMoving = true
 	sprite_index = dog_walk_spr
 	_movement_counter++
-	show_debug_message("Movement counter:" + string(_movement_counter))
+	//show_debug_message("Movement counter:" + string(_movement_counter))
 	switch(_xinput) {
-		case -1:
+		case FACING_LEFT:
 			//player is facing left
 			shadow_x1_offset = 0
 			shadow_x2_offset = 0
 			image_xscale = 1
 			isMoving = true
 			break
-		case 1:
+		case FACING_RIGHT:
 			//player is facing right
 			image_xscale = -1
 			shadow_x1_offset = -2
@@ -35,9 +35,9 @@ if(_xinput != 0 or _yinput != 0) {
 			break
 	}
 	if(_movement_counter > 200) {
-		show_debug_message("Dog has walked continuously for too long" + string(_movement_counter) + ": now draining energy")
+		show_debug_message("Dog has walked continuously for too long (" + string(_movement_counter) + " steps): now draining energy")
 		//drain energy
-		global.pet_needs.energy.value--
+		drainNeed("energy", 1)
 		//reset counter
 		_movement_counter = 0
 	}

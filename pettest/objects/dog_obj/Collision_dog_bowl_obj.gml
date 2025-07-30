@@ -5,6 +5,7 @@ if(keyboard_check_released(vk_space)) {
 		if(global.pet_needs.hunger.value + dog_bowl_obj.hunger_increase >= 100 && global.pet_needs.hunger.value < 100) {
 			global.pet_needs.hunger.value = 100
 			dog_bowl_obj.food_amount -= dog_bite_amount
+			audio_play_sound(eat_food,100,false)
 			show_debug_message("Dog is now full")
 		} 
 		else if (global.pet_needs.hunger.value == 100) {
@@ -13,6 +14,7 @@ if(keyboard_check_released(vk_space)) {
 		else {
 			global.pet_needs.hunger.value += dog_bowl_obj.hunger_increase
 			dog_bowl_obj.food_amount -= dog_bite_amount
+			audio_play_sound(eat_food,100,false)
 			show_debug_message("Dog has eaten")
 		}
 	} else {

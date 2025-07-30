@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"city_ambience",
+  "%Name":"eat_food",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":148.58463,
-  "name":"city_ambience",
+  "duration":0.5755782,
+  "name":"eat_food",
   "parent":{
-    "name":"Ambience",
-    "path":"folders/Sounds/Ambience.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"city_ambience.wav",
+  "soundFile":"eat_food.wav",
   "type":0,
   "volume":1.0,
 }

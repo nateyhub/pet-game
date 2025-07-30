@@ -5,16 +5,19 @@ enum needAlarms {
 	HYGIENE
 }
 
-//drain ENERGY after 5 seconds
-setAlarmBySeconds(needAlarms.ENERGY, 5)
-//drain HUNGER and BLADDER after 3 seconds
-setAlarmBySeconds(needAlarms.HUNGER_AND_BLADDER, 3)
-//drain FUN after 2 seconds
-setAlarmBySeconds(needAlarms.FUN, 2)
-//drain HYGIENE after 10 seconds
-setAlarmBySeconds(needAlarms.HYGIENE, 10)
+#macro FACING_LEFT -1
+#macro FACING_RIGHT 1
 
-my_speed = 2.5
+//drain ENERGY after 5 seconds
+setAlarmInSeconds(needAlarms.ENERGY, 5)
+//drain HUNGER and BLADDER after 3 seconds
+setAlarmInSeconds(needAlarms.HUNGER_AND_BLADDER, 3)
+//drain FUN after 2 seconds
+setAlarmInSeconds(needAlarms.FUN, 2)
+//drain HYGIENE after 10 seconds
+setAlarmInSeconds(needAlarms.HYGIENE, 10)
+
+my_speed = 3
 
 shadow_x1_offset = 0
 shadow_x2_offset = 0
@@ -33,7 +36,3 @@ function drainNeed(needName, drainAmount) {
 	}
 }
 
-//set the given alarm to go off in the given number of seconds
-function setAlarmBySeconds(alarmNumber, seconds) {
-	alarm[alarmNumber] = game_get_speed(gamespeed_fps) * seconds
-}

@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"overworld_melody",
+  "%Name":"house_music",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":80.11068,
-  "name":"overworld_melody",
+  "name":"house_music",
   "parent":{
     "name":"Music",
     "path":"folders/Sounds/Music.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"overworld_melody.mp3",
+  "soundFile":"house_music.mp3",
   "type":0,
   "volume":1.0,
 }

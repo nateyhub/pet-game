@@ -12,8 +12,8 @@
   "duration":193.51898,
   "name":"park_ambience",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Ambience",
+    "path":"folders/Sounds/Ambience.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

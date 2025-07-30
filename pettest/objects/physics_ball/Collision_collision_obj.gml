@@ -1,7 +1,3 @@
+audio_play_sound(basketball_rim,100,false,1.4)
 move_bounce_solid(false)
 speed=1
-//if (speed >= 1) {
-//	speed--
-//} else {
-//	speed = 0
-//}
