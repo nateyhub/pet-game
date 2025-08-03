@@ -5,12 +5,16 @@ _need_bar_shading_px = _need_bar_height_px / 2
 //colours
 _colours = {
 	text: make_color_rgb(70,70,119),
-	empty: {
+	background: {
 		main_colour: make_color_rgb(238,230,234) //grey
 	},
-	low: {
+	very_low: {
 		main_colour: make_color_rgb(226,114,133), //red
 		shade_colour: make_color_rgb(246,162,168) //light red
+	},
+	low: {
+		main_colour: make_color_rgb(232,138,54), //yellow
+		shade_colour: make_color_rgb(252,165,112) //light yellow
 	},
 	medium: {
 		main_colour: make_color_rgb(138, 161, 246), //blue
@@ -19,5 +23,9 @@ _colours = {
 	high: {
 		main_colour: make_color_rgb(89,207,147), //green
 		shade_colour: make_color_rgb(181, 231, 203) //lightgreen
+	},
+	ultimate: {
+		main_colour: make_color_rgb(156,139,219), //purple
+		shade_colour: make_color_rgb(206,170,237)
 	}
 }

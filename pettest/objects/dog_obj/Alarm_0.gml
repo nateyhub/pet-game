@@ -1,3 +1,5 @@
 //drain ENERGY every 5 seconds
-drainNeed("energy", 1)
-setAlarmInSeconds(needAlarms.ENERGY, 5)
+if(!isSleeping) {
+	drainNeed("energy", 1)
+	setAlarmInSeconds(needAlarms.ENERGY, 5)
+}

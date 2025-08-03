@@ -28,7 +28,7 @@ else if (instance_exists(dog_city_obj)) {
 
 // can change this to change the starting position of the camera
 x = room_width / 2
-y = room_height /3
+y = room_height / 3
 
 // initial goto position of the camera
 xTo = x

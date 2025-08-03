@@ -1,8 +1,14 @@
 enum needAlarms {
-	ENERGY,
-	HUNGER_AND_BLADDER,
-	FUN,
-	HYGIENE
+	ENERGY = 0,
+	HUNGER_AND_BLADDER = 1,
+	FUN = 2,
+	HYGIENE = 3,
+}
+
+enum actionAlarms {
+	EAT = 4,
+	SLEEP = 5,
+	EMPTY_BLADDER = 6
 }
 
 #macro FACING_LEFT -1
@@ -24,15 +30,19 @@ shadow_x2_offset = 0
 
 _movement_counter = 0
 
-//takes needName as a lowercase string eg "fun"
+/// @function drainNeed
+/// @description Drains the given need by the given amount
+/// @param {string} needName The name of the need in lowercase (e.g. "bladder")
+/// @param {real} drainAmount The amount to decrease the need's value by (e.g. 5)
 function drainNeed(needName, drainAmount) {
 	show_debug_message("Draining " + needName + "("
 		+ "current value: " + string(global.pet_needs[$ needName].value) + 
 		") by " + string(drainAmount))
-	if(global.pet_needs[$ needName].value > 1) {
-		global.pet_needs[$ needName].value--
+	if(global.pet_needs[$ needName].value - drainAmount >= 0) {
+		global.pet_needs[$ needName].value -= drainAmount
 	} else {
 		global.pet_needs[$ needName].value  = 0
 	}
 }
 
+_initial_energy_amount = 0
