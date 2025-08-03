@@ -12,8 +12,8 @@
   "duration":148.58463,
   "name":"city_ambience",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Ambience",
+    "path":"folders/Sounds/Ambience.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

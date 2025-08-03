@@ -1,2 +1,5 @@
-show_debug_message("one second has passed")
-alarm[0] = game_get_speed(gamespeed_fps) * 1
+if (global.needs_critical) {
+	global.pet_needs.health.value--
+	show_debug_message("Draining health! New value:" + string(global.pet_needs.health))
+}
+setAlarmInSeconds(DRAIN_HEALTH_ALARM, 1)
