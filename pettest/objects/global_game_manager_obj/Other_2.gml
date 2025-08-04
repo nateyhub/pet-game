@@ -22,6 +22,14 @@ global.points = 0
 
 global.ultimateNeedsCount = 0
 
+global.inventory = new Inventory()
+
+global.inventory.addItem(new InventoryItem("bath", 5, bath_obj))
+instance_create_layer(500, 200, "Instances", global.inventory.getItem("bath"))
+
+show_debug_message(global.inventory)
+
+
 
 
 //DEBUG:

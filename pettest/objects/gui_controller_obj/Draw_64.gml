@@ -72,3 +72,6 @@ draw_text(52,160,string(global.points))
 
 //draw the current number of needs that are at an Ultimate level
 if global.ultimateNeedsCount > 0 draw_text(100,159,string("+{0}", global.ultimateNeedsCount))
+
+
+draw_sprite(inv_slot_spr,0,20,300)

@@ -46,6 +46,12 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 			//reset counter
 			_movement_counter = 0
 		}
+		if(isUsingMop) {
+			//if dog is facing left
+			if image_xscale = 1 mop_obj.x = self.x - 16
+			else mop_obj.x = self.x + 16
+			mop_obj.y = self.y - 2
+		}
 	} else {
 		isMoving = false
 		_movement_counter = 0

@@ -18,9 +18,6 @@ if(collision_circle(x,y,collision_radius,bath_obj,false,false)) {
 		playErrorSound()
 		show_debug_message("Too clean for a bath")
 	}
-	
-	
-	
 }
 
 // if the bed is nearby
@@ -48,5 +45,11 @@ if(collision_circle(x,y,collision_radius,dog_bed_obj,false,false)) {
 		show_debug_message(string("Too much energy to sleep: {0}", global.pet_needs.energy.value))
 	}
 }
+
+//if(isUsingMop) 
+//{
+//	show_debug_message("Letting go of mop")
+//	isUsingMop = false
+//}
 
 show_debug_message(fps)

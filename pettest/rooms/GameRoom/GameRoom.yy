@@ -24,6 +24,8 @@
     {"name":"inst_4EFD4381","path":"rooms/GameRoom/GameRoom.yy",},
     {"name":"inst_4A4BC081","path":"rooms/GameRoom/GameRoom.yy",},
     {"name":"inst_2A8A5993","path":"rooms/GameRoom/GameRoom.yy",},
+    {"name":"inst_499F3E78","path":"rooms/GameRoom/GameRoom.yy",},
+    {"name":"inst_D571461","path":"rooms/GameRoom/GameRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -39,6 +41,8 @@
     {"$GMRInstanceLayer":"","%Name":"Instances_top_layer","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_42097A72","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_42097A72","objectId":{"name":"dog_obj","path":"objects/dog_obj/dog_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":720.0,"y":240.0,},
         {"$GMRInstance":"v2","%Name":"inst_E542227","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_E542227","objectId":{"name":"collision_obj","path":"objects/collision_obj/collision_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":736.0,"y":640.0,},
+        {"$GMRInstance":"v2","%Name":"inst_499F3E78","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_499F3E78","objectId":{"name":"mop_obj","path":"objects/mop_obj/mop_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":528.0,"y":160.0,},
+        {"$GMRInstance":"v2","%Name":"inst_D571461","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_D571461","objectId":{"name":"dog_toy_obj","path":"objects/dog_toy_obj/dog_toy_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":608.0,"y":112.0,},
       ],"layers":[],"name":"Instances_top_layer","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"bowl","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_5CBDFAC2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5CBDFAC2","objectId":{"name":"dog_bowl_obj","path":"objects/dog_bowl_obj/dog_bowl_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":624.0,"y":240.0,},
