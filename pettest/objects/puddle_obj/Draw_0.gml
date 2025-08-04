@@ -4,5 +4,6 @@ if(_alpha > 0)
 	draw_self()
 } else {
 	audio_play_sound(success, 100, false)
+	mop_obj.sprite_index = mop_spr;
 	instance_destroy(self)
 }
