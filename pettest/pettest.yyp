@@ -87,6 +87,7 @@
     {"id":{"name":"physicsTestRoom","path":"rooms/physicsTestRoom/physicsTestRoom.yy",},},
     {"id":{"name":"presetPathsRoom","path":"rooms/presetPathsRoom/presetPathsRoom.yy",},},
     {"id":{"name":"tilesTestRoom","path":"rooms/tilesTestRoom/tilesTestRoom.yy",},},
+    {"id":{"name":"drain_need","path":"scripts/drain_need/drain_need.yy",},},
     {"id":{"name":"inventory_script","path":"scripts/inventory_script/inventory_script.yy",},},
     {"id":{"name":"plan","path":"scripts/plan/plan.yy",},},
     {"id":{"name":"play_error_sound_script","path":"scripts/play_error_sound_script/play_error_sound_script.yy",},},

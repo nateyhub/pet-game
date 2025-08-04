@@ -3,6 +3,8 @@ if(keyboard_check_released(vk_space)) {
 	if(dog_bowl_obj.food_amount >= dog_bite_amount) {
 		isEating = true
 		
+		drainNeed("bladder", 5) //decrease bladder
+		
 		//restrict movement for 1 second
 		setAlarmInSeconds(actionAlarms.EAT,1)
 		

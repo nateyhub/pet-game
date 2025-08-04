@@ -4,10 +4,10 @@
 //pet needs struct (globally accessible)
 global.pet_needs = {
 	health:		{ value: 90, x: 178, y: 46 },
-	hunger:		{ value: 3, x: 178, y: 106 },
-	energy:		{ value: 4, x: 312, y: 46 },
-	hygiene:	{ value: 1, x: 312, y: 106 },
-	bladder:	{ value: 1, x: 446, y: 46 },
+	hunger:		{ value: 93, x: 178, y: 106 },
+	energy:		{ value: 94, x: 312, y: 46 },
+	hygiene:	{ value: 91, x: 312, y: 106 },
+	bladder:	{ value: 91, x: 446, y: 46 },
 	fun:		{ value: 88, x: 446, y: 106 },
 }
 
