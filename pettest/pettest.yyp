@@ -137,6 +137,7 @@
     {"id":{"name":"hoop_front_layer_spr","path":"sprites/hoop_front_layer_spr/hoop_front_layer_spr.yy",},},
     {"id":{"name":"inv_slot_spr","path":"sprites/inv_slot_spr/inv_slot_spr.yy",},},
     {"id":{"name":"mop_spr","path":"sprites/mop_spr/mop_spr.yy",},},
+    {"id":{"name":"mopping_animation_Spr","path":"sprites/mopping_animation_Spr/mopping_animation_Spr.yy",},},
     {"id":{"name":"newcar_x_spr","path":"sprites/newcar_x_spr/newcar_x_spr.yy",},},
     {"id":{"name":"newcar_y_spr","path":"sprites/newcar_y_spr/newcar_y_spr.yy",},},
     {"id":{"name":"nothing_spr","path":"sprites/nothing_spr/nothing_spr.yy",},},
