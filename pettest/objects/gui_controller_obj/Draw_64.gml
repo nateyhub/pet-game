@@ -6,7 +6,6 @@ if (dog_obj.isSleeping) {
 	draw_set_alpha(1)
 }
 
-
 // draw grey background
 draw_set_colour(_colours.background.main_colour)
 draw_rectangle(20,20,550,140,false)

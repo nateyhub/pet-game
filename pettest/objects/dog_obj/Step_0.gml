@@ -15,7 +15,7 @@ var _yinput = _down - _up
 
 
 
-if(!isEating and !isSleeping and !isEmptyingBladder)
+if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 {
 	if(_xinput != 0 or _yinput != 0) {
 		//the player is moving
@@ -65,17 +65,21 @@ if(!isEating and !isSleeping and !isEmptyingBladder)
 	// handle collisions against any objects that have obj_solid_parent as a parent
 	var collision = move_and_collide(_xinput * my_speed, _yinput * my_speed, obj_solid_parent)
 	
+	// if the pet's bladder needs emptying
 	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) {
-		isEmptyingBladder = true
-		global.pet_needs.bladder.value = 100
-		audio_play_sound(empty_bladder, 100, false)
-		instance_create_layer(x,y+16,"Instances",puddle_obj)
-		sprite_index = dog_emptying_bladder_spr
-		setAlarmInSeconds(actionAlarms.EMPTY_BLADDER, 1)
-		
-		//lower hygiene and fun
-		drainNeed("hygiene", 25)
-		drainNeed("fun", 20)
+		// prioritise bathing and sleeping actions over emptying bladder
+		if(isBathing or isSleeping or isEating) _wait_to_empty_bladder = true
+		else {
+			emptyBladder()
+		}
+
+	}
+	
+	if(global.pet_needs.energy.value == 0 and !isSleeping) {
+		if(isBathing or isEating) _wait_to_sleep = true
+		else {
+			passOut()
+		}
 	}
 
 }

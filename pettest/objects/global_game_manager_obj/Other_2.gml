@@ -6,7 +6,7 @@ global.pet_needs = {
 	health:		{ value: 90, x: 178, y: 46 },
 	hunger:		{ value: 3, x: 178, y: 106 },
 	energy:		{ value: 4, x: 312, y: 46 },
-	hygiene:	{ value: 62, x: 312, y: 106 },
+	hygiene:	{ value: 1, x: 312, y: 106 },
 	bladder:	{ value: 1, x: 446, y: 46 },
 	fun:		{ value: 88, x: 446, y: 106 },
 }
@@ -18,7 +18,7 @@ global.needs_critical = false
 global.needs_keys = variable_struct_get_names(global.pet_needs)
 
 //total points
-global.points = 2352
+global.points = 0
 
 global.ultimateNeedsCount = 0
 

@@ -53,6 +53,7 @@
     {"$GMObjectProperty":"v1","%Name":"isEating","filters":[],"listItems":[],"multiselect":false,"name":"isEating","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"isSleeping","filters":[],"listItems":[],"multiselect":false,"name":"isSleeping","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"isEmptyingBladder","filters":[],"listItems":[],"multiselect":false,"name":"isEmptyingBladder","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"isBathing","filters":[],"listItems":[],"multiselect":false,"name":"isBathing","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

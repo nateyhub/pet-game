@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"cheap_bath_spr",
-    "path":"sprites/cheap_bath_spr/cheap_bath_spr.yy",
+    "name":"bathtub_spr",
+    "path":"sprites/bathtub_spr/bathtub_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,
