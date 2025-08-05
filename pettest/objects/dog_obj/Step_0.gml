@@ -1,8 +1,8 @@
 // assign keycodes to variables
-var _right = keyboard_check(vk_right)
-var _left = keyboard_check(vk_left)
-var _up = keyboard_check(vk_up)
-var _down = keyboard_check(vk_down)
+var _right = keyboard_check(vk_right) || keyboard_check(ord("D"))
+var _left = keyboard_check(vk_left) || keyboard_check(ord("A"))
+var _up = keyboard_check(vk_up) || keyboard_check(ord("W"))
+var _down = keyboard_check(vk_down) || keyboard_check(ord("S"))
 
 // calculate x and y movement
 var _xinput = _right - _left
