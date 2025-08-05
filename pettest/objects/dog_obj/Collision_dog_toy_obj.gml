@@ -1,6 +1,7 @@
 //if dog is on the left
 if(!other._isMoving)
 {
+	if !audio_is_playing(ball_toy) audio_play_sound(ball_toy, 100, false)
 	drainNeed("energy", 2)
 	improveNeed("fun",3)
 	if(dog_obj.x < other.x) {

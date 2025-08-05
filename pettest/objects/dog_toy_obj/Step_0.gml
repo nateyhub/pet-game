@@ -1,8 +1,8 @@
 if speed > 0.0 { 
 	speed -= 0.05
 	_isMoving = true
-	if (direction <= 180) image_angle += 4
-	else image_angle -= 4
+	if (direction <= 180) image_angle += speed * 10
+	else image_angle -= speed * 10
 } else {
 	_isMoving = false
 }

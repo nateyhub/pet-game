@@ -1,5 +1,5 @@
 #macro MOUSE 0
-#macro x1 460
-#macro y1 500
-#macro x2 620
-#macro y2 600
+#macro x1 160
+#macro y1 160
+#macro x2 320
+#macro y2 220
