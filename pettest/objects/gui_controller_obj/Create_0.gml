@@ -1,3 +1,6 @@
+window_set_cursor(cr_none)
+cursor_sprite = spr_cursor
+
 //need bar height in px
 _need_bar_height_px = 20
 _need_bar_shading_px = _need_bar_height_px / 2

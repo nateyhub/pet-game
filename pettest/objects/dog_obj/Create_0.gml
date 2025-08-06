@@ -10,6 +10,7 @@ enum actionAlarms {
 	SLEEP = 5,
 	EMPTY_BLADDER = 6,
 	TAKE_BATH = 7,
+	BARK = 8,
 }
 
 #macro FACING_LEFT -1

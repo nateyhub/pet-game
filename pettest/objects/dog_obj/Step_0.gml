@@ -55,7 +55,7 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 	} else {
 		isMoving = false
 		_movement_counter = 0
-		sprite_index = dog_idle_spr
+		if !isBarking sprite_index = dog_idle_spr
 	}
 
 

@@ -1,1 +1,7 @@
-audio_play_sound(dog_bark,10,false,2)
+if !isMoving {
+	//audio_play_sound(dog_bark,10,false,2)
+	sprite_index = dog_bark_idle
+	instance_create_layer(x,y-8,"bark_layer",obj_dog_bark)
+	isBarking = true
+	setAlarmInSeconds(actionAlarms.BARK, 0.5)
+}
