@@ -1,5 +1,5 @@
 //if dog is on the left
-if(!other._isMoving)
+if(!other._isMoving and !other._isBeingDragged)
 {
 	if !audio_is_playing(ball_toy) audio_play_sound(ball_toy, 100, false)
 	drainNeed("energy", 2)
