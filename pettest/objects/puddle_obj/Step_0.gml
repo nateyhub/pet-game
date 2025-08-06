@@ -6,7 +6,7 @@ if(place_meeting(x,y,mop_obj) and keyboard_check(ord("E")))
 	{	
 		audio_play_sound(mop, 100, false, 5)
 	}
-	mop_obj.sprite_index = mopping_animation_Spr;
+	mop_obj.sprite_index = mopping_animation_spr;
 }
 else {
 	mop_obj.sprite_index = mop_spr;

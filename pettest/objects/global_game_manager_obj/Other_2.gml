@@ -22,10 +22,15 @@ global.points = 0
 
 global.ultimateNeedsCount = 0
 
+
+//DEBUG: Testing Inventory
 global.inventory = new Inventory()
 
-global.inventory.addItem(new InventoryItem("bath", 5, bath_obj))
-instance_create_layer(500, 200, "Instances", global.inventory.getItem("bath"))
+_item = new TieredItem("Dog food", 5, dog_food_obj, "Instances", tier.CHEAP) 
+global.inventory.addItem(_item)
+_retrieved_item = global.inventory.getItem("Dog food")
+_dogfood = instance_create_layer(mouse_x, mouse_y, _retrieved_item.room_layer, _retrieved_item.obj_index)
+_dogfood._isBeingDragged = true
 
 show_debug_message(global.inventory)
 

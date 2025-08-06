@@ -8,28 +8,29 @@ if(keyboard_check_released(vk_space)) {
 		//restrict movement for 1 second
 		setAlarmInSeconds(actionAlarms.EAT,1)
 		
-		if(global.pet_needs.hunger.value + dog_bowl_obj.hunger_increase >= 100 && global.pet_needs.hunger.value < 100) {
-			global.pet_needs.hunger.value = 100
-			dog_bowl_obj.food_amount -= dog_bite_amount
-			audio_play_sound(eat_food,100,false, 2)
-			show_debug_message("Dog is now full")
-			sprite_index = dog_eat_spr
-			x = dog_bowl_obj.x
-			y = dog_bowl_obj.y-10
-		} 
-		else if (global.pet_needs.hunger.value == 100) {
-			show_message("Dog is too full to eat")
-			playErrorSound()
-		}
-		else {
-			global.pet_needs.hunger.value += dog_bowl_obj.hunger_increase
+		if(global.pet_needs.hunger.value < 100) {
+			improveNeed("hunger", dog_bowl_obj.hunger_increase)
+			//global.pet_needs.hunger.value = 100
 			dog_bowl_obj.food_amount -= dog_bite_amount
 			audio_play_sound(eat_food,100,false, 2)
 			show_debug_message("Dog has eaten")
 			sprite_index = dog_eat_spr
 			x = dog_bowl_obj.x
 			y = dog_bowl_obj.y-10
+		} 
+		else {
+			show_message("Dog is too full to eat")
+			playErrorSound()
 		}
+		//else {
+		//	global.pet_needs.hunger.value += dog_bowl_obj.hunger_increase
+		//	dog_bowl_obj.food_amount -= dog_bite_amount
+		//	audio_play_sound(eat_food,100,false, 2)
+		//	show_debug_message("Dog has eaten")
+		//	sprite_index = dog_eat_spr
+		//	x = dog_bowl_obj.x
+		//	y = dog_bowl_obj.y-10
+		//}
 	} else {
 		playErrorSound()
 		show_debug_message("You need to buy more food")

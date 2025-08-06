@@ -1,7 +1,8 @@
 if(food_amount == 0) {
-	sprite_index = dog_bowl_empty_spr
+	image_index = 0
 } else if (food_amount > 0 && food_amount < 50) {
-	sprite_index = dog_bowl_level_2_spr
+	image_index = Amount.HALF
 } else {
-	sprite_index = dog_bowl_spr
+	image_index = Amount.FULL
 }
+//if position_meeting(mouse_x, mouse_y, self) image_index += 3

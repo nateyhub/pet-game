@@ -4,3 +4,5 @@ setAlarmInSeconds(INCREASE_POINTS_ALARM, 2)
 
 
 _game_speed = game_get_speed(gamespeed_fps)
+
+gpu_set_tex_filter(false);

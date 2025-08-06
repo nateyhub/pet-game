@@ -37,7 +37,7 @@ function emptyBladder() {
 	isEmptyingBladder = true
 	global.pet_needs.bladder.value = 100
 	audio_play_sound(empty_bladder, 100, false)
-	instance_create_layer(x,y+16,"Instances",puddle_obj)
+	instance_create_layer(x,y+16,"bottom_layer",puddle_obj)
 	sprite_index = dog_emptying_bladder_spr
 	setAlarmInSeconds(actionAlarms.EMPTY_BLADDER, 1)
 		

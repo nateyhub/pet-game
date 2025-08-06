@@ -1,0 +1,1 @@
+showObjectOutline(self)

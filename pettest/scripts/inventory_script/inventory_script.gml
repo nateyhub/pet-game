@@ -1,9 +1,18 @@
 #macro CAPACITY 3
 
-function InventoryItem(_name, _need_effect, _obj_index) constructor {
+function InventoryItem(_name, _need_effect, _obj_index, _room_layer) constructor {
 	name = _name
 	need_effect = _need_effect
 	obj_index = _obj_index
+	room_layer = _room_layer
+}
+
+function TieredItem(_name, _need_effect, _obj_index, _room_layer, _obj_tier) : InventoryItem(_name, _need_effect, _obj_index, _room_layer) constructor {
+	name = _name
+	need_effect = _need_effect
+	obj_index = _obj_index
+	room_layer = _room_layer
+	obj_tier = _obj_tier
 }
 
 function Inventory() constructor {
@@ -41,7 +50,7 @@ function Inventory() constructor {
 	static getItem = function(itemName) {
 		if !isEmpty() {
 			for(var i = 0; i < numberOfItems(); i++) {
-				if(inventory[i].name == itemName) return inventory[i].obj_index
+				if(inventory[i].name == itemName) return inventory[i]
 			}
 		}
 		return noone
