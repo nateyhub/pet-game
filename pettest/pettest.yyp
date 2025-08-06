@@ -112,6 +112,7 @@
     {"id":{"name":"mop","path":"sounds/mop/mop.yy",},},
     {"id":{"name":"park_ambience","path":"sounds/park_ambience/park_ambience.yy",},},
     {"id":{"name":"pour_dog_food","path":"sounds/pour_dog_food/pour_dog_food.yy",},},
+    {"id":{"name":"put_down","path":"sounds/put_down/put_down.yy",},},
     {"id":{"name":"sleep","path":"sounds/sleep/sleep.yy",},},
     {"id":{"name":"success","path":"sounds/success/success.yy",},},
     {"id":{"name":"town_music","path":"sounds/town_music/town_music.yy",},},

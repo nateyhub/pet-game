@@ -1,8 +1,5 @@
 enum needAlarms {
-	ENERGY = 0,
-	HUNGER_AND_BLADDER = 1,
-	FUN = 2,
-	HYGIENE = 3,
+	NEEDS = 0,
 }
 
 enum actionAlarms {
@@ -16,14 +13,15 @@ enum actionAlarms {
 #macro FACING_LEFT -1
 #macro FACING_RIGHT 1
 
-//drain ENERGY after 5 seconds
-setAlarmInSeconds(needAlarms.ENERGY, 5)
-//drain HUNGER and BLADDER after 3 seconds
-setAlarmInSeconds(needAlarms.HUNGER_AND_BLADDER, 3)
-//drain FUN after 2 seconds
-setAlarmInSeconds(needAlarms.FUN, 2)
-//drain HYGIENE after 10 seconds
-setAlarmInSeconds(needAlarms.HYGIENE, 10)
+_drainHealthCounter = 0 
+_drainEnergyCounter = 0
+_drainHygieneCounter = 0
+_drainHungerAndBladderCounter = 0
+_drainFunCounter = 0
+
+
+//drain needs alarm
+setAlarmInSeconds(needAlarms.NEEDS, 1)
 
 my_speed = 3
 
