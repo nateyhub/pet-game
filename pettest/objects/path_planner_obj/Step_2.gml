@@ -1,1 +1,0 @@
-plan(target_obj.x, target_obj.y)

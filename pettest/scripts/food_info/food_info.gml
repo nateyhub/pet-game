@@ -1,4 +1,4 @@
-#macro DOGFOOD_SPR dogfood_tiers_24x24_spr
+#macro DOGFOOD_SPR spr_dogfood_tiers
 
 enum tier {
 	CHEAP,

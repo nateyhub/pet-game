@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"wood_tile5",
-    "path":"sprites/wood_tile5/wood_tile5.yy",
+    "name":"spr_wood_tile5",
+    "path":"sprites/spr_wood_tile5/spr_wood_tile5.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
