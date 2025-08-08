@@ -13,7 +13,11 @@ if (!_isBeingDragged)
 		}
 	}
 	else {
-		if(place_empty(x,y)) _isBeingDragged = false
+		if(place_empty(x,y)) 
+		{ 
+			_isBeingDragged = false
+			global.holdingAnItem = false
+		}
 		else playErrorSound()
 	}
 }

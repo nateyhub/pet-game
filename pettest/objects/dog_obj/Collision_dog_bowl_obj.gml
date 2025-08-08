@@ -10,6 +10,7 @@ if(keyboard_check_released(vk_space)) {
 		
 		if(global.pet_needs.hunger.value < 100) {
 			improveNeed("hunger", dog_bowl_obj.hunger_increase)
+			improveNeed("energy", 8)
 			//global.pet_needs.hunger.value = 100
 			dog_bowl_obj.food_amount -= dog_bite_amount
 			audio_play_sound(eat_food,100,false, 2)
@@ -22,15 +23,6 @@ if(keyboard_check_released(vk_space)) {
 			show_message("Dog is too full to eat")
 			playErrorSound()
 		}
-		//else {
-		//	global.pet_needs.hunger.value += dog_bowl_obj.hunger_increase
-		//	dog_bowl_obj.food_amount -= dog_bite_amount
-		//	audio_play_sound(eat_food,100,false, 2)
-		//	show_debug_message("Dog has eaten")
-		//	sprite_index = dog_eat_spr
-		//	x = dog_bowl_obj.x
-		//	y = dog_bowl_obj.y-10
-		//}
 	} else {
 		playErrorSound()
 		show_debug_message("You need to buy more food")

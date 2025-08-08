@@ -1,16 +1,18 @@
-// dim if dog is sleeping
+
+#region dim if dog is sleeping
 if (dog_obj.isSleeping) {
 	draw_set_colour(c_black)
 	draw_set_alpha(0.5)
 	draw_rectangle(0,0,10000,room_height,false)
 	draw_set_alpha(1)
 }
+#endregion
 
 // draw grey background
 draw_set_colour(_colours.background.main_colour)
 draw_rectangle(20,20,550,140,false)
 
-// draw a bar representing the value of each need (health, hunger etc.)
+#region DRAW A BAR REPRESENTING THE VALUE OF EACH NEED (HEALTH, HUNGER ETC)
 for (var i = 0; i < array_length(global.needs_keys); i++) {
 	// get each key (eg health)
 	var key = global.needs_keys[i]
@@ -59,8 +61,7 @@ for (var i = 0; i < array_length(global.needs_keys); i++) {
 		false
 	)
 }
-
-
+#endregion
 
 // draw the main GUI element on top of the bars
 draw_sprite(gui_spr,0,0,0)
@@ -73,7 +74,60 @@ draw_text(52,160,string(global.points))
 //draw the current number of needs that are at an Ultimate level
 if global.ultimateNeedsCount > 0 draw_text(100,159,string("+{0}", global.ultimateNeedsCount))
 
-//draw inventory slots
-draw_sprite(inv_slot_spr,0,20,300)
-draw_sprite(inv_slot_spr,0,20,380)
-draw_sprite(inv_slot_spr,0,20,460)
+#region HANDLE INVENTORY SLOTS
+
+var _x = 24
+var _y = 284
+
+for(var i = 0; i < 3; i++) 
+{
+	draw_sprite_stretched(inv_slot_spr,UNSELECTED,_x,_y,80,80)
+	if global.inventory.slotContainsItem(i)
+	{
+		//get the slot item
+		var _item = global.inventory.getItemInSlot(i)
+		
+		//draw the item sprite in the slot
+		draw_sprite_stretched(_item.spr_index, 0, _x+8,_y+8, 66,66)
+		
+		//if the mouse is hovering over this slot
+		if(device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70) 
+		{
+			//draw the second (index 1) frame of the inventory slot to show it's being hovered over
+			draw_sprite_stretched(inv_slot_spr,SELECTED,_x,_y,80,80)
+			
+			//if the user clicks on the slot
+			if(device_mouse_check_button_pressed(MOUSE, mb_left)) 
+			{
+				//if the user isn't already holding an item
+				if(global.holdingAnItem == false) 
+				{	
+					//create the object from the item's data
+					var item_object = instance_create_layer(mouse_x,mouse_y,_item.room_layer, _item.obj_index)
+					global.inventory.removeItemInSlot(i)
+					//make the user currently hold the item
+					item_object._isBeingDragged = true
+					global.holdingAnItem = true
+					global.selectedItem = _item
+					show_debug_message(global.inventory)
+				} 
+				else
+				{
+					show_debug_message("Already holding an item!")
+				}
+			} 
+		}
+	} else {
+		if(device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70) 
+		and (device_mouse_check_button_pressed(MOUSE, mb_left)) {
+			//add item to empty slot
+			show_debug_message("Test")
+			global.inventory.putItemInSlot(0, global.selectedItem)
+			global.selectedItem = noone
+		}
+		
+	}
+	_y += 100
+}
+
+#endregion

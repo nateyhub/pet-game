@@ -1,22 +1,24 @@
 #macro CAPACITY 3
 
-function InventoryItem(_name, _need_effect, _obj_index, _room_layer) constructor {
+function InventoryItem(_name, _need_effect, _obj_index, _spr_index, _room_layer) constructor {
 	name = _name
 	need_effect = _need_effect
 	obj_index = _obj_index
+	spr_index = _spr_index
 	room_layer = _room_layer
 }
 
-function TieredItem(_name, _need_effect, _obj_index, _room_layer, _obj_tier) : InventoryItem(_name, _need_effect, _obj_index, _room_layer) constructor {
+function TieredItem(_name, _need_effect, _obj_index, _spr_index, _room_layer, _tier) : InventoryItem(_name, _need_effect, _obj_index, _spr_index, _room_layer) constructor {
 	name = _name
 	need_effect = _need_effect
 	obj_index = _obj_index
+	spr_index = _spr_index
 	room_layer = _room_layer
-	obj_tier = _obj_tier
+	_tier = _tier
 }
 
 function Inventory() constructor {
-	inventory = []
+	inventory = [noone, noone, noone]
 	//inventory = {
 	//	item1: noone,
 	//	item2: noone,
@@ -28,9 +30,9 @@ function Inventory() constructor {
 	//}
 	
 	static toString = function() {
-		_currentNoOfItems = numberOfItems()
-		_message = string("-------------------------------\nInventory\n-------------------------------\nNumber of items: {0}\n", _currentNoOfItems)
-		for(var i = 0; i < _currentNoOfItems; i++)
+		//_currentNoOfItems = numberOfItems()
+		_message = string("-------------------------------\nInventory\n-------------------------------\nNumber of items: {0}\n", numberOfItems())
+		for(var i = 0; i < CAPACITY; i++)
 		{
 			//show_debug_message(string("Inventory item {0}: {1}", i+1, inventory[i]))
 			//string_concat(_message, string("Inventory item {0}: {1}", i+1, inventory[i]))
@@ -39,31 +41,36 @@ function Inventory() constructor {
 		return string_concat(_message,"-------------------------------")
 	}
 	
-	static addItem = function(item) {
-		if !isFull() {
-			array_push(inventory, item)
-			return true
-		}
-		return false
-	}
+	//static addItem = function(item) {
+	//	if !isFull() {
+	//		array_push(inventory, item)
+	//		return true
+	//	}
+	//	return false
+	//}
 	
-	static getItem = function(itemName) {
-		if !isEmpty() {
-			for(var i = 0; i < numberOfItems(); i++) {
-				if(inventory[i].name == itemName) return inventory[i]
-			}
-		}
-		return noone
-	}
+	//static getItem = function(itemName) {
+	//	if !isEmpty() {
+	//		for(var i = 0; i < numberOfItems(); i++) {
+	//			if(inventory[i].name == itemName) return inventory[i]
+	//		}
+	//	}
+	//	return noone
+	//}
 	
-	static removeItem = function(itemToRemove) {
-		if !isEmpty() and array_contains(inventory, itemToRemove) {
-			array_delete(inventory, itemToRemove, 1)
-		}
-	}
+	//static removeItem = function(itemToRemove) {
+	//	if !isEmpty() and array_contains(inventory, itemToRemove) {
+	//		array_delete(inventory, itemToRemove, 1)
+	//	}
+	//}
 	
 	static numberOfItems = function() {
-		return array_length(inventory)
+		var num = 0
+		for(var i = 0; i < CAPACITY; i++) {
+			if inventory[i] != noone num++
+		}
+		return num
+		//return array_length(inventory)
 		//return variable_struct_names_count(inventory)
 	}
 	
@@ -75,6 +82,28 @@ function Inventory() constructor {
 	static isEmpty = function() {
 		return numberOfItems() == 0
 		//return variable_struct_names_count(inventory) == 0
+	}
+	
+	static putItemInSlot = function(slotNumber, itemToInsert) {
+		if slotNumber < 0 or slotNumber >= CAPACITY return false
+		if inventory[slotNumber] != noone return false
+		inventory[slotNumber] = itemToInsert
+		return true
+	}
+	
+	static slotContainsItem = function(slotNumber) {
+		//show_debug_message(string("{0} > {1} ? {2}", slotNumber, numberOfItems(), slotNumber >= numberOfItems()))
+		if slotNumber >= CAPACITY return false
+		return inventory[slotNumber] != noone
+	}
+	
+	static getItemInSlot = function(slotNumber) {
+		return inventory[slotNumber]
+	}
+	
+	static removeItemInSlot = function(slotNumber) {
+		inventory[slotNumber] = noone
+		show_debug_message("Slot number 1 is now:" + string(inventory[slotNumber]))
 	}
 	
 

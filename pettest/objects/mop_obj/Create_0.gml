@@ -1,1 +1,1 @@
-initialScale = 1.2
+//initialScale = 1.2

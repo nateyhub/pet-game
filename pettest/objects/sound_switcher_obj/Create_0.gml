@@ -4,7 +4,7 @@ show_debug_message("sound_switcher: CURRENT ROOM: " + string(room_get_name(room)
 
 switch(_current_room) {
 	case "GameRoom":
-		audio_play_sound(house_music, 100, false)
+		audio_play_sound(house_music, 100, true)
 		break;
 	default:
 		audio_play_sound(city_ambience,100,true,1.2)
