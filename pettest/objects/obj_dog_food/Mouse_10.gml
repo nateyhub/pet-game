@@ -1,1 +1,1 @@
-layer_add_instance("top_glow_layer", self)
+layer_add_instance(string("{0}_glow", room_layer), self)

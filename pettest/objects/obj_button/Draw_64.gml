@@ -1,3 +1,10 @@
-draw_button(x1,y1,x2,y2,true)
+//draw_button(x1,y1,x2,y2,true)
 draw_set_colour(c_white)
-draw_text(165,165,"Click here")
+//draw_rectangle(x1,y1,x2,y2,false)
+//draw_sprite(spr_button,0,x1,y1)
+draw_sprite_stretched(spr_button,0,x1,y1,x2-x1,y2-y1)
+draw_sprite(spr_quit_label,0,x1,y1)
+//draw_self()
+//draw_text(x1+4,y1+4,"Click here")
+
+//draw_text(x,y,"Click here")

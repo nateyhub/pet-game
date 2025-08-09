@@ -6,6 +6,12 @@ function InventoryItem(_name, _need_effect, _obj_index, _spr_index, _room_layer)
 	obj_index = _obj_index
 	spr_index = _spr_index
 	room_layer = _room_layer
+	
+	static toString = function() {
+		var _message = string("Item name: {0} | Need effect: {1} | Obj: {2} | Spr: {3} | Layer: {4}",
+			name, need_effect, obj_index, spr_index, room_layer)
+		return _message
+	}
 }
 
 function TieredItem(_name, _need_effect, _obj_index, _spr_index, _room_layer, _tier) : InventoryItem(_name, _need_effect, _obj_index, _spr_index, _room_layer) constructor {
@@ -14,20 +20,17 @@ function TieredItem(_name, _need_effect, _obj_index, _spr_index, _room_layer, _t
 	obj_index = _obj_index
 	spr_index = _spr_index
 	room_layer = _room_layer
-	_tier = _tier
+	item_tier = _tier
+	
+	static toString = function() {
+		var _message = string("Item name: {0} | Need effect: {1} | Obj: {2} | Spr: {3} | Layer: {4} | Tier: {5}",
+			name, need_effect, obj_index, spr_index, room_layer, item_tier)
+		return _message
+	}
 }
 
 function Inventory() constructor {
 	inventory = [noone, noone, noone]
-	//inventory = {
-	//	item1: noone,
-	//	item2: noone,
-	//	item3: noone,
-		
-	//	toString : function() {
-	//		return string("\nInventory contains {0}, {1}, {2}", item1, item2, item3)
-	//	}
-	//}
 	
 	static toString = function() {
 		//_currentNoOfItems = numberOfItems()
@@ -40,29 +43,6 @@ function Inventory() constructor {
 		}
 		return string_concat(_message,"-------------------------------")
 	}
-	
-	//static addItem = function(item) {
-	//	if !isFull() {
-	//		array_push(inventory, item)
-	//		return true
-	//	}
-	//	return false
-	//}
-	
-	//static getItem = function(itemName) {
-	//	if !isEmpty() {
-	//		for(var i = 0; i < numberOfItems(); i++) {
-	//			if(inventory[i].name == itemName) return inventory[i]
-	//		}
-	//	}
-	//	return noone
-	//}
-	
-	//static removeItem = function(itemToRemove) {
-	//	if !isEmpty() and array_contains(inventory, itemToRemove) {
-	//		array_delete(inventory, itemToRemove, 1)
-	//	}
-	//}
 	
 	static numberOfItems = function() {
 		var num = 0

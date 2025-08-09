@@ -1,3 +1,5 @@
+
+
 if(_isBeingDragged) {
 	if(!place_empty(x,y)) { 
 		layer_add_instance("top_glow_layer_red", self)

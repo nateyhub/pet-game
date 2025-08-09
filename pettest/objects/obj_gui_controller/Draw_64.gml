@@ -88,7 +88,12 @@ for(var i = 0; i < 3; i++)
 		var _item = global.inventory.getItemInSlot(i)
 		
 		//draw the item sprite in the slot
-		draw_sprite_stretched(_item.spr_index, 0, _x+8,_y+8, 66,66)
+		if(is_instanceof(_item, TieredItem)) {
+			draw_sprite_stretched(_item.spr_index, _item.item_tier, _x+8,_y+8, 66,66)
+		} else {
+			draw_sprite_stretched(_item.spr_index, 0, _x+8,_y+8, 66,66)
+		}
+		
 		
 		//if the mouse is hovering over this slot
 		if(device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70) 
@@ -101,14 +106,29 @@ for(var i = 0; i < 3; i++)
 			{
 				//if the user isn't already holding an item
 				if(global.holdingAnItem == false) 
-				{	
-					//create the object from the item's data
-					var item_object = instance_create_layer(mouse_x,mouse_y,_item.room_layer, _item.obj_index)
+				{						
+					//remove item from the inventory slot
 					global.inventory.removeItemInSlot(i)
 					//make the user currently hold the item
-					item_object._isBeingDragged = true
+					show_debug_message(string("Item properties: {0}", _item))
+					
+					
+					var _inst_data = {
+						_isBeingDragged: true,
+						name: _item.name,
+						need_effect: _item.need_effect,
+						room_layer: _item.room_layer,
+						obj_index: _item.obj_index,
+						spr_index: _item.spr_index
+					}
+					//if the item is a TieredItem, set its tier
+					if(is_instanceof(_item, TieredItem)) _inst_data.item_tier = _item.item_tier
+					
+					var item_object = instance_create_layer(mouse_x,mouse_y,_item.room_layer, _item.obj_index, _inst_data)
+					
+					
 					global.holdingAnItem = true
-					global.selectedItem = _item
+					global.selectedItem = item_object
 					show_debug_message(global.inventory)
 				} 
 				else
@@ -121,9 +141,14 @@ for(var i = 0; i < 3; i++)
 		if(device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70) 
 		and (device_mouse_check_button_pressed(MOUSE, mb_left)) {
 			//add item to empty slot
-			show_debug_message("Test")
-			global.inventory.putItemInSlot(0, global.selectedItem)
+			show_debug_message(string("Selected item: {0}", global.selectedItem.item_details))
+			global.inventory.putItemInSlot(i, global.selectedItem.item_details)
+			
+			//destroy the instance
+			instance_destroy(global.selectedItem)
 			global.selectedItem = noone
+			global.holdingAnItem = false
+			show_debug_message(global.inventory)
 		}
 		
 	}
