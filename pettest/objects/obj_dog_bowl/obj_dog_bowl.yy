@@ -30,8 +30,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"food_amount","filters":[],"listItems":[],"multiselect":false,"name":"food_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"100","varType":1,},
-    {"$GMObjectProperty":"v1","%Name":"hunger_increase","filters":[],"listItems":[],"multiselect":false,"name":"hunger_increase","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"25","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"food_amount","filters":[],"listItems":[],"multiselect":false,"name":"food_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"hunger_increase","filters":[],"listItems":[],"multiselect":false,"name":"hunger_increase","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"40","varType":1,},
+    {"$GMObjectProperty":"v1","%Name":"current_tier","filters":[],"listItems":[],"multiselect":false,"name":"current_tier","rangeEnabled":true,"rangeMax":2.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

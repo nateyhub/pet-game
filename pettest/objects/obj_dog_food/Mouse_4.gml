@@ -9,7 +9,21 @@ if (!_isBeingDragged)
 		else {
 			show_debug_message("Filling bowl")
 			audio_play_sound(sfx_pour_dog_food, 100, false, 1.5)
-			obj_dog_bowl.food_amount = 100
+			switch(item_tier) {
+				case tier.CHEAP:
+					obj_dog_bowl.food_amount = 80
+					break
+				case tier.GOOD:
+					obj_dog_bowl.food_amount = 100
+					break
+				case tier.ULTIMATE:
+					obj_dog_bowl.food_amount = 120
+					break
+			}
+			//set the current tier of dog food in the bowl to the item's tier
+			obj_dog_bowl.current_tier = item_tier
+			
+			//destroy the dog food bag
 			instance_destroy(self)
 			global.holdingAnItem = false
 			global.selectedItem = noone
