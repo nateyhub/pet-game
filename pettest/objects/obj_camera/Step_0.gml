@@ -4,6 +4,11 @@ if (follow != noone) {
 	yTo = follow.y
 }
 
+//show_debug_message(string("VIEWPORT DIMENSIONS: {0}x{1}", view_get_wport(0), view_get_hport(0)))
+//show_debug_message(string("WINDOW DIMENSIONS: {0}x{1}", window_get_width(), window_get_height()))
+
+if(view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)) surface_resize(application_surface, view_wport[0], view_hport[0])
+
 // incremently move towards the follow object
 // 25 is a magic number - this adds a smoothing effect to the camera's start and end movements
 //	the camera is moving a 25th to the position, and this change decreases as it approaches to the target

@@ -28,6 +28,7 @@
     {"name":"inst_7E8DAF","path":"rooms/rm_home/rm_home.yy",},
     {"name":"inst_BF9D82D","path":"rooms/rm_home/rm_home.yy",},
     {"name":"inst_4A4BC081","path":"rooms/rm_home/rm_home.yy",},
+    {"name":"inst_7AE05D14","path":"rooms/rm_home/rm_home.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -74,6 +75,7 @@
         {"$GMRInstance":"v2","%Name":"inst_4EFD4381","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4EFD4381","objectId":{"name":"obj_bath","path":"objects/obj_bath/obj_bath.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":784.0,"y":24.0,},
         {"$GMRInstance":"v2","%Name":"inst_2A8A5993","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2A8A5993","objectId":{"name":"obj_tip","path":"objects/obj_tip/obj_tip.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":592.0,"y":80.0,},
         {"$GMRInstance":"v2","%Name":"inst_4AAF6DFC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4AAF6DFC","objectId":{"name":"obj_dog_food","path":"objects/obj_dog_food/obj_dog_food.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":656.0,"y":176.0,},
+        {"$GMRInstance":"v2","%Name":"inst_7AE05D14","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7AE05D14","objectId":{"name":"obj_DEBUG_MANAGER","path":"objects/obj_DEBUG_MANAGER/obj_DEBUG_MANAGER.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":16.0,"y":112.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"bowl","depth":800,"effectEnabled":true,"effectType":"none","gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_5CBDFAC2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5CBDFAC2","objectId":{"name":"obj_dog_bowl","path":"objects/obj_dog_bowl/obj_dog_bowl.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":624.0,"y":240.0,},

@@ -10,15 +10,25 @@ enum actionAlarms {
 	BARK = 8,
 }
 
+enum dogColours {
+	DEFAULT = 0,
+	BLACK = 1,
+	PINK = 2
+}
+
 #macro FACING_LEFT -1
 #macro FACING_RIGHT 1
+
+
+//PALETTE MANAGEMENT
+current_pal = dogColours.DEFAULT;
+application_surface_draw_enable(false);
 
 _drainHealthCounter = 0 
 _drainEnergyCounter = 0
 _drainHygieneCounter = 0
 _drainHungerAndBladderCounter = 0
 _drainFunCounter = 0
-
 
 //drain needs alarm
 setAlarmInSeconds(needAlarms.NEEDS, 1)
@@ -78,3 +88,4 @@ _sleep_amount = 40
 
 //TODO: put this in bath_obj
 _bathe_amount = 30
+
