@@ -1,0 +1,1 @@
+layer_add_instance(room_layer, self)

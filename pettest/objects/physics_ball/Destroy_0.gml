@@ -1,1 +1,0 @@
-instance_create_layer(_start_x,_start_y,"Instances_1", physics_ball)

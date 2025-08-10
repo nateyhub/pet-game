@@ -1,0 +1,1 @@
+plan(obj_target.x, obj_target.y)

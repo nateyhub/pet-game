@@ -1,0 +1,1 @@
+hideObjectOutline(self, "bowl")

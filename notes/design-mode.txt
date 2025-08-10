@@ -1,0 +1,13 @@
+Add design mode:
+- design button in bottom left of screen
+- when selected and an object is clicked on, change its colour using the colour palette swapper
+- eg dog food bowl change colour from red to blue
+
+
+
+
+
+NEED:
+- objBasicExample
+- script files
+- shader files
