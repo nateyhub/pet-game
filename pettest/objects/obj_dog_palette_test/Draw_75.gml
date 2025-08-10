@@ -14,6 +14,6 @@
 
 
 //          "\n---POST DRAW EVENT---\n"+
-//          "pal_swap_set(spr_pope_pal, "+string(current_pal)+ ", false);\n"+
+//          "pal_swap_set(spr_pope_pal, "+string(global.current_pal)+ ", false);\n"+
 //          "draw_surface_stretched(application_surface,0,0,GUI_W,GUI_H);\n"+
 //          "pal_swap_reset();", GUI_W * .3,,GUI_W * .55);

@@ -18,6 +18,9 @@ global.needs_critical = false
 
 global.needs_keys = variable_struct_get_names(global.pet_needs)
 
+
+global.current_pal = dogColours.DEFAULT;
+
 //total points
 global.points = 0
 

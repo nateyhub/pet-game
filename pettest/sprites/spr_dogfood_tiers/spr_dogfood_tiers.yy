@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"dog_bowl",
+    "path":"folders/Sprites/dog_bowl.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

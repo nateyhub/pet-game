@@ -1,9 +1,8 @@
 if(food_amount == 0) {
-	image_index = 0
+	food_level = Amount.EMPTY
 	current_tier = 0
-} else if (food_amount > 0 && food_amount < 50) {
-	image_index = Amount.HALF
+} else if (food_amount > 0 && food_amount <= 50) {
+	food_level = Amount.HALF
 } else {
-	image_index = Amount.FULL
+	food_level = Amount.FULL
 }
-//if position_meeting(mouse_x, mouse_y, self) image_index += 3

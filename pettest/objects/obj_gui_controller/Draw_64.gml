@@ -1,4 +1,7 @@
 
+_x = 24
+_y = 284
+
 #region dim if dog is sleeping
 if (obj_dog.isSleeping) {
 	draw_set_colour(c_black)
@@ -76,8 +79,6 @@ if global.ultimateNeedsCount > 0 draw_text(100,159,string("+{0}", global.ultimat
 
 #region HANDLE INVENTORY SLOTS
 
-var _x = 24
-var _y = 284
 
 for(var i = 0; i < 3; i++) 
 {

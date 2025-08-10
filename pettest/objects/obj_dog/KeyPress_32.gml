@@ -29,7 +29,7 @@ if(collision_circle(x,y,collision_radius,obj_dog_bed,false,false)) {
 
 	
 	//only sleep if the pet is tired enough
-	if(global.pet_needs.energy.value <= 25) {
+	if(global.pet_needs.energy.value <= 30) {
 		//start sleeping
 		isSleeping = true
 		sprite_index = spr_dog_sleep

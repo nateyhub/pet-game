@@ -1,6 +1,10 @@
 #macro UNSELECTED 0
 #macro SELECTED 1
 
+
+_x = 24
+_y = 284
+
 window_set_cursor(cr_none)
 cursor_sprite = spr_cursor
 

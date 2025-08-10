@@ -1,20 +1,15 @@
-
-
 if(_isBeingDragged) {
+	//if the user is attempting to drop the dog food in a place where it can't go
 	if(!place_empty(x,y)) { 
 		layer_add_instance("top_glow_layer_red", self)
-		
 	} else {
 		layer_add_instance("top_glow_layer", self)
 	}
-	move_snap(16,16)
-	//if (mouse_x > 0 and mouse_y > 0) {
-	//	x = (mouse_x div 8) * 8
-	//	y = (mouse_y div 8) * 8
-		
-	//} else {
-		x = mouse_x
-		y = mouse_y
-	//}
+
+	//move dog food obj to the cursor's current position
+	x = mouse_x
+	y = mouse_y
+
+	//snap position to 16x16 grid spaces
 	move_snap(16,16)
 }

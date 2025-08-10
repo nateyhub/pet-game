@@ -21,7 +21,7 @@ enum dogColours {
 
 
 //PALETTE MANAGEMENT
-current_pal = dogColours.DEFAULT;
+//global.current_pal = dogColours.DEFAULT;
 application_surface_draw_enable(false);
 
 _drainHealthCounter = 0 

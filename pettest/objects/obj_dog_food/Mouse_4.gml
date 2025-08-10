@@ -30,12 +30,14 @@ if (!_isBeingDragged)
 		}
 	}
 	else {
-		if(place_empty(x,y)) 
-		{ 
-			_isBeingDragged = false
-			global.holdingAnItem = false
-			global.selectedItem = noone
+		if(place_empty(x,y)) and (device_mouse_x_to_gui(MOUSE) < obj_gui_controller._x or device_mouse_x_to_gui(MOUSE) > obj_gui_controller._x+70) and (device_mouse_y_to_gui(MOUSE) < obj_gui_controller._y or device_mouse_y_to_gui(MOUSE) > obj_gui_controller._y+70) 
+		{
+				_isBeingDragged = false
+				global.holdingAnItem = false
+				global.selectedItem = noone
 		}
-		else playErrorSound()
+		else if (device_mouse_x_to_gui(MOUSE) < obj_gui_controller._x or device_mouse_x_to_gui(MOUSE) > obj_gui_controller._x+70) and (device_mouse_y_to_gui(MOUSE) < obj_gui_controller._y or device_mouse_y_to_gui(MOUSE) > obj_gui_controller._y+70) {
+			playErrorSound()
+		}
 	}
 }
