@@ -15,6 +15,8 @@ if (obj_dog.isSleeping) {
 draw_set_colour(_colours.background.main_colour)
 draw_rectangle(20,20,550,140,false)
 
+draw_sprite_stretched(spr_coin,0,200,400,32,32)
+
 #region DRAW A BAR REPRESENTING THE VALUE OF EACH NEED (HEALTH, HUNGER ETC)
 for (var i = 0; i < array_length(global.needs_keys); i++) {
 	// get each key (eg health)
@@ -139,7 +141,7 @@ for(var i = 0; i < 3; i++)
 			} 
 		}
 	} else {
-		if(device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70) 
+		if global.holdingAnItem and (device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70) 
 		and (device_mouse_check_button_pressed(MOUSE, mb_left)) {
 			//add item to empty slot
 			show_debug_message(string("Selected item: {0}", global.selectedItem.item_details))

@@ -20,7 +20,8 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 	if(_xinput != 0 or _yinput != 0) {
 		//the player is moving
 		isMoving = true
-		sprite_index = spr_dog_walk
+		if(isBarking) sprite_index = spr_dog_walk_barking
+		else sprite_index = spr_dog_walk
 		_movement_counter++
 		//show_debug_message("Movement counter:" + string(_movement_counter))
 		switch(_xinput) {
@@ -56,6 +57,7 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 		isMoving = false
 		_movement_counter = 0
 		if !isBarking sprite_index = spr_dog_idle
+		else sprite_index = spr_dog_bark_idle
 	}
 
 

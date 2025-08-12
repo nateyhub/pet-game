@@ -29,7 +29,7 @@ if (_drainHygieneCounter >= 5 and !isBathing) {
 	_drainHygieneCounter = 0
 }
 
-
+if(isSprinting) drainNeed("energy", 1)
 
 
 

@@ -46,10 +46,4 @@ if(collision_circle(x,y,collision_radius,obj_dog_bed,false,false)) {
 	}
 }
 
-//if(isUsingMop) 
-//{
-//	show_debug_message("Letting go of mop")
-//	isUsingMop = false
-//}
-
 show_debug_message(fps)
