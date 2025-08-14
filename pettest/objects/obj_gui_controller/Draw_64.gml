@@ -23,13 +23,13 @@ for (var i = 0; i < array_length(global.needs_keys); i++) {
 	var key = global.needs_keys[i]
 	
 	// set the colour of the bar according to the current value of this need (eg low value = red)
-	if (global.pet_needs[$ key].value <= 14) {
+	if (global.pet_needs[$ key].value < 15) {
 		draw_set_colour(_colours.very_low.main_colour)
-	} else if (global.pet_needs[$ key].value >= 15 and global.pet_needs[$ key].value <= 29) {
+	} else if (global.pet_needs[$ key].value >= 15 and global.pet_needs[$ key].value < 30) {
 		draw_set_colour(_colours.low.main_colour)
-	} else if (global.pet_needs[$ key].value >= 29 and global.pet_needs[$ key].value <= 64) {
+	} else if (global.pet_needs[$ key].value >= 30 and global.pet_needs[$ key].value < 65) {
 		draw_set_colour(_colours.medium.main_colour)
-	} else if (global.pet_needs[$ key].value >= 65 and global.pet_needs[$ key].value <= 89) {
+	} else if (global.pet_needs[$ key].value >= 65 and global.pet_needs[$ key].value < 90) {
 		draw_set_colour(_colours.high.main_colour)
 	} else {
 		draw_set_colour(_colours.ultimate.main_colour)

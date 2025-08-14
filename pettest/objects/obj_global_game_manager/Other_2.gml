@@ -26,7 +26,6 @@ global.points = 0
 
 global.ultimateNeedsCount = 0
 
-
 //DEBUG: Testing Inventory
 global.inventory = new Inventory()
 global.selectedItem = noone
