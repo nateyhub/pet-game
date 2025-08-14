@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_door",
-  "eventList":[],
+  "%Name":"obj_need_change",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_door",
+  "name":"obj_need_change",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"gui_objs",
+    "path":"folders/Objects/gui_objs.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_door",
-    "path":"sprites/spr_door/spr_door.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

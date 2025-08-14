@@ -71,6 +71,8 @@ for (var i = 0; i < array_length(global.needs_keys); i++) {
 // draw the main GUI element on top of the bars
 draw_sprite(spr_gui,0,0,0)
 
+draw_sprite( spr_need_increase,0,284,100)
+
 
 //draw the number of points the player has
 draw_set_colour(_colours.text)
