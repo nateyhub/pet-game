@@ -40,6 +40,12 @@ shadow_x2_offset = 0
 
 _movement_counter = 0
 
+collision_radius = 24
+_nearby_mop = collision_circle(x,y,collision_radius,obj_mop,false,false)
+_nearby_bath = collision_circle(x,y,collision_radius,obj_bath,false,false)
+_nearby_dog_bowl = collision_circle(x,y,collision_radius,obj_dog_bowl,false,false)
+_nearby_bed = collision_circle(x,y,collision_radius,obj_dog_bed,false,false)
+_nearby_door = collision_circle(x,y,collision_radius,obj_door,false,false)
 
 
 function emptyBladder() {

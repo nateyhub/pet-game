@@ -39,3 +39,6 @@ _colours = {
 		shade_colour: make_color_rgb(206,170,237)
 	}
 }
+
+_current_main_colour = _colours.ultimate.main_colour
+_current_shade_colour = _colours.ultimate.shade_colour

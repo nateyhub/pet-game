@@ -13,6 +13,26 @@ var _yinput = _down - _up
 
 //if there is any x or y movement detected
 
+_nearby_mop = collision_circle(x,y,collision_radius, obj_mop,false,false)
+_nearby_bath = collision_circle(x,y,collision_radius,obj_bath,false,false)
+_nearby_dog_bowl = collision_circle(x,y,collision_radius,obj_dog_bowl,false,false)
+_nearby_bed = collision_circle(x,y,collision_radius,obj_dog_bed,false,false)
+_nearby_door = collision_circle(x,y,collision_radius,obj_door,false,false)
+if _nearby_mop and !isUsingMop global.tipsContainer.createTip("Space", "Pick up")
+else global.tipsContainer.removeTip("Pick up")
+
+
+if !isBathing and _nearby_bath global.tipsContainer.createTip("Space", "Take a bath")
+else global.tipsContainer.removeTip("Take a bath")
+
+if !isEating and _nearby_dog_bowl global.tipsContainer.createTip("Space", "Eat")
+else global.tipsContainer.removeTip("Eat")
+
+if !isSleeping and _nearby_bed global.tipsContainer.createTip("Space", "Sleep")
+else global.tipsContainer.removeTip("Sleep")
+
+if !isSleeping and _nearby_door global.tipsContainer.createTip("Space", "Go outside")
+else global.tipsContainer.removeTip("Go outside")
 
 
 if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)

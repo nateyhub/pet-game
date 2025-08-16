@@ -1,4 +1,3 @@
-
 _x = 24
 _y = 284
 
@@ -18,22 +17,29 @@ draw_rectangle(20,20,550,140,false)
 draw_sprite_stretched(spr_coin,0,200,400,32,32)
 
 #region DRAW A BAR REPRESENTING THE VALUE OF EACH NEED (HEALTH, HUNGER ETC)
-for (var i = 0; i < array_length(global.needs_keys); i++) {
+for (var i = 0; i < 6; i++) {
 	// get each key (eg health)
 	var key = global.needs_keys[i]
 	
 	// set the colour of the bar according to the current value of this need (eg low value = red)
 	if (global.pet_needs[$ key].value < 15) {
-		draw_set_colour(_colours.very_low.main_colour)
+		_current_main_colour = _colours.very_low.main_colour
+		_current_shade_colour = _colours.very_low.shade_colour
 	} else if (global.pet_needs[$ key].value >= 15 and global.pet_needs[$ key].value < 30) {
-		draw_set_colour(_colours.low.main_colour)
+		_current_main_colour = _colours.low.main_colour
+		_current_shade_colour = _colours.low.shade_colour
 	} else if (global.pet_needs[$ key].value >= 30 and global.pet_needs[$ key].value < 65) {
-		draw_set_colour(_colours.medium.main_colour)
+		_current_main_colour = _colours.medium.main_colour
+		_current_shade_colour = _colours.medium.shade_colour
 	} else if (global.pet_needs[$ key].value >= 65 and global.pet_needs[$ key].value < 90) {
-		draw_set_colour(_colours.high.main_colour)
+		_current_main_colour = _colours.high.main_colour
+		_current_shade_colour = _colours.high.shade_colour
 	} else {
-		draw_set_colour(_colours.ultimate.main_colour)
+		_current_main_colour = _colours.ultimate.main_colour
+		_current_shade_colour = _colours.ultimate.shade_colour
 	}
+	
+	draw_set_colour(_current_main_colour)
 	
 	// draw a rectangle using the need's given x & y coords and current value (out of 100)
 	draw_rectangle(
@@ -44,18 +50,7 @@ for (var i = 0; i < array_length(global.needs_keys); i++) {
 		false
 	)
 	
-	// set the colour of the bar according to the current value of this need (eg low value = red)
-	if (global.pet_needs[$ key].value <= 14) {
-		draw_set_colour(_colours.very_low.shade_colour)
-	} else if (global.pet_needs[$ key].value >= 15 and global.pet_needs[$ key].value <= 29) {
-		draw_set_colour(_colours.low.shade_colour)
-	} else if (global.pet_needs[$ key].value >= 29 and global.pet_needs[$ key].value <= 64) {
-		draw_set_colour(_colours.medium.shade_colour)
-	} else if (global.pet_needs[$ key].value >= 65 and global.pet_needs[$ key].value <= 89) {
-		draw_set_colour(_colours.high.shade_colour)
-	} else {
-		draw_set_colour(_colours.ultimate.shade_colour)
-	}
+	draw_set_colour(_current_shade_colour)
 	
 	// draw shading bar
 	draw_rectangle(
@@ -76,13 +71,13 @@ draw_sprite( spr_need_increase,0,284,100)
 
 //draw the number of points the player has
 draw_set_colour(_colours.text)
-draw_text(52,160,string(global.points))
+draw_set_font(fnt_gui)
+draw_text(52,156,string(global.points))
 
 //draw the current number of needs that are at an Ultimate level
-if global.ultimateNeedsCount > 0 draw_text(100,159,string("+{0}", global.ultimateNeedsCount))
+if global.ultimateNeedsCount > 0 draw_text(90,156,string("+{0}", global.ultimateNeedsCount))
 
 #region HANDLE INVENTORY SLOTS
-
 
 for(var i = 0; i < 3; i++) 
 {

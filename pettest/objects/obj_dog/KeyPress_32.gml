@@ -1,7 +1,8 @@
-var collision_radius = 24
 // if the bath is nearby
-if(collision_circle(x,y,collision_radius,obj_bath,false,false)) {
+if(_nearby_bath) {
 	show_debug_message("Bath is here")
+	
+	global.tipsContainer.removeTip("Take a bath")
 
 	if(global.pet_needs.hygiene.value <= 90) {
 		//move pet towards the bath
@@ -21,7 +22,7 @@ if(collision_circle(x,y,collision_radius,obj_bath,false,false)) {
 }
 
 // if the bed is nearby
-if(collision_circle(x,y,collision_radius,obj_dog_bed,false,false)) {
+if(_nearby_bed) {
 	show_debug_message("Bed is here")
 	//move to the bed
 	x = obj_dog_bed.x

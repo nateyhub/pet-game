@@ -1,10 +1,20 @@
+//if the ball is moving
 if speed > 0.0 { 
 	speed -= 0.05
 	_isMoving = true
-	if (direction <= 180) image_angle += speed * 10
-	else image_angle -= speed * 10
+	var collidingObject = collision_circle(x,y,sprite_width/2,all,false,true)
+	if(collidingObject and collidingObject != obj_dog.id and _hasBeenHit) 
+	{
+		show_debug_message("Bouncing")
+		move_bounce_all(false)
+	}
+	
+	
+	//if (direction <= 180) image_angle += speed * 10
+	//else image_angle -= speed * 10
 } else {
 	_isMoving = false
+	_hasBeenHit = false
 }
 
 if(_isBeingDragged) {
@@ -20,14 +30,3 @@ if(_isBeingDragged) {
 
 	move_snap(16,16)
 }
-
-
-//if(place_meeting(x,y,dog_obj)) 
-//{ 
-//	var _direction = point_direction(x,y,dog_obj.x, dog_obj.y)
-//	show_debug_message(_direction)
-//	direction = -_direction
-//	speed = 3
-//}
-
-//var collision = move_and_collide(1 * speed, 1 * speed, obj_solid_parent)
