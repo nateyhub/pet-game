@@ -12,28 +12,48 @@ var _yinput = _down - _up
 //show_debug_message("y: " + string(_yinput) + " x: " + string(_xinput))
 
 //if there is any x or y movement detected
-
-_nearby_mop = collision_circle(x,y,collision_radius, obj_mop,false,false)
-_nearby_bath = collision_circle(x,y,collision_radius,obj_bath,false,false)
-_nearby_dog_bowl = collision_circle(x,y,collision_radius,obj_dog_bowl,false,false)
-_nearby_bed = collision_circle(x,y,collision_radius,obj_dog_bed,false,false)
-_nearby_door = collision_circle(x,y,collision_radius,obj_door,false,false)
-if _nearby_mop and !isUsingMop global.tipsContainer.createTip("Space", "Pick up")
-else global.tipsContainer.removeTip("Pick up")
-
-
-if !isBathing and _nearby_bath global.tipsContainer.createTip("Space", "Take a bath")
-else global.tipsContainer.removeTip("Take a bath")
-
-if !isEating and _nearby_dog_bowl global.tipsContainer.createTip("Space", "Eat")
-else global.tipsContainer.removeTip("Eat")
-
-if !isSleeping and _nearby_bed global.tipsContainer.createTip("Space", "Sleep")
-else global.tipsContainer.removeTip("Sleep")
-
-if !isSleeping and _nearby_door global.tipsContainer.createTip("Space", "Go outside")
-else global.tipsContainer.removeTip("Go outside")
-
+_nearby_interactable = collision_rectangle(x-collision_radius,y-collision_radius,x+collision_radius,y+collision_radius,obj_interactable_parent,false,false)
+if _nearby_interactable {
+	switch _nearby_interactable {
+		// If the nearby interactable object is a bath
+		case obj_bath.id:
+			if !isBathing and !isUsingMop {
+				global.tipsContainer.createTip("Space", "Take a bath")
+				if(keyboard_check_pressed(vk_space)) useBath()		
+			}
+			else global.tipsContainer.removeTip("Take a bath")
+			break
+		// If the object is a mop
+		case obj_mop.id:
+			if !isUsingMop global.tipsContainer.createTip("Space", "Pick up")
+			else global.tipsContainer.removeTip("Pick up")
+			break
+		case obj_dog_bowl.id:
+			if !isEating and !isUsingMop {
+				global.tipsContainer.createTip("Space", "Eat")
+				if (keyboard_check_pressed(vk_space)) eatFromBowl()
+			}
+			else global.tipsContainer.removeTip("Eat")
+			break
+		case obj_dog_bed.id:
+			if !isSleeping and !isUsingMop 
+			{ 
+				global.tipsContainer.createTip("Space", "Sleep")
+				if(keyboard_check_pressed(vk_space)) useBed()
+			}
+			else global.tipsContainer.removeTip("Sleep")
+			break
+		case obj_door.id:
+			if !isSleeping and !isUsingMop {
+				global.tipsContainer.createTip("Space", "Go outside")
+				if(keyboard_check_pressed(vk_space)) goOutside()
+			}
+			else global.tipsContainer.removeTip("Go outside")
+			break
+	}
+} else {
+	global.tipsContainer.clearAllTips()
+}
 
 if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 {
@@ -70,7 +90,7 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 		if(isUsingMop) {
 			//if dog is facing left
 			if image_xscale = 1 obj_mop.x = self.x - 16
-			else obj_mop.x = self.x + 16
+			else obj_mop.x = self.x + 15
 			obj_mop.y = self.y - 2
 		}
 	} else {
@@ -91,7 +111,7 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 
 
 	// handle collisions against any objects that have obj_solid_parent as a parent
-	var collision = move_and_collide(_xinput * my_speed, _yinput * my_speed, obj_solid_parent)
+	var collision = move_and_collide(_xinput * my_speed, _yinput * my_speed, [obj_solid_parent, obj_solid_interactable])
 	
 	// if the pet's bladder needs emptying
 	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) {

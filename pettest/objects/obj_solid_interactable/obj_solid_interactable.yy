@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bath",
+  "%Name":"obj_solid_interactable",
   "eventList":[],
   "managed":true,
-  "name":"obj_bath",
+  "name":"obj_solid_interactable",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"global",
+    "path":"folders/Objects/global.yy",
   },
   "parentObjectId":{
-    "name":"obj_solid_interactable",
-    "path":"objects/obj_solid_interactable/obj_solid_interactable.yy",
+    "name":"obj_interactable_parent",
+    "path":"objects/obj_interactable_parent/obj_interactable_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_bathtub",
-    "path":"sprites/spr_bathtub/spr_bathtub.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
