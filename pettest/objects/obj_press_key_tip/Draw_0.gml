@@ -7,7 +7,16 @@ if(visible) {
 	sprite_index = current_key.spr_index
 	draw_set_font(fnt_tip)
 	draw_set_colour(c_white)
-	draw_text(x+sprite_width-6+(current_key.key_str_length*6)+current_key.margin_left, y+2, text)
+	//WARNING: draw_text_outline can be demanding - remove if performance suffers
+	draw_text_outline(
+		x+sprite_width-6+(current_key.key_str_length*6)+current_key.margin_left,
+		y+2,
+		text,
+		1,
+		make_color_rgb(105,91,89),
+		6
+	)
+	//draw_text(x+sprite_width-6+(current_key.key_str_length*6)+current_key.margin_left, y+2, text)
 	
 	//draw_rectangle(x,y,x+key_str_length,y+20,false)
 	

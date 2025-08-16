@@ -46,8 +46,10 @@
   },
   "name":"pettest",
   "resources":[
+    {"id":{"name":"Draw_Text_Outlined","path":"extensions/Draw_Text_Outlined/Draw_Text_Outlined.yy",},},
     {"id":{"name":"fnt_gui","path":"fonts/fnt_gui/fnt_gui.yy",},},
     {"id":{"name":"fnt_tip","path":"fonts/fnt_tip/fnt_tip.yy",},},
+    {"id":{"name":"compatibility_report_170825_256565656","path":"notes/compatibility_report_170825_256565656/compatibility_report_170825_256565656.yy",},},
     {"id":{"name":"obj_ambience","path":"objects/obj_ambience/obj_ambience.yy",},},
     {"id":{"name":"obj_ball_collision","path":"objects/obj_ball_collision/obj_ball_collision.yy",},},
     {"id":{"name":"obj_basketball","path":"objects/obj_basketball/obj_basketball.yy",},},
@@ -101,6 +103,7 @@
     {"id":{"name":"rm_preset_paths_test","path":"rooms/rm_preset_paths_test/rm_preset_paths_test.yy",},},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"id":{"name":"drain_need","path":"scripts/drain_need/drain_need.yy",},},
+    {"id":{"name":"draw_text_outline","path":"scripts/draw_text_outline/draw_text_outline.yy",},},
     {"id":{"name":"food_info","path":"scripts/food_info/food_info.yy",},},
     {"id":{"name":"outline","path":"scripts/outline/outline.yy",},},
     {"id":{"name":"plan","path":"scripts/plan/plan.yy",},},
