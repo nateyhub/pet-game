@@ -5,8 +5,10 @@
 #macro LARGE_CAMERA_HEIGHT 360
 
 // initial width and height of the camera
-camWidth = SMALL_CAMERA_WIDTH
-camHeight = SMALL_CAMERA_HEIGHT
+camWidth = LARGE_CAMERA_WIDTH
+camHeight = LARGE_CAMERA_HEIGHT
+
+//show_message(room ==  rm_preset_paths_test)
 
 //default if needed:
 //	follow = noone
@@ -14,14 +16,14 @@ camHeight = SMALL_CAMERA_HEIGHT
 //(there may be some use cases in the future)
 
 // if the dog_obj is being used (eg in buildings)
-if (instance_exists(obj_dog)) {
+if (room == rm_home) {
 	follow = obj_dog
 	camWidth = LARGE_CAMERA_WIDTH
 	camHeight = LARGE_CAMERA_HEIGHT
 }
 // otherwise, if we are in the city
-else if (instance_exists(obj_dog_city)) {
-	follow = obj_dog_city
+else if (room == rm_preset_paths_test) {
+	follow = obj_dog
 	camWidth = SMALL_CAMERA_WIDTH
 	camHeight = SMALL_CAMERA_HEIGHT
 }

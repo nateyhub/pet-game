@@ -1,0 +1,1 @@
+if global.tipsContainer global.tipsContainer.drawTips()

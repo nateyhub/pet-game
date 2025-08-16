@@ -1,0 +1,1 @@
+global.tipsContainer.createTip("B", "Pick up a")

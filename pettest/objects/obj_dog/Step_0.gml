@@ -12,15 +12,56 @@ var _yinput = _down - _up
 //show_debug_message("y: " + string(_yinput) + " x: " + string(_xinput))
 
 //if there is any x or y movement detected
-
-
+_nearby_interactable = collision_rectangle(x-collision_radius,y-collision_radius,x+collision_radius,y+collision_radius,obj_interactable_parent,false,false)
+if _nearby_interactable {
+	switch _nearby_interactable {
+		// If the nearby interactable object is a bath
+		case obj_bath.id:
+			if !isBathing and !isUsingMop {
+				global.tipsContainer.createTip("Space", "Take a bath")
+				if(keyboard_check_pressed(vk_space)) useBath()		
+			}
+			else global.tipsContainer.removeTip("Take a bath")
+			break
+		// If the object is a mop
+		case obj_mop.id:
+			if !isUsingMop global.tipsContainer.createTip("Space", "Pick up")
+			else global.tipsContainer.removeTip("Pick up")
+			break
+		case obj_dog_bowl.id:
+			if !isEating and !isUsingMop {
+				global.tipsContainer.createTip("Space", "Eat")
+				if (keyboard_check_pressed(vk_space)) eatFromBowl()
+			}
+			else global.tipsContainer.removeTip("Eat")
+			break
+		case obj_dog_bed.id:
+			if !isSleeping and !isUsingMop 
+			{ 
+				global.tipsContainer.createTip("Space", "Sleep")
+				if(keyboard_check_pressed(vk_space)) useBed()
+			}
+			else global.tipsContainer.removeTip("Sleep")
+			break
+		case obj_door.id:
+			if !isSleeping and !isUsingMop {
+				global.tipsContainer.createTip("Space", "Go outside")
+				if(keyboard_check_pressed(vk_space)) goOutside()
+			}
+			else global.tipsContainer.removeTip("Go outside")
+			break
+	}
+} else {
+	global.tipsContainer.clearAllTips()
+}
 
 if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 {
 	if(_xinput != 0 or _yinput != 0) {
 		//the player is moving
 		isMoving = true
-		sprite_index = spr_dog_walk
+		if(isBarking) sprite_index = spr_dog_walk_barking
+		else sprite_index = spr_dog_walk
 		_movement_counter++
 		//show_debug_message("Movement counter:" + string(_movement_counter))
 		switch(_xinput) {
@@ -49,13 +90,14 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 		if(isUsingMop) {
 			//if dog is facing left
 			if image_xscale = 1 obj_mop.x = self.x - 16
-			else obj_mop.x = self.x + 16
+			else obj_mop.x = self.x + 15
 			obj_mop.y = self.y - 2
 		}
 	} else {
 		isMoving = false
 		_movement_counter = 0
 		if !isBarking sprite_index = spr_dog_idle
+		else sprite_index = spr_dog_bark_idle
 	}
 
 
@@ -69,7 +111,7 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 
 
 	// handle collisions against any objects that have obj_solid_parent as a parent
-	var collision = move_and_collide(_xinput * my_speed, _yinput * my_speed, obj_solid_parent)
+	var collision = move_and_collide(_xinput * my_speed, _yinput * my_speed, [obj_solid_parent, obj_solid_interactable])
 	
 	// if the pet's bladder needs emptying
 	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) {

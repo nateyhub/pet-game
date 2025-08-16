@@ -29,8 +29,8 @@ switch(direction) {
 	case 0:
 		//show_debug_message("going right")
 		sprite_index = spr_newcar_x
-		image_xscale = 1
-		image_yscale = 1
+		image_xscale = 2
+		image_yscale = 2
 		_direction = "right"
 		if (collision_rectangle(x-28,y-18,x+36,y+16,obj_dog_city, false,false)) {
 			show_debug_message("Dog is here")
@@ -42,8 +42,8 @@ switch(direction) {
 	case 90:
 		//show_debug_message("going up")
 		sprite_index = spr_newcar_y
-		image_xscale = 1
-		image_yscale = 1
+		image_xscale = 2
+		image_yscale = 2
 		_direction = "up"
 		if (collision_rectangle(x-18,y-36,x+18,y+26,obj_dog_city, false,false)) {
 			show_debug_message("Dog is here")
@@ -55,8 +55,8 @@ switch(direction) {
 	case 180:
 		//show_debug_message("going left")
 		sprite_index = spr_newcar_x
-		image_xscale = -1
-		image_yscale = 1
+		image_xscale = -2
+		image_yscale = 2
 		_direction = "left"
 		if (collision_rectangle(x-36,y-18,x+28,y+16,obj_dog_city, false,false)) {
 			show_debug_message("Dog is here")
@@ -69,8 +69,8 @@ switch(direction) {
 	case 270:
 		//show_debug_message("going down")
 		sprite_index = spr_newcar_y
-		image_xscale = 1
-		image_yscale= -1
+		image_xscale = 2
+		image_yscale= -2
 		if (collision_rectangle(x-18,y-26,x+18,y+36,obj_dog_city, false,false)) {
 			show_debug_message("Dog is here")
 			path_speed = 0

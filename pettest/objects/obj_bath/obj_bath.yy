@@ -10,8 +10,8 @@
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_solid_parent",
-    "path":"objects/obj_solid_parent/obj_solid_parent.yy",
+    "name":"obj_solid_interactable",
+    "path":"objects/obj_solid_interactable/obj_solid_interactable.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

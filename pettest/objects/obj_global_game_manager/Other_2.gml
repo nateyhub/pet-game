@@ -26,6 +26,10 @@ global.points = 0
 
 global.ultimateNeedsCount = 0
 
+global.tipsContainer = new TipsContainer() 
+//global.tipsContainer.createTip("Space", "Pick up mop")
+//global.tipsContainer.createTip("B", "Bark")
+show_debug_message(global.tipsContainer.toString())
 
 //DEBUG: Testing Inventory
 global.inventory = new Inventory()

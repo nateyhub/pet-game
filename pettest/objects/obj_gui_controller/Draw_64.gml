@@ -1,4 +1,3 @@
-
 _x = 24
 _y = 284
 
@@ -15,23 +14,32 @@ if (obj_dog.isSleeping) {
 draw_set_colour(_colours.background.main_colour)
 draw_rectangle(20,20,550,140,false)
 
+draw_sprite_stretched(spr_coin,0,200,400,32,32)
+
 #region DRAW A BAR REPRESENTING THE VALUE OF EACH NEED (HEALTH, HUNGER ETC)
-for (var i = 0; i < array_length(global.needs_keys); i++) {
+for (var i = 0; i < 6; i++) {
 	// get each key (eg health)
 	var key = global.needs_keys[i]
 	
 	// set the colour of the bar according to the current value of this need (eg low value = red)
-	if (global.pet_needs[$ key].value <= 14) {
-		draw_set_colour(_colours.very_low.main_colour)
-	} else if (global.pet_needs[$ key].value >= 15 and global.pet_needs[$ key].value <= 29) {
-		draw_set_colour(_colours.low.main_colour)
-	} else if (global.pet_needs[$ key].value >= 29 and global.pet_needs[$ key].value <= 64) {
-		draw_set_colour(_colours.medium.main_colour)
-	} else if (global.pet_needs[$ key].value >= 65 and global.pet_needs[$ key].value <= 89) {
-		draw_set_colour(_colours.high.main_colour)
+	if (global.pet_needs[$ key].value < 15) {
+		_current_main_colour = _colours.very_low.main_colour
+		_current_shade_colour = _colours.very_low.shade_colour
+	} else if (global.pet_needs[$ key].value >= 15 and global.pet_needs[$ key].value < 30) {
+		_current_main_colour = _colours.low.main_colour
+		_current_shade_colour = _colours.low.shade_colour
+	} else if (global.pet_needs[$ key].value >= 30 and global.pet_needs[$ key].value < 65) {
+		_current_main_colour = _colours.medium.main_colour
+		_current_shade_colour = _colours.medium.shade_colour
+	} else if (global.pet_needs[$ key].value >= 65 and global.pet_needs[$ key].value < 90) {
+		_current_main_colour = _colours.high.main_colour
+		_current_shade_colour = _colours.high.shade_colour
 	} else {
-		draw_set_colour(_colours.ultimate.main_colour)
+		_current_main_colour = _colours.ultimate.main_colour
+		_current_shade_colour = _colours.ultimate.shade_colour
 	}
+	
+	draw_set_colour(_current_main_colour)
 	
 	// draw a rectangle using the need's given x & y coords and current value (out of 100)
 	draw_rectangle(
@@ -42,18 +50,7 @@ for (var i = 0; i < array_length(global.needs_keys); i++) {
 		false
 	)
 	
-	// set the colour of the bar according to the current value of this need (eg low value = red)
-	if (global.pet_needs[$ key].value <= 14) {
-		draw_set_colour(_colours.very_low.shade_colour)
-	} else if (global.pet_needs[$ key].value >= 15 and global.pet_needs[$ key].value <= 29) {
-		draw_set_colour(_colours.low.shade_colour)
-	} else if (global.pet_needs[$ key].value >= 29 and global.pet_needs[$ key].value <= 64) {
-		draw_set_colour(_colours.medium.shade_colour)
-	} else if (global.pet_needs[$ key].value >= 65 and global.pet_needs[$ key].value <= 89) {
-		draw_set_colour(_colours.high.shade_colour)
-	} else {
-		draw_set_colour(_colours.ultimate.shade_colour)
-	}
+	draw_set_colour(_current_shade_colour)
 	
 	// draw shading bar
 	draw_rectangle(
@@ -69,16 +66,18 @@ for (var i = 0; i < array_length(global.needs_keys); i++) {
 // draw the main GUI element on top of the bars
 draw_sprite(spr_gui,0,0,0)
 
+draw_sprite( spr_need_increase,0,284,100)
+
 
 //draw the number of points the player has
 draw_set_colour(_colours.text)
-draw_text(52,160,string(global.points))
+draw_set_font(fnt_gui)
+draw_text(52,156,string(global.points))
 
 //draw the current number of needs that are at an Ultimate level
-if global.ultimateNeedsCount > 0 draw_text(100,159,string("+{0}", global.ultimateNeedsCount))
+if global.ultimateNeedsCount > 0 draw_text(90,156,string("+{0}", global.ultimateNeedsCount))
 
 #region HANDLE INVENTORY SLOTS
-
 
 for(var i = 0; i < 3; i++) 
 {
@@ -134,24 +133,29 @@ for(var i = 0; i < 3; i++)
 				} 
 				else
 				{
+					playErrorSound()
 					show_debug_message("Already holding an item!")
 				}
 			} 
 		}
 	} else {
-		if(device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70) 
-		and (device_mouse_check_button_pressed(MOUSE, mb_left)) {
-			//add item to empty slot
-			show_debug_message(string("Selected item: {0}", global.selectedItem.item_details))
-			global.inventory.putItemInSlot(i, global.selectedItem.item_details)
+		if global.holdingAnItem and (device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70)
+		{
+			//draw the second (index 1) frame of the inventory slot to show it's being hovered over
+			draw_sprite_stretched(spr_inv_slot,SELECTED,_x,_y,80,80)
 			
-			//destroy the instance
-			instance_destroy(global.selectedItem)
-			global.selectedItem = noone
-			global.holdingAnItem = false
-			show_debug_message(global.inventory)
+			if (device_mouse_check_button_pressed(MOUSE, mb_left)) {
+				//add item to empty slot
+				show_debug_message(string("Selected item: {0}", global.selectedItem.item_details))
+				global.inventory.putItemInSlot(i, global.selectedItem.item_details)
+			
+				//destroy the instance
+				instance_destroy(global.selectedItem)
+				global.selectedItem = noone
+				global.holdingAnItem = false
+				show_debug_message(global.inventory)
+			}
 		}
-		
 	}
 	_y += 100
 }

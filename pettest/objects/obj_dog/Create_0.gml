@@ -40,6 +40,9 @@ shadow_x2_offset = 0
 
 _movement_counter = 0
 
+collision_radius = 18
+
+_nearby_interactable = collision_circle(x,y,collision_radius,obj_interactable_parent,false,false)
 
 
 function emptyBladder() {

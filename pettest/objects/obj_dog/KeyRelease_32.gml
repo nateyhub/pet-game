@@ -3,16 +3,21 @@ if(place_meeting(x,y,obj_mop)) {
 	//handle picking up the mop
 	if (!isUsingMop and !isPuttingDownMop) {
 		isUsingMop = true
-		obj_press_e.image_alpha = 1
+
+		global.tipsContainer.createTip("E", "Hold: mop")
+		global.tipsContainer.createTip("Space", "Put down mop")
+	
 		show_debug_message("picking up mop")
 	} else if(isUsingMop) {
 		//handle starting to put down the mop
 		isUsingMop = false
 		isPuttingDownMop = true
-		obj_press_e.image_alpha = 0
+		
+		global.tipsContainer.removeTip("Hold: mop")
+		global.tipsContainer.removeTip("Put down mop")
+		
 	} else {
 		//handle finishing putting down the mop
 		isPuttingDownMop = false
-		obj_press_e.image_alpha = 0
 	}
 }
