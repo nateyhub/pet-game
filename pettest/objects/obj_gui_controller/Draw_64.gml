@@ -133,24 +133,29 @@ for(var i = 0; i < 3; i++)
 				} 
 				else
 				{
+					playErrorSound()
 					show_debug_message("Already holding an item!")
 				}
 			} 
 		}
 	} else {
-		if global.holdingAnItem and (device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70) 
-		and (device_mouse_check_button_pressed(MOUSE, mb_left)) {
-			//add item to empty slot
-			show_debug_message(string("Selected item: {0}", global.selectedItem.item_details))
-			global.inventory.putItemInSlot(i, global.selectedItem.item_details)
+		if global.holdingAnItem and (device_mouse_x_to_gui(MOUSE) >= _x and device_mouse_x_to_gui(MOUSE) <= _x+70 and device_mouse_y_to_gui(MOUSE) >= _y and device_mouse_y_to_gui(MOUSE) <= _y+70)
+		{
+			//draw the second (index 1) frame of the inventory slot to show it's being hovered over
+			draw_sprite_stretched(spr_inv_slot,SELECTED,_x,_y,80,80)
 			
-			//destroy the instance
-			instance_destroy(global.selectedItem)
-			global.selectedItem = noone
-			global.holdingAnItem = false
-			show_debug_message(global.inventory)
+			if (device_mouse_check_button_pressed(MOUSE, mb_left)) {
+				//add item to empty slot
+				show_debug_message(string("Selected item: {0}", global.selectedItem.item_details))
+				global.inventory.putItemInSlot(i, global.selectedItem.item_details)
+			
+				//destroy the instance
+				instance_destroy(global.selectedItem)
+				global.selectedItem = noone
+				global.holdingAnItem = false
+				show_debug_message(global.inventory)
+			}
 		}
-		
 	}
 	_y += 100
 }

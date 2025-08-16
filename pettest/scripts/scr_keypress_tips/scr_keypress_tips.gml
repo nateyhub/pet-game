@@ -5,9 +5,9 @@ function TipsContainer() constructor {
 	tips_list = []
 	
 	keys = {
-		B: {spr_index: spr_press_b, margin_left: 2},
-		E: {spr_index: spr_press_e, margin_left: 2},
-		Space: {spr_index: spr_press_space, margin_left: 2} 
+		B: {key_str: "b", key_str_length: 1, spr_index: spr_press_blank, margin_left: 2},
+		E: {key_str: "e", key_str_length: 1, spr_index: spr_press_blank, margin_left: 2},
+		Space: {key_str: "space", key_str_length: 5, spr_index: spr_press_blank, margin_left: 2} 
 	}
 	
 	/// @function createTip

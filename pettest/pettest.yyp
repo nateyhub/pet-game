@@ -181,6 +181,7 @@
     {"id":{"name":"spr_newcar_y","path":"sprites/spr_newcar_y/spr_newcar_y.yy",},},
     {"id":{"name":"spr_nothing","path":"sprites/spr_nothing/spr_nothing.yy",},},
     {"id":{"name":"spr_press_b","path":"sprites/spr_press_b/spr_press_b.yy",},},
+    {"id":{"name":"spr_press_blank","path":"sprites/spr_press_blank/spr_press_blank.yy",},},
     {"id":{"name":"spr_press_e","path":"sprites/spr_press_e/spr_press_e.yy",},},
     {"id":{"name":"spr_press_space_1","path":"sprites/spr_press_space_1/spr_press_space_1.yy",},},
     {"id":{"name":"spr_press_space","path":"sprites/spr_press_space/spr_press_space.yy",},},

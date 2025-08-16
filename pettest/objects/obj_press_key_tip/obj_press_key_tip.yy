@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_press_e",
-    "path":"sprites/spr_press_e/spr_press_e.yy",
+    "name":"spr_press_blank",
+    "path":"sprites/spr_press_blank/spr_press_blank.yy",
   },
   "spriteMaskId":null,
   "visible":true,
