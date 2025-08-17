@@ -23,4 +23,5 @@ if(!other._isMoving and !other._isBeingDragged)
 	}
 
 	other.speed = 4
+	other.image_speed = 4
 }

@@ -10,6 +10,13 @@ if (obj_dog.isSleeping) {
 }
 #endregion
 
+// draw portrait in bottom left
+//draw_set_halign(fa_left)
+//draw_set_valign(fa_bottom)
+draw_sprite(spr_new_gui_holder,0,0,camera_get_view_height(0)-112)
+draw_sprite(spr_new_gui_portrait,0,-10,camera_get_view_height(0)-192)
+
+
 // draw grey background
 draw_set_colour(_colours.background.main_colour)
 draw_rectangle(20,20,550,140,false)

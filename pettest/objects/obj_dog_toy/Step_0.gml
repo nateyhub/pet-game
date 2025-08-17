@@ -3,6 +3,7 @@ if speed > 0.0 {
 	//gradually slow the ball down
 	speed -= 0.05
 	_isMoving = true
+	image_speed -= 0.05
 	
 	//horizontal bounce handling off specific collision objects
 	if(place_meeting(x + hspeed, y, [obj_collision, obj_ball_collision, obj_solid_interactable]))
@@ -13,9 +14,19 @@ if speed > 0.0 {
 	    direction = -direction;
 		
 	
-	if (direction <= 180) image_angle += speed * 10
-	else image_angle -= speed * 10
+	show_debug_message(direction)
+	//if rolling to the right
+	if (direction <= 90 or direction >= 270) 
+	{ 
+		show_debug_message("Rolling right")
+		image_xscale = 1
+	}
+	else {
+		show_debug_message("Rolling left")
+		image_xscale = -1
+	}
 } else {
+	image_speed = 0
 	_isMoving = false
 	_hasBeenHit = false
 }

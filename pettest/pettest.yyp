@@ -183,6 +183,8 @@
     {"id":{"name":"spr_mopping_animation","path":"sprites/spr_mopping_animation/spr_mopping_animation.yy",},},
     {"id":{"name":"spr_need_decrease","path":"sprites/spr_need_decrease/spr_need_decrease.yy",},},
     {"id":{"name":"spr_need_increase","path":"sprites/spr_need_increase/spr_need_increase.yy",},},
+    {"id":{"name":"spr_new_gui_holder","path":"sprites/spr_new_gui_holder/spr_new_gui_holder.yy",},},
+    {"id":{"name":"spr_new_gui_portrait","path":"sprites/spr_new_gui_portrait/spr_new_gui_portrait.yy",},},
     {"id":{"name":"spr_newcar_x","path":"sprites/spr_newcar_x/spr_newcar_x.yy",},},
     {"id":{"name":"spr_newcar_y","path":"sprites/spr_newcar_y/spr_newcar_y.yy",},},
     {"id":{"name":"spr_nothing","path":"sprites/spr_nothing/spr_nothing.yy",},},
