@@ -7,6 +7,7 @@ function TipsContainer() constructor {
 	keys = {
 		B: {key_str: "b", key_str_length: 1, spr_index: spr_press_blank, margin_left: 2},
 		E: {key_str: "e", key_str_length: 1, spr_index: spr_press_blank, margin_left: 2},
+		C: {key_str: "c", key_str_length: 1, spr_index: spr_press_blank, margin_left: 2},
 		Space: {key_str: "space", key_str_length: 5, spr_index: spr_press_blank, margin_left: 2} 
 	}
 	
@@ -18,7 +19,7 @@ function TipsContainer() constructor {
 		//check if the list already contains this tip
 		if(!containsTip(_tip_text)) {	
 			//create an object instance for the tip in the "tips" room layer
-			var _key_instance = instance_create_layer(0,0,"tips", obj_press_key_tip)
+			var _key_instance = instance_create_layer(-2000,0,"tips", obj_press_key_tip)
 			_key_instance.current_key = keys[$ _key_string]
 			_key_instance.text = _tip_text
 			//if there is at least one other tip in the array, set this new tip's image_index to match (animate at the same position)

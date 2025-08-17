@@ -1,6 +1,6 @@
 if(_isBeingDragged) {
 	//if the user is attempting to drop the dog food in a place where it can't go
-	if(!place_empty(x,y)) { 
+	if(!place_empty(x,y) and !place_meeting(x,y,obj_dog_bowl)) { 
 		layer_add_instance("top_glow_layer_red", self)
 	} else {
 		layer_add_instance("top_glow_layer", self)

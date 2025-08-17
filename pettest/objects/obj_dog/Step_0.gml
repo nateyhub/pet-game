@@ -89,8 +89,14 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 		}
 		if(isUsingMop) {
 			//if dog is facing left
-			if image_xscale = 1 obj_mop.x = self.x - 16
-			else obj_mop.x = self.x + 15
+			if (image_xscale = 1) {
+				obj_mop.x = self.x - 16
+				if(!place_free(obj_mop.x-8,obj_mop.y)) obj_mop.x = self.x-8
+			}
+			else {
+				obj_mop.x = self.x + 15
+				if(!place_free(obj_mop.x+7,obj_mop.y)) obj_mop.x = self.x+7
+			}
 			obj_mop.y = self.y - 2
 		}
 	} else {
@@ -114,7 +120,7 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 	var collision = move_and_collide(_xinput * my_speed, _yinput * my_speed, [obj_solid_parent, obj_solid_interactable])
 	
 	// if the pet's bladder needs emptying
-	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) {
+	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) or (keyboard_check(ord("C")) and global.pet_needs.bladder.value < 10) {
 		// prioritise bathing and sleeping actions over emptying bladder
 		if(isBathing or isSleeping or isEating) _wait_to_empty_bladder = true
 		else {

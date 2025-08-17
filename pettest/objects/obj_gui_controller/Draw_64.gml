@@ -72,10 +72,10 @@ draw_sprite( spr_need_increase,0,284,100)
 //draw the number of points the player has
 draw_set_colour(_colours.text)
 draw_set_font(fnt_gui)
-draw_text(52,156,string(global.points))
+draw_text(52,160,string(global.points))
 
 //draw the current number of needs that are at an Ultimate level
-if global.ultimateNeedsCount > 0 draw_text(90,156,string("+{0}", global.ultimateNeedsCount))
+if global.ultimateNeedsCount > 0 draw_text(94,160,string("+{0}", global.ultimateNeedsCount))
 
 #region HANDLE INVENTORY SLOTS
 

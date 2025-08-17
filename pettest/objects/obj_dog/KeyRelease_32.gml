@@ -4,7 +4,7 @@ if(place_meeting(x,y,obj_mop)) {
 	if (!isUsingMop and !isPuttingDownMop) {
 		isUsingMop = true
 
-		global.tipsContainer.createTip("E", "Hold: mop")
+		global.tipsContainer.createTip("E", "Hold: mop floor")
 		global.tipsContainer.createTip("Space", "Put down mop")
 	
 		show_debug_message("picking up mop")

@@ -3,11 +3,11 @@ enum needAlarms {
 }
 
 enum actionAlarms {
-	EAT = 4,
-	SLEEP = 5,
-	EMPTY_BLADDER = 6,
-	TAKE_BATH = 7,
-	BARK = 8,
+	EAT = 1,
+	SLEEP = 2,
+	EMPTY_BLADDER = 3,
+	TAKE_BATH = 4,
+	BARK = 5,
 }
 
 enum dogColours {
@@ -61,6 +61,7 @@ function emptyBladder() {
 function passOut() {
 	//start sleeping
 	isSleeping = true
+	isPassedOut = true
 	sprite_index = spr_dog_sleep
 	audio_play_sound(sleep, 100, false, 2)
 		

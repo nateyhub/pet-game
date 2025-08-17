@@ -1,7 +1,9 @@
+show_debug_message("Dog food: Left pressed")
 if (!_isBeingDragged)
 {
 	_isBeingDragged = true
 	global.selectedItem = self
+	global.holdingAnItem = true
 } else {
 	if(place_meeting(x,y, obj_dog_bowl)) 
 	{
@@ -30,8 +32,7 @@ if (!_isBeingDragged)
 		}
 	}
 	else {
-		if(place_empty(x,y)) and (device_mouse_x_to_gui(MOUSE) < obj_gui_controller._x or device_mouse_x_to_gui(MOUSE) > obj_gui_controller._x+70) and (device_mouse_y_to_gui(MOUSE) < obj_gui_controller._y or device_mouse_y_to_gui(MOUSE) > obj_gui_controller._y+70) 
-		{
+		if(place_empty(x,y)) and (device_mouse_x_to_gui(MOUSE) < obj_gui_controller._x or device_mouse_x_to_gui(MOUSE) > obj_gui_controller._x+70) and (device_mouse_y_to_gui(MOUSE) < obj_gui_controller._y or device_mouse_y_to_gui(MOUSE) > obj_gui_controller._y+70) {
 				_isBeingDragged = false
 				global.holdingAnItem = false
 				global.selectedItem = noone

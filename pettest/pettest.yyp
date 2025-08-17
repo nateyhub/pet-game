@@ -95,6 +95,7 @@
     {"id":{"name":"obj_target","path":"objects/obj_target/obj_target.yy",},},
     {"id":{"name":"obj_test_car","path":"objects/obj_test_car/obj_test_car.yy",},},
     {"id":{"name":"obj_tip","path":"objects/obj_tip/obj_tip.yy",},},
+    {"id":{"name":"ParticleSystem1","path":"particles/ParticleSystem1/ParticleSystem1.yy",},},
     {"id":{"name":"pth_test","path":"paths/pth_test/pth_test.yy",},},
     {"id":{"name":"rm_camera_test","path":"rooms/rm_camera_test/rm_camera_test.yy",},},
     {"id":{"name":"rm_home_1","path":"rooms/rm_home_1/rm_home_1.yy",},},
