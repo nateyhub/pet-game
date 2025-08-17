@@ -32,7 +32,7 @@ function pal_swap_init_system(_shader = shd_pal_swapper, _html5_sprite_shader = 
 		_swapper.texture[rps_type_standard] = shader_get_sampler_index(_shader, "u_palTexture");
 	}	else	{
 		if(_html5_sprite_shader == undefined || _html5_surface_shader == undefined) {
-			show_message("Must provide pal_swap_init_system() with 2 additional arguments for HTML5 Compatible Sprite and Surface Shaders");
+			show_debug_message("Must provide pal_swap_init_system() with 2 additional arguments for HTML5 Compatible Sprite and Surface Shaders");
 			game_end();
 		}
 		_swapper.html5_sprite = _html5_sprite_shader;

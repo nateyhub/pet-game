@@ -4,6 +4,7 @@
 /// @param str
 /// @param outwidth
 /// @param outcol
+/// @param outfidelity
 function draw_text_outline(argument0, argument1, argument2, argument3, argument4, argument5) {
 	//Created by Andrew McCluskey http://nalgames.com/
 	//x,y: Coordinates to draw

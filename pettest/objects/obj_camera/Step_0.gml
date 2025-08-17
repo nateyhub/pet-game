@@ -9,6 +9,7 @@ if (follow != noone) {
 
 if(view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)) surface_resize(application_surface, view_wport[0], view_hport[0])
 
+resolution_scale(global.zoom_level)
 // incremently move towards the follow object
 // 25 is a magic number - this adds a smoothing effect to the camera's start and end movements
 //	the camera is moving a 25th to the position, and this change decreases as it approaches to the target
@@ -21,3 +22,4 @@ y += (yTo - y)/20
 // set the camera position such that the target is in the middle centre (eg camWidth * 0.5)
 // view_camera[0] is the Viewport 0 camera in the room settings
 camera_set_view_pos(view_camera[0], x - (camWidth * 0.5), y - (camHeight * 0.5))
+

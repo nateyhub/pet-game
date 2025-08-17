@@ -48,7 +48,7 @@ function eatFromBowl() {
 			setAlarmInSeconds(actionAlarms.EAT,1)
 		} 
 		else {
-			show_message("Dog is too full to eat")
+			show_debug_message("Dog is too full to eat")
 			playErrorSound()
 		}
 	} else {

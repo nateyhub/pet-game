@@ -14,7 +14,7 @@ if (obj_dog.isSleeping) {
 draw_set_colour(_colours.background.main_colour)
 draw_rectangle(20,20,550,140,false)
 
-draw_sprite_stretched(spr_coin,0,200,400,32,32)
+//draw_sprite_stretched(spr_coin,0,200,400,32,32)
 
 #region DRAW A BAR REPRESENTING THE VALUE OF EACH NEED (HEALTH, HUNGER ETC)
 for (var i = 0; i < 6; i++) {
