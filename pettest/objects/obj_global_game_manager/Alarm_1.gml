@@ -1,4 +1,4 @@
-show_debug_message("Running Alarm 1")
+//show_debug_message("Running Alarm 1")
 setAlarmInSeconds(INCREASE_POINTS_ALARM, 2)
 
 global.ultimateNeedsCount = 0

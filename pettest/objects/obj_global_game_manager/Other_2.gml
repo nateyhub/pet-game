@@ -1,6 +1,7 @@
 
 #macro DRAIN_HEALTH_ALARM 0
 #macro INCREASE_POINTS_ALARM 1
+#macro INCREASE_TIME_ALARM 2
 
 //pet needs struct (globally accessible)
 global.pet_needs = {
@@ -13,6 +14,23 @@ global.pet_needs = {
 }
 
 global.needs_critical = false
+
+
+//1 second = 4 game minutes 
+//12 minutes = 24 game hrs (one day)
+//12 * 60s = 720 real seconds for one day
+
+global.default_font = fnt_gui
+global.minutes_in_a_day = 1440
+global.current_minutes = 720 //midday
+global.day_current_hour = floor(global.current_minutes / 60)
+global.current_game_day = 1
+global.current_time_string = string("{0}:{1}{2} {3}", 
+	global.day_current_hour mod 12 == 0 ? "12" : string(global.day_current_hour mod 12), 
+	global.current_minutes mod 60 < 10 ? "0" : "",
+	global.current_minutes mod 60,
+	global.current_minutes < 720 ? "AM" : "PM"
+)
 
 //show_debug_message("HEALTH" + string(global.pet_needs.health.value))
 

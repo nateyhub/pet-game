@@ -31,4 +31,6 @@ if(visible) {
 		draw_text(x+5,y+2,current_key.key_str)
 	}
 	
+	draw_set_font(global.default_font)
+	draw_set_colour(c_white)
 }

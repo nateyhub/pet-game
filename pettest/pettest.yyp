@@ -47,6 +47,7 @@
   "name":"pettest",
   "resources":[
     {"id":{"name":"Draw_Text_Outlined","path":"extensions/Draw_Text_Outlined/Draw_Text_Outlined.yy",},},
+    {"id":{"name":"fnt_clock","path":"fonts/fnt_clock/fnt_clock.yy",},},
     {"id":{"name":"fnt_gui","path":"fonts/fnt_gui/fnt_gui.yy",},},
     {"id":{"name":"fnt_tip","path":"fonts/fnt_tip/fnt_tip.yy",},},
     {"id":{"name":"compatibility_report_170825_256565656","path":"notes/compatibility_report_170825_256565656/compatibility_report_170825_256565656.yy",},},

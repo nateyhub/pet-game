@@ -96,6 +96,10 @@ function eatFromBowl() {
 function useBed() {
 	global.tipsContainer.removeTip("Sleep")
 	
+	with(obj_global_game_manager) {
+		alarm[2] = 1
+	}
+		
 	//move to the bed
 	x = obj_dog_bed.x
 	y = obj_dog_bed.y

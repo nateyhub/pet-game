@@ -72,9 +72,9 @@ function passOut() {
 }
 
 function improveNeed(needName, improveAmount) {
-	show_debug_message("Improving " + needName + "("
-		+ "current value: " + string(global.pet_needs[$ needName].value) + 
-		") by " + string(improveAmount))
+	//show_debug_message("Improving " + needName + "("
+	//	+ "current value: " + string(global.pet_needs[$ needName].value) + 
+	//	") by " + string(improveAmount))
 	global.pet_needs[$ needName].value += improveAmount
 	//set to maximum if overflow
 	if global.pet_needs[$ needName].value > 100 global.pet_needs[$ needName].value = 100

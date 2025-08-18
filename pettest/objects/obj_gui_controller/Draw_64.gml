@@ -1,21 +1,30 @@
 _x = 24
 _y = 284
 
-#region dim if dog is sleeping
-if (obj_dog.isSleeping) {
-	draw_set_colour(c_black)
-	draw_set_alpha(0.5)
-	draw_rectangle(0,0,view_get_wport(0),view_get_hport(0),false)
-	draw_set_alpha(1)
-}
+#region draw brightness according to the time of day
+
+var brightness = (cos(0.26 * global.day_current_hour)  + 0.8)/2
+var dim_amount =  max(0,brightness)
+draw_set_colour(c_black)
+draw_set_alpha(dim_amount * .8)
+draw_rectangle(0,0,view_get_wport(0),view_get_hport(0),false)
+draw_set_alpha(1)
+draw_set_colour(c_white)
+
 #endregion
 
-// draw portrait in bottom left
-//draw_set_halign(fa_left)
-//draw_set_valign(fa_bottom)
+//portrait and gui in bottom left
 draw_sprite(spr_new_gui_holder,0,0,camera_get_view_height(0)-112)
 draw_sprite(spr_new_gui_portrait,0,-10,camera_get_view_height(0)-192)
 
+//draw day and time
+draw_set_halign(fa_right)
+draw_set_font(fnt_clock)
+draw_text(camera_get_view_width(0), 10, string("Day {0}", global.current_game_day))
+draw_text(camera_get_view_width(0), 30, global.current_time_string)
+draw_set_font(fnt_gui)
+
+draw_set_halign(fa_left)
 
 // draw grey background
 draw_set_colour(_colours.background.main_colour)
