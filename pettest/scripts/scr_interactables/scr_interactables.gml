@@ -1,3 +1,38 @@
+function pickUpItem() {
+	if(!global.holdingAnItem) {
+		audio_play_sound(sfx_click,100,false,0.9)
+		_isBeingDragged = true
+		global.holdingAnItem = true
+	}
+}
+
+function putDownItem() {
+	if(place_empty(x,y)) 
+	{ 
+		_isBeingDragged = false
+		global.holdingAnItem = false
+		audio_play_sound(sfx_put_down,100,false,2)
+	}
+	else playErrorSound()
+}
+
+function handleDragging(_x_offset,_y_offset,grid_x,grid_y) {
+	//if the item is being held over an area it cannot be placed down at
+	if(!place_empty(x,y)) { 
+		layer_add_instance("top_glow_layer_red", self.id)
+	} else {
+		layer_add_instance("top_glow_layer", self.id)
+	}
+
+	//have the bowl be attached to the player's mouse
+	x = mouse_x
+	y = mouse_y+_y_offset
+
+	//ensure that the bowl's position is snapped to the 8x8 grid
+	move_snap(grid_x,grid_y)
+}
+
+
 function useBath() {
 	global.tipsContainer.removeTip("Take a bath")
 
@@ -29,7 +64,7 @@ function eatFromBowl() {
 	global.tipsContainer.removeTip("Eat")
 	var dog_bite_amount = 10
 	if(obj_dog_bowl.food_amount >= dog_bite_amount) {
-		if(global.pet_needs.hunger.value < 100) {
+		if(global.pet_needs.hunger.value <= 85) {
 			isEating = true
 			improveNeed("hunger", obj_dog_bowl.hunger_increase)
 			improveNeed("energy", 8)

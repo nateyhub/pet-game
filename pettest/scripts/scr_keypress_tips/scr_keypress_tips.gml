@@ -13,8 +13,8 @@ function TipsContainer() constructor {
 	
 	/// @function createTip
 	/// @description Creates a Tip that is put into the TipsContainer and displayed
-	/// @param {string} key_string A capitalised string representing the keyboard key (e.g. "A")
-	/// @param {string} tip_text A string containing the tip for the user to read (e.g. "Use mop")
+	/// @param {string} _key_string A capitalised string representing the keyboard key (e.g. "A")
+	/// @param {string} _tip_text A string containing the tip for the user to read (e.g. "Use mop")
 	static createTip = function(_key_string, _tip_text) {
 		//check if the list already contains this tip
 		if(!containsTip(_tip_text)) {	

@@ -1,5 +1,4 @@
-if (!_isBeingDragged)
-{
+if (!_isBeingDragged) {
 	pickUpItem()
 } else {
 	putDownItem()

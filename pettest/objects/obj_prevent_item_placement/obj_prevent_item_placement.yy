@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_ball_collision",
+  "%Name":"obj_prevent_item_placement",
   "eventList":[],
   "managed":true,
-  "name":"obj_ball_collision",
+  "name":"obj_prevent_item_placement",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"global",
+    "path":"folders/Objects/global.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ball_collision",
-    "path":"sprites/spr_ball_collision/spr_ball_collision.yy",
+    "name":"spr_no_placement_zone",
+    "path":"sprites/spr_no_placement_zone/spr_no_placement_zone.yy",
   },
   "spriteMaskId":null,
   "visible":false,

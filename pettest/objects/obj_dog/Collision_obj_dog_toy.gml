@@ -1,4 +1,4 @@
-//if dog is on the left
+//if the ball isn't already moving or being dragged by the player
 if(!other._isMoving and !other._isBeingDragged)
 {
 	if !audio_is_playing(sfx_ball_toy) audio_play_sound(sfx_ball_toy, 100, false)

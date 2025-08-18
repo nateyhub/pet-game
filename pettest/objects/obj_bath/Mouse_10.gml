@@ -1,0 +1,1 @@
+layer_add_instance("instances_glow", self)

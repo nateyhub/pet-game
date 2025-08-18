@@ -6,3 +6,8 @@ if(food_amount == 0) {
 } else {
 	food_level = Amount.FULL
 }
+
+//if the player has picked up the bowl
+if(_isBeingDragged) {
+	handleDragging(0,-8,8,8)
+}

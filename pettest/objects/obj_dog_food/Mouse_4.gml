@@ -5,10 +5,13 @@ if (!_isBeingDragged)
 	global.selectedItem = self
 	global.holdingAnItem = true
 } else {
+	//if the player is holding the dog food while clicking on the dog bowl, attempt to fill the bowl
 	if(place_meeting(x,y, obj_dog_bowl)) 
 	{
+		//bowl needs to be empty before refilling
 		if(obj_dog_bowl.food_amount > 0) show_debug_message("Bowl needs to be empty")
 		else {
+			//refill the bowl
 			show_debug_message("Filling bowl")
 			audio_play_sound(sfx_pour_dog_food, 100, false, 1.5)
 			switch(item_tier) {
@@ -32,12 +35,15 @@ if (!_isBeingDragged)
 		}
 	}
 	else {
+		//otherwise if the player is hovering over an inventory slot with the dog food
 		if(place_empty(x,y)) and (device_mouse_x_to_gui(MOUSE) < obj_gui_controller._x or device_mouse_x_to_gui(MOUSE) > obj_gui_controller._x+70) and (device_mouse_y_to_gui(MOUSE) < obj_gui_controller._y or device_mouse_y_to_gui(MOUSE) > obj_gui_controller._y+70) {
-				_isBeingDragged = false
-				global.holdingAnItem = false
-				global.selectedItem = noone
+			//store the dog food in the slot
+			_isBeingDragged = false
+			global.holdingAnItem = false
+			global.selectedItem = noone
 		}
 		else if (device_mouse_x_to_gui(MOUSE) < obj_gui_controller._x or device_mouse_x_to_gui(MOUSE) > obj_gui_controller._x+70) and (device_mouse_y_to_gui(MOUSE) < obj_gui_controller._y or device_mouse_y_to_gui(MOUSE) > obj_gui_controller._y+70) {
+			//finally, player is attempting to put dog food down in an area it is not allowed
 			playErrorSound()
 		}
 	}
