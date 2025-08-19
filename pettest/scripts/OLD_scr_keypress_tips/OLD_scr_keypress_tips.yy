@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_keypress_tips",
+  "%Name":"OLD_scr_keypress_tips",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_keypress_tips",
+  "name":"OLD_scr_keypress_tips",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

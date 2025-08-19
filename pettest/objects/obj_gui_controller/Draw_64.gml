@@ -5,11 +5,28 @@ _y = 284
 
 var brightness = (cos(0.26 * global.day_current_hour)  + 0.8)/2
 var dim_amount =  max(0,brightness)
-draw_set_colour(c_black)
-draw_set_alpha(dim_amount * .8)
+
+//show_debug_message(global.day_current_hour)
+if (global.day_current_hour > 12 and global.day_current_hour < 20) {
+	draw_set_colour(make_color_rgb(160,60,50))
+	dim_amount *= .4
+} else if (global.day_current_hour >= 20 and global.day_current_hour < 22) {
+	//8pm or later
+	dim_amount *= .5
+	draw_set_colour(make_color_rgb(7,8,30))
+} else if (global.day_current_hour >= 22 and global.day_current_hour < 24) {
+	draw_set_colour(make_color_rgb(7,8,30))
+	dim_amount *= .7
+} else {
+	dim_amount *= .8
+	draw_set_colour(make_color_rgb(7,8,30))
+}
+
+draw_set_alpha(dim_amount)
 draw_rectangle(0,0,view_get_wport(0),view_get_hport(0),false)
 draw_set_alpha(1)
 draw_set_colour(c_white)
+//layer_background_blend(layer_background_get_id(layer_get_id("Background")),c_aqua)
 
 #endregion
 

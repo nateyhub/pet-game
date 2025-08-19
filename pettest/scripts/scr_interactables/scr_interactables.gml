@@ -25,7 +25,7 @@ function handleDragging(_x_offset,_y_offset,grid_x,grid_y) {
 	}
 
 	//have the bowl be attached to the player's mouse
-	x = mouse_x
+	x = mouse_x+_x_offset
 	y = mouse_y+_y_offset
 
 	//ensure that the bowl's position is snapped to the 8x8 grid
@@ -34,7 +34,8 @@ function handleDragging(_x_offset,_y_offset,grid_x,grid_y) {
 
 
 function useBath() {
-	global.tipsContainer.removeTip("Take a bath")
+	//global.tipsContainer.removeTip("Take a bath")
+	global.new_tc.hideTip(tip_indices.TAKE_BATH)
 
 	if(global.pet_needs.hygiene.value <= 90) {
 		//move pet towards the bath
@@ -56,15 +57,18 @@ function useBath() {
 function goOutside() {
 	audio_stop_all()
 	audio_play_sound(sfx_door,100,false,2 )
-	global.tipsContainer.clearAllTips()
+	global.new_tc.hideAllTips()
+	//global.tipsContainer.clearAllTips()
 	room = rm_preset_paths_test
 }
 
 function eatFromBowl() {
-	global.tipsContainer.removeTip("Eat")
+	//global.tipsContainer.removeTip("Eat")
+	
 	var dog_bite_amount = 10
 	if(obj_dog_bowl.food_amount >= dog_bite_amount) {
-		if(global.pet_needs.hunger.value <= 85) {
+		if(global.pet_needs.hunger.value <= 95) {
+			global.new_tc.hideTip(tip_indices.EAT_FOOD)
 			isEating = true
 			improveNeed("hunger", obj_dog_bowl.hunger_increase)
 			improveNeed("energy", 8)
@@ -94,7 +98,8 @@ function eatFromBowl() {
 }
 
 function useBed() {
-	global.tipsContainer.removeTip("Sleep")
+	//global.tipsContainer.removeTip("Sleep")
+	global.new_tc.hideTip(tip_indices.SLEEP)
 	
 	with(obj_global_game_manager) {
 		alarm[2] = 1

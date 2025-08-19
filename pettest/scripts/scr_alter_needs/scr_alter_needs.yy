@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"drain_need",
+  "%Name":"scr_alter_needs",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"drain_need",
+  "name":"scr_alter_needs",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

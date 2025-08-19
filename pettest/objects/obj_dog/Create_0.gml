@@ -71,24 +71,12 @@ function passOut() {
 	event_perform(ev_alarm, actionAlarms.SLEEP)
 }
 
-function improveNeed(needName, improveAmount) {
-	//show_debug_message("Improving " + needName + "("
-	//	+ "current value: " + string(global.pet_needs[$ needName].value) + 
-	//	") by " + string(improveAmount))
-	global.pet_needs[$ needName].value += improveAmount
-	//set to maximum if overflow
-	if global.pet_needs[$ needName].value > 100 global.pet_needs[$ needName].value = 100
-}
-
 _initial_energy_amount = 0
 _initial_hygiene_amount = 0
 
 _wait_to_empty_bladder = false
 _wait_to_sleep = false
 
-
-//TODO: put this in bed obj
-_sleep_amount = 40
 
 //TODO: put this in bath_obj
 _bathe_amount = 30

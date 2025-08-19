@@ -14,10 +14,12 @@ global.pet_needs = {
 }
 
 global.needs_critical = false
+global.needs_can_be_drained = true
 
-
-//1 second = 4 game minutes 
-//12 minutes = 24 game hrs (one day)
+//1 real second = 4 game minutes 
+//30 real seconds = 1 hr
+//1 real minute = 2 hrs
+//12 real minutes = 24 game hrs (one day)
 //12 * 60s = 720 real seconds for one day
 
 global.default_font = fnt_gui
@@ -44,10 +46,10 @@ global.points = 0
 
 global.ultimateNeedsCount = 0
 
-global.tipsContainer = new TipsContainer() 
-//global.tipsContainer.createTip("Space", "Pick up mop")
-//global.tipsContainer.createTip("B", "Bark")
-show_debug_message(global.tipsContainer.toString())
+//global.tipsContainer = new TipsContainer() 
+//show_debug_message(global.tipsContainer.toString())
+global.new_tc = new NewTipsContainer() 
+global.new_tc.drawTips()
 
 //DEBUG: Testing Inventory
 global.inventory = new Inventory()

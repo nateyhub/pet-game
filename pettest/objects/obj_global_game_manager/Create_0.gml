@@ -7,3 +7,4 @@ setAlarmInSeconds(INCREASE_POINTS_ALARM, 2)
 setAlarmInSeconds(INCREASE_TIME_ALARM, 1)
 
 
+needNameStr = ""
