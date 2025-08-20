@@ -4,7 +4,7 @@
 /// @param str
 /// @param outwidth
 /// @param outcol
-/// @param outfidelity
+/// @param outfidelity Fidelity of outline (recommended: 4 for small, 8 for medium, 16 for larger. Watch your performance!)
 function draw_text_outline(argument0, argument1, argument2, argument3, argument4, argument5) {
 	//Created by Andrew McCluskey http://nalgames.com/
 	//x,y: Coordinates to draw
