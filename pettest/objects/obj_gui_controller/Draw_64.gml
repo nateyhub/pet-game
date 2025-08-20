@@ -1,37 +1,72 @@
 _x = 24
 _y = 284
 
-#region dim if dog is sleeping
-if (obj_dog.isSleeping) {
-	draw_set_colour(c_black)
-	draw_set_alpha(0.5)
-	draw_rectangle(0,0,view_get_wport(0),view_get_hport(0),false)
-	draw_set_alpha(1)
+#region draw brightness according to the time of day
+
+var brightness = (cos(0.26 * global.day_current_hour)  + 0.8)/2
+var dim_amount =  max(0,brightness)
+
+//show_debug_message(global.day_current_hour)
+if (global.day_current_hour > 12 and global.day_current_hour < 20) {
+	draw_set_colour(make_color_rgb(160,60,50))
+	dim_amount *= .4
+} else if (global.day_current_hour >= 20 and global.day_current_hour < 22) {
+	//8pm or later
+	dim_amount *= .5
+	draw_set_colour(make_color_rgb(7,8,30))
+} else if (global.day_current_hour >= 22 and global.day_current_hour < 24) {
+	draw_set_colour(make_color_rgb(7,8,30))
+	dim_amount *= .7
+} else {
+	dim_amount *= .8
+	draw_set_colour(make_color_rgb(7,8,30))
 }
+
+draw_set_alpha(dim_amount)
+draw_rectangle(0,0,view_get_wport(0),view_get_hport(0),false)
+draw_set_alpha(1)
+draw_set_colour(c_white)
+//layer_background_blend(layer_background_get_id(layer_get_id("Background")),c_aqua)
+
 #endregion
+
+//portrait and gui in bottom left
+draw_sprite(spr_new_gui_holder,0,0,camera_get_view_height(0)-112)
+draw_sprite(spr_new_gui_portrait,0,-10,camera_get_view_height(0)-192)
+
+//draw day and time
+draw_set_halign(fa_right)
+draw_set_font(fnt_clock)
+draw_text(camera_get_view_width(0), 10, string("Day {0}", global.current_game_day))
+draw_text(camera_get_view_width(0), 30, global.current_time_string)
+draw_set_font(fnt_gui)
+
+draw_set_halign(fa_left)
 
 // draw grey background
 draw_set_colour(_colours.background.main_colour)
 draw_rectangle(20,20,550,140,false)
 
-draw_sprite_stretched(spr_coin,0,200,400,32,32)
+//draw_sprite_stretched(spr_coin,0,200,400,32,32)
 
 #region DRAW A BAR REPRESENTING THE VALUE OF EACH NEED (HEALTH, HUNGER ETC)
 for (var i = 0; i < 6; i++) {
 	// get each key (eg health)
 	var key = global.needs_keys[i]
+	var current_need = global.pet_needs[$ key]
+
 	
 	// set the colour of the bar according to the current value of this need (eg low value = red)
-	if (global.pet_needs[$ key].value < 15) {
+	if (current_need.value < 15) {
 		_current_main_colour = _colours.very_low.main_colour
 		_current_shade_colour = _colours.very_low.shade_colour
-	} else if (global.pet_needs[$ key].value >= 15 and global.pet_needs[$ key].value < 30) {
+	} else if (current_need.value >= 15 and current_need.value < 30) {
 		_current_main_colour = _colours.low.main_colour
 		_current_shade_colour = _colours.low.shade_colour
-	} else if (global.pet_needs[$ key].value >= 30 and global.pet_needs[$ key].value < 65) {
+	} else if (current_need.value >= 30 and current_need.value < 65) {
 		_current_main_colour = _colours.medium.main_colour
 		_current_shade_colour = _colours.medium.shade_colour
-	} else if (global.pet_needs[$ key].value >= 65 and global.pet_needs[$ key].value < 90) {
+	} else if (current_need.value >= 65 and current_need.value < 90) {
 		_current_main_colour = _colours.high.main_colour
 		_current_shade_colour = _colours.high.shade_colour
 	} else {
@@ -43,10 +78,10 @@ for (var i = 0; i < 6; i++) {
 	
 	// draw a rectangle using the need's given x & y coords and current value (out of 100)
 	draw_rectangle(
-		global.pet_needs[$ key].x,
-		global.pet_needs[$ key].y,
-		global.pet_needs[$ key].x + (global.pet_needs[$ key].value),
-		global.pet_needs[$ key].y + _need_bar_height_px,
+		current_need.x,
+		current_need.y,
+		current_need.x + (current_need.value),
+		current_need.y + _need_bar_height_px,
 		false
 	)
 	
@@ -54,28 +89,49 @@ for (var i = 0; i < 6; i++) {
 	
 	// draw shading bar
 	draw_rectangle(
-		global.pet_needs[$ key].x,
-		global.pet_needs[$ key].y + (_need_bar_shading_px),
-		global.pet_needs[$ key].x + (global.pet_needs[$ key].value),
-		global.pet_needs[$ key].y + _need_bar_height_px,
+		current_need.x,
+		current_need.y + (_need_bar_shading_px),
+		current_need.x + (current_need.value),
+		current_need.y + _need_bar_height_px,
 		false
 	)
+	
+		
+	switch(current_need.change_direction) {
+		case needChangeDirection.DECREASING_LOW:
+			//draw decreasing need animation
+			draw_sprite(spr_decrease_low,image_index/2,global.pet_needs[$ key].x,global.pet_needs[$ key].y+2)
+			break
+		case needChangeDirection.DECREASING:
+			//draw decreasing need animation
+			draw_sprite(spr_decrease,image_index/2,global.pet_needs[$ key].x,global.pet_needs[$ key].y+2)
+			break
+		case needChangeDirection.INCREASING_LOW:
+			//draw increasing need animation
+			draw_sprite(spr_increase_low,image_index/2,global.pet_needs[$ key].x,global.pet_needs[$ key].y+2)
+			break
+		case needChangeDirection.INCREASING:
+			//draw increasing need animation
+			draw_sprite(spr_increase,image_index/2,global.pet_needs[$ key].x,global.pet_needs[$ key].y+2)
+			break
+	}
 }
 #endregion
+
 
 // draw the main GUI element on top of the bars
 draw_sprite(spr_gui,0,0,0)
 
-draw_sprite( spr_need_increase,0,284,100)
+//draw_sprite( spr_need_increase,0,284,100)
 
 
 //draw the number of points the player has
 draw_set_colour(_colours.text)
 draw_set_font(fnt_gui)
-draw_text(52,156,string(global.points))
+draw_text(52,160,string(global.points))
 
 //draw the current number of needs that are at an Ultimate level
-if global.ultimateNeedsCount > 0 draw_text(90,156,string("+{0}", global.ultimateNeedsCount))
+if global.ultimateNeedsCount > 0 draw_text(94,160,string("+{0}", global.ultimateNeedsCount))
 
 #region HANDLE INVENTORY SLOTS
 

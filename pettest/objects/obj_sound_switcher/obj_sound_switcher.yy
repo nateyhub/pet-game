@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite34",
-    "path":"sprites/Sprite34/Sprite34.yy",
+    "name":"spr_sound_switcher",
+    "path":"sprites/spr_sound_switcher/spr_sound_switcher.yy",
   },
   "spriteMaskId":null,
   "visible":false,

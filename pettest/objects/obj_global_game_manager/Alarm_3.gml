@@ -1,0 +1,1 @@
+//part_emitter_enable(global._ps,global._pemit1,false)

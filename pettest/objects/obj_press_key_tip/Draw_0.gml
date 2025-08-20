@@ -1,10 +1,11 @@
+if !instance_exists(self.id) or !should_be_visible or !ready_to_draw { return }
 if(visible) {
 	//draw_self()
 	var padding_right = current_key.key_str_length
 	draw_sprite_stretched(sprite_index,-1,x,y,sprite_width-6+(current_key.key_str_length*6),sprite_height)
 	
 	image_alpha = 1
-	sprite_index = current_key.spr_index
+	//sprite_index = current_key.spr_index
 	draw_set_font(fnt_tip)
 	draw_set_colour(c_white)
 	//WARNING: draw_text_outline can be demanding - remove if performance suffers
@@ -31,4 +32,6 @@ if(visible) {
 		draw_text(x+5,y+2,current_key.key_str)
 	}
 	
+	draw_set_font(global.default_font)
+	draw_set_colour(c_white)
 }

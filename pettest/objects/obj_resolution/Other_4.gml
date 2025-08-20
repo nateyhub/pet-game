@@ -1,0 +1,1 @@
+resolution_scale(global.zoom_level)

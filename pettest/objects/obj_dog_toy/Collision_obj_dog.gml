@@ -1,1 +1,0 @@
-_hasBeenHit = true

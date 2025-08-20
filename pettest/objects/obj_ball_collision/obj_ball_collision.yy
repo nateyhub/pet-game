@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite24",
-    "path":"sprites/Sprite24/Sprite24.yy",
+    "name":"spr_ball_collision",
+    "path":"sprites/spr_ball_collision/spr_ball_collision.yy",
   },
   "spriteMaskId":null,
   "visible":false,

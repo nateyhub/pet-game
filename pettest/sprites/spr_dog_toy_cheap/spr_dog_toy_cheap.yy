@@ -12,14 +12,21 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c05d5579-52bf-4e24-8450-7363084ea22f","name":"c05d5579-52bf-4e24-8450-7363084ea22f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"6f0ff12e-bd0d-44aa-9ed7-e733c02d117e","name":"6f0ff12e-bd0d-44aa-9ed7-e733c02d117e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"d965ca98-a200-484a-80a1-161c99e5266c","name":"d965ca98-a200-484a-80a1-161c99e5266c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"237f627d-0770-409f-88bc-42cf5e78604b","name":"237f627d-0770-409f-88bc-42cf5e78604b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"8fb55754-dd9b-4b2b-8ce1-cc8fcb441095","name":"8fb55754-dd9b-4b2b-8ce1-cc8fcb441095","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"17fbe7d7-d4f0-43f7-b3e0-f5def2be7d14","name":"17fbe7d7-d4f0-43f7-b3e0-f5def2be7d14","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"394c00d8-d0a0-4167-bd59-81cd06b1fe8c","name":"394c00d8-d0a0-4167-bd59-81cd06b1fe8c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"05711199-7afe-4c20-ba39-8a54e3e1215e","name":"05711199-7afe-4c20-ba39-8a54e3e1215e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"d8049c4f-6f36-4db7-a21f-403fc127c65e","name":"d8049c4f-6f36-4db7-a21f-403fc127c65e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":16,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"e8f17edc-8546-48bb-a4d8-38da2b07b74f","blendMode":0,"displayName":"default","isLocked":false,"name":"e8f17edc-8546-48bb-a4d8-38da2b07b74f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c699808d-08c9-4787-a73e-7d230ab2fef0","blendMode":0,"displayName":"default","isLocked":false,"name":"c699808d-08c9-4787-a73e-7d230ab2fef0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_dog_toy_cheap",
   "nineSlice":null,
@@ -49,7 +56,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":8.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -59,7 +66,7 @@
     },
     "name":"spr_dog_toy_cheap",
     "playback":1,
-    "playbackSpeed":30.0,
+    "playbackSpeed":20.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -71,8 +78,29 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c05d5579-52bf-4e24-8450-7363084ea22f","path":"sprites/spr_dog_toy_cheap/spr_dog_toy_cheap.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ad70732e-83b3-4384-bc8f-ba4e974bb754","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6f0ff12e-bd0d-44aa-9ed7-e733c02d117e","path":"sprites/spr_dog_toy_cheap/spr_dog_toy_cheap.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"cd7546b7-7466-4fa8-bb17-609ec6cbcb6f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d965ca98-a200-484a-80a1-161c99e5266c","path":"sprites/spr_dog_toy_cheap/spr_dog_toy_cheap.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"9a0e7175-2a42-4d9d-aed0-0b0a28e6a668","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"237f627d-0770-409f-88bc-42cf5e78604b","path":"sprites/spr_dog_toy_cheap/spr_dog_toy_cheap.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"1786ca33-5335-4df9-888d-6312201e5257","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8fb55754-dd9b-4b2b-8ce1-cc8fcb441095","path":"sprites/spr_dog_toy_cheap/spr_dog_toy_cheap.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"4761d164-805b-43f0-a93c-d336ea037677","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"17fbe7d7-d4f0-43f7-b3e0-f5def2be7d14","path":"sprites/spr_dog_toy_cheap/spr_dog_toy_cheap.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b74821c7-8d56-4fb7-b753-2df085dbc395","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"394c00d8-d0a0-4167-bd59-81cd06b1fe8c","path":"sprites/spr_dog_toy_cheap/spr_dog_toy_cheap.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"05d07d37-9bf2-4218-a853-26ebdffb0dba","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"05711199-7afe-4c20-ba39-8a54e3e1215e","path":"sprites/spr_dog_toy_cheap/spr_dog_toy_cheap.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"aea5b803-119d-41c8-91b2-fa197b8da372","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d8049c4f-6f36-4db7-a21f-403fc127c65e","path":"sprites/spr_dog_toy_cheap/spr_dog_toy_cheap.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"690745ca-4079-4eb1-9cbd-5811b25be7f3","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
