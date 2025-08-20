@@ -30,10 +30,10 @@ if isPassedOut {
 	if global.pet_needs.energy.value < obj_dog_bed.increaseEnergyTo and global.pet_needs.energy.value < 100 
 	{
 		improveNeed("energy", 1)
-		drainNeed("hunger",0.5)
-		drainNeed("bladder",0.4)
-		drainNeed("hygiene",0.4)
-		drainNeed("fun",0.3)
+		drainNeed("hunger",0.6)
+		drainNeed("bladder",0.6)
+		drainNeed("hygiene",0.5)
+		drainNeed("fun",0.5)
 		improveNeed("health",0.1)
 		setAlarmInSeconds(actionAlarms.SLEEP,0.05)
 	} else {

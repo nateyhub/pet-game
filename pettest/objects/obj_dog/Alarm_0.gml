@@ -4,7 +4,7 @@ _drainFunCounter++
 _drainHygieneCounter++
 
 // if something is putting a lock on draining needs, exit out of this alarm
-if (!global.needs_can_be_drained) {
+if (!global.needs_can_be_drained or isSleeping) {
 	setAlarmInSeconds(needAlarms.NEEDS, 1)
 	return
 }

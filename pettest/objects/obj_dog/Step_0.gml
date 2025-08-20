@@ -139,12 +139,20 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 	// handle collisions against any objects that have a solid parent
 	var collision = move_and_collide(_xinput * my_speed, _yinput * my_speed, [obj_solid_parent, obj_solid_interactable])
 	
+	
+	if keyboard_check(ord("C")) and global.pet_needs.bladder.value <= 80 and !isEmptyingBladder {
+		if(isBathing or isSleeping or isEating) _wait_to_empty_bladder = true
+		else {
+			emptyBladder(true)
+		}
+	}
+	
 	// if the pet's bladder needs emptying
-	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) or (keyboard_check(ord("C")) and global.pet_needs.bladder.value <= 80) {
+	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) {
 		// prioritise bathing and sleeping actions over emptying bladder
 		if(isBathing or isSleeping or isEating) _wait_to_empty_bladder = true
 		else {
-			emptyBladder()
+			emptyBladder(false)
 		}
 
 	}

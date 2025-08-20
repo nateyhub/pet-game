@@ -75,35 +75,37 @@ function eatFromBowl() {
 		if(global.pet_needs.hunger.value <= 95) {
 			global.new_tc.hideTip(tip_indices.EAT_FOOD)
 			isEating = true
-			global.pet_needs.hunger.change_direction = needChangeDirection.INCREASING
-			global.pet_needs.energy.change_direction = needChangeDirection.INCREASING
-			global.pet_needs.bladder.change_direction = needChangeDirection.DECREASING
-			global.pet_needs.health.change_direction = needChangeDirection.INCREASING
-			improveNeed("hunger", obj_dog_bowl.hunger_increase)
-			improveNeed("energy", 8)
-			improveNeed("health", 2)
-			drainNeed("bladder", 5) //decrease bladder
-			show_debug_message(string("CURRENT FOOD TIER: {0}", obj_dog_bowl.current_tier))
-			if(obj_dog_bowl.current_tier == tier.GOOD) 
-			{ 
-				improveNeed("fun", 5)
-				global.pet_needs.fun.change_direction = needChangeDirection.INCREASING
+			//global.pet_needs.hunger.change_direction = needChangeDirection.INCREASING
+			//global.pet_needs.energy.change_direction = needChangeDirection.INCREASING
+			//global.pet_needs.bladder.change_direction = needChangeDirection.DECREASING
+			//global.pet_needs.health.change_direction = needChangeDirection.INCREASING
+			//improveNeed("hunger", obj_dog_bowl.hunger_increase)
+			//improveNeed("energy", 8)
+			//improveNeed("health", 2)
+			//drainNeed("bladder", 5) //decrease bladder
+			//show_debug_message(string("CURRENT FOOD TIER: {0}", obj_dog_bowl.current_tier))
+			//if(obj_dog_bowl.current_tier == tier.GOOD) 
+			//{ 
+			//	improveNeed("fun", 5)
+			//	global.pet_needs.fun.change_direction = needChangeDirection.INCREASING
 				
-			}
-			if(obj_dog_bowl.current_tier == tier.ULTIMATE) {
-				improveNeed("fun", 10)
-				global.pet_needs.fun.change_direction = needChangeDirection.INCREASING
-			}
+			//}
+			//if(obj_dog_bowl.current_tier == tier.ULTIMATE) {
+			//	improveNeed("fun", 10)
+			//	global.pet_needs.fun.change_direction = needChangeDirection.INCREASING
+			//}
 			//global.pet_needs.hunger.value = 100
-			obj_dog_bowl.food_amount -= dog_bite_amount
-			audio_play_sound(sfx_eat_food,100,false, 2)
-			show_debug_message("Dog has eaten")
+			//obj_dog_bowl.food_amount -= dog_bite_amount
+			//if !audio_is_playing(sfx_eat_food) audio_play_sound(sfx_eat_food,100,false, 2)
+			//show_debug_message("Dog has eaten")
+			
+			//move dog to bowl and animate
 			sprite_index = spr_dog_eat
 			x = obj_dog_bowl.x
 			y = obj_dog_bowl.y-10
 			
 			//restrict movement for 1 second
-			setAlarmInSeconds(actionAlarms.EAT,1)
+			setAlarmInSeconds(actionAlarms.EAT,0.5)
 		} 
 		else {
 			show_debug_message("Dog is too full to eat")
@@ -127,8 +129,6 @@ function useBed() {
 	//move to the bed
 	x = obj_dog_bed.x
 	y = obj_dog_bed.y
-	
-	//part_emitter_enable(global._ps,global._pemit1,true)
 	
 	//only sleep if the pet is tired enough
 	if(global.pet_needs.energy.value <= 30) {

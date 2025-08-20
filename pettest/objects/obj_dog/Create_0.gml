@@ -49,12 +49,23 @@ _xinput = 0
 _yinput = 0
 
 
-function emptyBladder() {
+_dog_bite_amount = 10
+_bites_remaining = 10
+_food_consumed = 0
+
+
+function emptyBladder(_voluntary) {
 	isEmptyingBladder = true
 	
 	audio_play_sound(sfx_empty_bladder, 100, false)
 	instance_create_layer(x,y+16,"bottom_layer",obj_puddle)
 	sprite_index = spr_dog_emptying_bladder
+	
+	//if bladder was emptied due to bladder level being 0, impact health
+	if(!_voluntary) {
+		drainNeed("health", 2.5);
+		global.pet_needs.health.change_direction = needChangeDirection.DECREASING_LOW
+	}
 	
 	global.pet_needs.bladder.change_direction = needChangeDirection.INCREASING
 	global.pet_needs.hygiene.change_direction = needChangeDirection.DECREASING_LOW
