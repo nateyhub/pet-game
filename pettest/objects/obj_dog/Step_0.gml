@@ -5,8 +5,8 @@ var _up = keyboard_check(vk_up) || keyboard_check(ord("W"))
 var _down = keyboard_check(vk_down) || keyboard_check(ord("S"))
 
 // calculate x and y movement
-var _xinput = _right - _left
-var _yinput = _down - _up
+_xinput = _right - _left
+_yinput = _down - _up
 
 //ENABLE THIS TO SEE DIRECTION:
 //show_debug_message("y: " + string(_yinput) + " x: " + string(_xinput))
@@ -82,6 +82,7 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 		if(isBarking) sprite_index = spr_dog_walk_barking
 		else sprite_index = spr_dog_walk
 		_movement_counter++
+
 		//show_debug_message("Movement counter:" + string(_movement_counter))
 		switch(_xinput) {
 			case FACING_LEFT:
@@ -139,7 +140,7 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 	var collision = move_and_collide(_xinput * my_speed, _yinput * my_speed, [obj_solid_parent, obj_solid_interactable])
 	
 	// if the pet's bladder needs emptying
-	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) or (keyboard_check(ord("C")) and global.pet_needs.bladder.value < 30) {
+	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) or (keyboard_check(ord("C")) and global.pet_needs.bladder.value <= 80) {
 		// prioritise bathing and sleeping actions over emptying bladder
 		if(isBathing or isSleeping or isEating) _wait_to_empty_bladder = true
 		else {

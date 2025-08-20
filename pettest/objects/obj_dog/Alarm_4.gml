@@ -3,9 +3,9 @@
 // 2. AND if the current hygiene value is less than 100 (the max value that hygiene can be)
 if global.pet_needs.hygiene.value < _initial_hygiene_amount + _bathe_amount and global.pet_needs.hygiene.value < 100 
 {
-	global.pet_needs.hygiene.value++
-	drainNeed("energy",0.15)
+	improveNeed("hygiene", 1)
 	improveNeed("fun",0.1)
+	drainNeed("energy",0.15)
 	setAlarmInSeconds(actionAlarms.TAKE_BATH,0.05)
 } else {
 	//finished bathing
@@ -18,4 +18,8 @@ if global.pet_needs.hygiene.value < _initial_hygiene_amount + _bathe_amount and 
 	self.sprite_index = spr_dog_idle
 	//if the dog reached a full bladder during the bath, now the dog can empty it
 	_wait_to_empty_bladder = false
+	
+	global.pet_needs.hygiene.change_direction = needChangeDirection.NOT_CHANGING
+	global.pet_needs.energy.change_direction = needChangeDirection.NOT_CHANGING
+	global.pet_needs.fun.change_direction = needChangeDirection.NOT_CHANGING
 }

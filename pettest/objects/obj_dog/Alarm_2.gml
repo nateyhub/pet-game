@@ -5,7 +5,7 @@
 var nap_energy_gain = 24
 if isPassedOut {
 	if(global.pet_needs.energy.value < _initial_energy_amount + nap_energy_gain) {
-		global.pet_needs.energy.value++
+		improveNeed("energy", 1)
 		drainNeed("hunger",0.5)
 		drainNeed("bladder",0.4)
 		drainNeed("hygiene",0.6)
@@ -16,12 +16,20 @@ if isPassedOut {
 		isPassedOut = false
 		//if the dog reached a full bladder during sleep, now the dog can empty it
 		_wait_to_empty_bladder = false
+		global.needs_are_changing = false
+		
+		global.pet_needs.hunger.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.bladder.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.hygiene.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.fun.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.energy.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.health.change_direction = needChangeDirection.NOT_CHANGING	
 	}
 
 } else {
 	if global.pet_needs.energy.value < obj_dog_bed.increaseEnergyTo and global.pet_needs.energy.value < 100 
 	{
-		global.pet_needs.energy.value++
+		improveNeed("energy", 1)
 		drainNeed("hunger",0.5)
 		drainNeed("bladder",0.4)
 		drainNeed("hygiene",0.4)
@@ -33,6 +41,13 @@ if isPassedOut {
 		isPassedOut = false
 		//if the dog reached a full bladder during sleep, now the dog can empty it
 		_wait_to_empty_bladder = false
+		global.needs_are_changing = false
+		global.pet_needs.hunger.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.bladder.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.hygiene.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.fun.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.energy.change_direction = needChangeDirection.NOT_CHANGING
+		global.pet_needs.health.change_direction = needChangeDirection.NOT_CHANGING	
 	}
 	
 }

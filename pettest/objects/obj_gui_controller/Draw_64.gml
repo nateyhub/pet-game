@@ -53,18 +53,20 @@ draw_rectangle(20,20,550,140,false)
 for (var i = 0; i < 6; i++) {
 	// get each key (eg health)
 	var key = global.needs_keys[i]
+	var current_need = global.pet_needs[$ key]
+
 	
 	// set the colour of the bar according to the current value of this need (eg low value = red)
-	if (global.pet_needs[$ key].value < 15) {
+	if (current_need.value < 15) {
 		_current_main_colour = _colours.very_low.main_colour
 		_current_shade_colour = _colours.very_low.shade_colour
-	} else if (global.pet_needs[$ key].value >= 15 and global.pet_needs[$ key].value < 30) {
+	} else if (current_need.value >= 15 and current_need.value < 30) {
 		_current_main_colour = _colours.low.main_colour
 		_current_shade_colour = _colours.low.shade_colour
-	} else if (global.pet_needs[$ key].value >= 30 and global.pet_needs[$ key].value < 65) {
+	} else if (current_need.value >= 30 and current_need.value < 65) {
 		_current_main_colour = _colours.medium.main_colour
 		_current_shade_colour = _colours.medium.shade_colour
-	} else if (global.pet_needs[$ key].value >= 65 and global.pet_needs[$ key].value < 90) {
+	} else if (current_need.value >= 65 and current_need.value < 90) {
 		_current_main_colour = _colours.high.main_colour
 		_current_shade_colour = _colours.high.shade_colour
 	} else {
@@ -76,10 +78,10 @@ for (var i = 0; i < 6; i++) {
 	
 	// draw a rectangle using the need's given x & y coords and current value (out of 100)
 	draw_rectangle(
-		global.pet_needs[$ key].x,
-		global.pet_needs[$ key].y,
-		global.pet_needs[$ key].x + (global.pet_needs[$ key].value),
-		global.pet_needs[$ key].y + _need_bar_height_px,
+		current_need.x,
+		current_need.y,
+		current_need.x + (current_need.value),
+		current_need.y + _need_bar_height_px,
 		false
 	)
 	
@@ -87,19 +89,40 @@ for (var i = 0; i < 6; i++) {
 	
 	// draw shading bar
 	draw_rectangle(
-		global.pet_needs[$ key].x,
-		global.pet_needs[$ key].y + (_need_bar_shading_px),
-		global.pet_needs[$ key].x + (global.pet_needs[$ key].value),
-		global.pet_needs[$ key].y + _need_bar_height_px,
+		current_need.x,
+		current_need.y + (_need_bar_shading_px),
+		current_need.x + (current_need.value),
+		current_need.y + _need_bar_height_px,
 		false
 	)
+	
+		
+	switch(current_need.change_direction) {
+		case needChangeDirection.DECREASING_LOW:
+			//draw decreasing need animation
+			draw_sprite(spr_decrease_low,image_index/2,global.pet_needs[$ key].x,global.pet_needs[$ key].y+2)
+			break
+		case needChangeDirection.DECREASING:
+			//draw decreasing need animation
+			draw_sprite(spr_decrease,image_index/2,global.pet_needs[$ key].x,global.pet_needs[$ key].y+2)
+			break
+		case needChangeDirection.INCREASING_LOW:
+			//draw increasing need animation
+			draw_sprite(spr_increase_low,image_index/2,global.pet_needs[$ key].x,global.pet_needs[$ key].y+2)
+			break
+		case needChangeDirection.INCREASING:
+			//draw increasing need animation
+			draw_sprite(spr_increase,image_index/2,global.pet_needs[$ key].x,global.pet_needs[$ key].y+2)
+			break
+	}
 }
 #endregion
+
 
 // draw the main GUI element on top of the bars
 draw_sprite(spr_gui,0,0,0)
 
-draw_sprite( spr_need_increase,0,284,100)
+//draw_sprite( spr_need_increase,0,284,100)
 
 
 //draw the number of points the player has

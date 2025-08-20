@@ -36,7 +36,13 @@ if (_drainHygieneCounter >= 10 and !isBathing) {
 }
 
 //if the dog is sprinting, drain energy each second
-if(isSprinting) drainNeed("energy", 1)
+if(isSprinting and (_xinput != 0 or _yinput != 0)) {
+	drainNeed("energy", 1)
+	global.pet_needs.energy.change_direction = needChangeDirection.DECREASING_LOW
+}
+
+//drain hygiene if standing in a puddle
+if(place_meeting(x,y,obj_puddle)) drainNeed("hygiene", 1)
 
 //reset the alarm
 setAlarmInSeconds(needAlarms.NEEDS, 1)

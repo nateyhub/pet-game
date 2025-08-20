@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_health_increase",
-    "path":"sprites/spr_health_increase/spr_health_increase.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -42,6 +42,7 @@ function NewTipsContainer() constructor {
 	generateTip(keys.B, "Bark", false)
 	generateTip(keys.Space, "Go outside", false)
 	
+	
 	static hideTip = function(_tip_index) {
 		if(all_tips[_tip_index].should_be_visible) {
 			//show_debug_message("Hiding {0}: {1}", _tip_index, all_tips[_tip_index].should_be_visible) 
