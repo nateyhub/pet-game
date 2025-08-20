@@ -2,7 +2,7 @@
 if(_food_consumed < obj_dog_bowl.hunger_increase) {
 	//improve and drain needs accordingly
 	improveNeed("hunger", 1)
-	improveNeed("energy", 1)
+	improveNeed("energy", 0.5)
 	improveNeed("health", 0.1)
 	drainNeed("bladder", 0.75)
 	
