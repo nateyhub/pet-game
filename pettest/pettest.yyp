@@ -190,6 +190,7 @@
     {"id":{"name":"spr_ground","path":"sprites/spr_ground/spr_ground.yy",},},
     {"id":{"name":"spr_gui","path":"sprites/spr_gui/spr_gui.yy",},},
     {"id":{"name":"spr_health_change","path":"sprites/spr_health_change/spr_health_change.yy",},},
+    {"id":{"name":"spr_health_increase_v2","path":"sprites/spr_health_increase_v2/spr_health_increase_v2.yy",},},
     {"id":{"name":"spr_heart","path":"sprites/spr_heart/spr_heart.yy",},},
     {"id":{"name":"spr_home_props","path":"sprites/spr_home_props/spr_home_props.yy",},},
     {"id":{"name":"spr_hunger_change","path":"sprites/spr_hunger_change/spr_hunger_change.yy",},},
