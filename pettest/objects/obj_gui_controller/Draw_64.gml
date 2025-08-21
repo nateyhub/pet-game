@@ -5,19 +5,28 @@ _y = 284
 
 var brightness = (cos(0.26 * global.day_current_hour)  + 0.8)/2
 var dim_amount =  max(0,brightness)
+//var dim_amount = 0.5
 
 //show_debug_message(global.day_current_hour)
 if (global.day_current_hour > 12 and global.day_current_hour < 20) {
 	draw_set_colour(make_color_rgb(160,60,50))
+	//if !layer_get_visible("sunset") layer_set_visible("sunset", true)
 	dim_amount *= .4
 } else if (global.day_current_hour >= 20 and global.day_current_hour < 22) {
 	//8pm or later
+	//if layer_get_visible("sunset") layer_set_visible("sunset", false)
+	//if !layer_get_visible("early_night") layer_set_visible("early_night", true)
 	dim_amount *= .5
 	draw_set_colour(make_color_rgb(7,8,30))
-} else if (global.day_current_hour >= 22 and global.day_current_hour < 24) {
+} else if (global.day_current_hour >= 22 and global.day_current_hour < 24) or (global.day_current_hour >= 0 and global.day_current_hour <= 8) {
 	draw_set_colour(make_color_rgb(7,8,30))
+	//if !layer_get_visible("late_night") layer_set_visible("late_night", true)
+	//if layer_get_visible("early_night") layer_set_visible("early_night", false)
+	//dim_amount = 0
 	dim_amount *= .7
 } else {
+	//if layer_get_visible("late_night") layer_set_visible("late_night", false)
+	
 	dim_amount *= .8
 	draw_set_colour(make_color_rgb(7,8,30))
 }
@@ -34,11 +43,25 @@ draw_set_colour(c_white)
 draw_sprite(spr_new_gui_holder,0,0,camera_get_view_height(0)-112)
 draw_sprite(spr_new_gui_portrait,0,-10,camera_get_view_height(0)-192)
 
-//draw day and time
-draw_set_halign(fa_right)
+
+
+
+//draw calendar and day
+draw_sprite_stretched(spr_calendar,0,camera_get_view_width(0)-140,10,138,134)
+draw_set_halign(fa_center)
+
+draw_set_font(fnt_calendar_day_text)
+draw_set_color(c_black)
+draw_text(camera_get_view_width(0)-70, 52, string("Day"))
+draw_set_font(fnt_calendar_day_number)
+draw_text(camera_get_view_width(0)-70, 68, string("{0}", global.current_game_day))
 draw_set_font(fnt_clock)
-draw_text(camera_get_view_width(0), 10, string("Day {0}", global.current_game_day))
-draw_text(camera_get_view_width(0), 30, global.current_time_string)
+
+//draw time
+draw_set_halign(fa_center)
+draw_sprite_stretched(spr_clock,0,camera_get_view_width(0)-140,130,138,58)
+draw_text(camera_get_view_width(0)-70, 146, global.current_time_string)
+draw_set_color(c_white)
 draw_set_font(fnt_gui)
 
 draw_set_halign(fa_left)
@@ -122,7 +145,7 @@ for (var i = 0; i < 6; i++) {
 // draw the main GUI element on top of the bars
 draw_sprite(spr_gui,0,0,0)
 
-//draw_sprite( spr_need_increase,0,284,100)
+
 
 
 //draw the number of points the player has

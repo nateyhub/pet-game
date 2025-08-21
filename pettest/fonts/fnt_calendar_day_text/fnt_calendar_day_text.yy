@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_clock",
+  "%Name":"fnt_calendar_day_text",
   "AntiAlias":0,
   "applyKerning":1,
   "ascender":21,
@@ -117,7 +117,7 @@
   "last":0,
   "lineHeight":25,
   "maintainGms1Font":false,
-  "name":"fnt_clock",
+  "name":"fnt_calendar_day_text",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",
@@ -134,10 +134,7 @@
   "sdfSpread":2,
   "size":24.0,
   "styleName":"Medium",
-  "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
-  },
+  "textureGroupId":null,
   "TTFName":"",
   "usesSDF":true,
 }

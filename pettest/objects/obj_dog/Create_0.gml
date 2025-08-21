@@ -86,6 +86,14 @@ function passOut() {
 	isPassedOut = true
 	sprite_index = spr_dog_sleep
 	audio_play_sound(sleep, 100, false, 2)
+	
+	global.pet_needs.energy.change_direction = needChangeDirection.INCREASING
+	global.pet_needs.health.change_direction = needChangeDirection.DECREASING_LOW
+	global.pet_needs.fun.change_direction = needChangeDirection.DECREASING_LOW
+	global.pet_needs.hygiene.change_direction = needChangeDirection.DECREASING_LOW
+	global.pet_needs.hunger.change_direction = needChangeDirection.DECREASING_LOW
+	global.pet_needs.bladder.change_direction = needChangeDirection.DECREASING_LOW
+	
 		
 	//get the current energy level to set as an initial value
 	_initial_energy_amount = global.pet_needs.energy.value
