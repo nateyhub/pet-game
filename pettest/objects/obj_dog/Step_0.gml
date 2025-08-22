@@ -83,7 +83,6 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 		else sprite_index = spr_dog_walk
 		_movement_counter++
 
-		//show_debug_message("Movement counter:" + string(_movement_counter))
 		switch(_xinput) {
 			case FACING_LEFT:
 				//player is facing left
@@ -109,7 +108,7 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 		}
 		if(isUsingMop) {
 			//if dog is facing left
-			if (image_xscale = 1) {
+			if (_xinput == FACING_LEFT) {
 				obj_mop.x = self.x - 16
 				if(!place_free(obj_mop.x-8,obj_mop.y)) obj_mop.x = self.x-8
 			}
@@ -146,6 +145,8 @@ if(!isEating and !isSleeping and !isEmptyingBladder and !isBathing)
 			emptyBladder(true)
 		}
 	}
+	
+	if(global.pet_needs.bladder.value < 20 and !isEmptyingBladder) global.new_tc.showTip(tip_indices.EMPTY_BLADDER)
 	
 	// if the pet's bladder needs emptying
 	if(global.pet_needs.bladder.value == 0 and !isEmptyingBladder) {

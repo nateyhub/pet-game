@@ -10,6 +10,7 @@ enum tip_indices {
 	BARK = 6,
 	GO_OUTSIDE = 7,
 	WAKE_UP = 8,
+	EMPTY_BLADDER = 9
 }
 
 function NewTipsContainer() constructor {
@@ -44,6 +45,7 @@ function NewTipsContainer() constructor {
 	generateTip(keys.B, "Bark", false)
 	generateTip(keys.Space, "Go outside", false)
 	generateTip(keys.X, "Wake up", false)
+	generateTip(keys.C, "Empty bladder", false)
 	
 	
 	static hideTip = function(_tip_index) {

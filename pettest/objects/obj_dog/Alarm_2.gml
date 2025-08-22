@@ -10,8 +10,8 @@ if isSleeping and ((isPassedOut and global.pet_needs.energy.value < nap_energy_g
 {
 	global.new_tc.showTip(tip_indices.WAKE_UP)
 	improveNeed("energy", 1)
-	drainNeed("hunger",0.6)
-	drainNeed("bladder",0.6)
+	drainNeed("hunger",1)
+	drainNeed("bladder",0.8)
 	if(isPassedOut) {
 		//passed out; more impact on hygiene and fun, and negative impact on health
 		drainNeed("hygiene",0.6)
@@ -32,6 +32,8 @@ else {
 	//if the dog reached a full bladder during sleep, now the dog can empty it
 	_wait_to_empty_bladder = false
 	global.needs_are_changing = false
+	
+	global.new_tc.hideTip(tip_indices.WAKE_UP)
 		
 	global.pet_needs.hunger.change_direction = needChangeDirection.NOT_CHANGING
 	global.pet_needs.bladder.change_direction = needChangeDirection.NOT_CHANGING

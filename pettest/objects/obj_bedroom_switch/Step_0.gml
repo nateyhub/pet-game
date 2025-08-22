@@ -1,7 +1,5 @@
 //if the dog is in the bedroom
 if place_meeting(x,y,obj_dog) {
-	//var fx = layer_get_fx("bedroom_floor")
-
 	if !layer_get_fx("living_room_floor") 
 	{ 
 		layer_set_fx("living_room_floor", _night_fx);
