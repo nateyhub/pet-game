@@ -18,4 +18,7 @@ current_colour = BowlColour.RED
 image_speed = 0
 image_index = 0
 
+_layer = layer
+
+
 _isBeingDragged = false

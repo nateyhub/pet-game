@@ -1,5 +1,5 @@
 //speed up the passage of time when the dog is asleep or passed out
-if obj_dog.isSleeping or obj_dog.isPassedOut global.current_minutes += 20
+if obj_dog.isSleeping or obj_dog.isPassedOut global.current_minutes += 4
 else global.current_minutes += 2 //else, increase time by 2 minutes
 
 //if the current number of minutes reaches the max number in a day, reset the counter

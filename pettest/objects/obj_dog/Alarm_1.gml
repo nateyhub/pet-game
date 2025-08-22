@@ -4,16 +4,16 @@ if(_food_consumed < obj_dog_bowl.hunger_increase) {
 	improveNeed("hunger", 1)
 	improveNeed("energy", 0.5)
 	improveNeed("health", 0.1)
-	drainNeed("bladder", 0.75)
+	drainNeed("bladder", 0.5)
 	
 	//repeatedly play sound if not already playing
 	if !audio_is_playing(sfx_eat_food) audio_play_sound(sfx_eat_food,100,false, 2)
 	
 	//reflect these changes in the GUI
 	global.pet_needs.hunger.change_direction = needChangeDirection.INCREASING
-	global.pet_needs.energy.change_direction = needChangeDirection.INCREASING
+	global.pet_needs.energy.change_direction = needChangeDirection.INCREASING_LOW
 	global.pet_needs.health.change_direction = needChangeDirection.INCREASING_LOW
-	global.pet_needs.bladder.change_direction = needChangeDirection.DECREASING
+	global.pet_needs.bladder.change_direction = needChangeDirection.DECREASING_LOW
 	
 	//if the Tier of the dog food is better than average, also improve the dog's mood
 	if(obj_dog_bowl.current_tier == tier.GOOD) {
@@ -29,7 +29,7 @@ if(_food_consumed < obj_dog_bowl.hunger_increase) {
 	_food_consumed++
 	
 	//repeat the alarm
-	setAlarmInSeconds(actionAlarms.EAT, 0.05)
+	setAlarmInSeconds(actionAlarms.EAT, 0.1)
 } else {
 	//if the dog has finished eating, is allowed to move again
 	isEating = false

@@ -9,6 +9,7 @@ enum tip_indices {
 	PUT_DOWN_MOP = 5,
 	BARK = 6,
 	GO_OUTSIDE = 7,
+	WAKE_UP = 8,
 }
 
 function NewTipsContainer() constructor {
@@ -16,6 +17,7 @@ function NewTipsContainer() constructor {
 		B: {key_str: "b", key_str_length: 1,  margin_left: 2},
 		E: {key_str: "e", key_str_length: 1,  margin_left: 2},
 		C: {key_str: "c", key_str_length: 1,  margin_left: 2},
+		X: {key_str: "x", key_str_length: 1,  margin_left: 2},
 		Space: {key_str: "space", key_str_length: 5,  margin_left: 2} 
 	}
 	
@@ -41,6 +43,7 @@ function NewTipsContainer() constructor {
 	generateTip(keys.Space, "Put down mop", false)
 	generateTip(keys.B, "Bark", false)
 	generateTip(keys.Space, "Go outside", false)
+	generateTip(keys.X, "Wake up", false)
 	
 	
 	static hideTip = function(_tip_index) {

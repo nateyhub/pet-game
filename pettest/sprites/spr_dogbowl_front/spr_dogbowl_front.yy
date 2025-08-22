@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"spr_dogbowl_front",
-  "bboxMode":0,
+  "bboxMode":1,
   "bbox_bottom":23,
   "bbox_left":0,
   "bbox_right":23,
-  "bbox_top":12,
+  "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

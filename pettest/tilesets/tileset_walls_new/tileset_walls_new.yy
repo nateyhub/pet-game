@@ -3,9 +3,10 @@
   "%Name":"tileset_walls_new",
   "autoTileSets":[],
   "macroPageTiles":{
-    "SerialiseHeight":0,
-    "SerialiseWidth":0,
-    "TileSerialiseData":[],
+    "SerialiseHeight":3,
+    "SerialiseWidth":3,
+    "TileCompressedData":[-4,0,5,198,199,0,246,247,],
+    "TileDataFormat":1,
   },
   "name":"tileset_walls_new",
   "out_columns":42,

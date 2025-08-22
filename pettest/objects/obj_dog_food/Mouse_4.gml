@@ -1,4 +1,4 @@
-show_debug_message("Dog food: Left pressed")
+show_debug_message("Dog food: Left pressed. Is being dragged: ", _isBeingDragged)
 if (!_isBeingDragged)
 {
 	_isBeingDragged = true

@@ -1,1 +1,1 @@
-layer_add_instance("bowl", self)
+layer_add_instance(_layer, self)

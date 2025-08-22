@@ -1,1 +1,1 @@
-layer_add_instance("instances", self)
+layer_add_instance("instances_top_layer", self)

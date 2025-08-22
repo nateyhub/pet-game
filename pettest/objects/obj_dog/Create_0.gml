@@ -58,7 +58,7 @@ function emptyBladder(_voluntary) {
 	isEmptyingBladder = true
 	
 	audio_play_sound(sfx_empty_bladder, 100, false)
-	instance_create_layer(x,y+16,"bottom_layer",obj_puddle)
+	instance_create_layer(x,y+16,obj_dog.layer,obj_puddle)
 	sprite_index = spr_dog_emptying_bladder
 	
 	//if bladder was emptied due to bladder level being 0, impact health

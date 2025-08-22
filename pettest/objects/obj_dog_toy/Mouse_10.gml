@@ -1,1 +1,1 @@
-layer_add_instance("glow_layer", self)
+layer_add_instance("top_glow_layer", self)

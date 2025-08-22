@@ -91,7 +91,7 @@ global.new_tc.drawTips()
 global.inventory = new Inventory()
 global.selectedItem = noone
 
-_item = new TieredItem("Dog food", 5, obj_dog_food, spr_dogfood_tiers, "Instances", tier.CHEAP) 
+_item = new TieredItem("Dog food", 5, obj_dog_food, spr_dogfood_tiers, obj_dog.layer, tier.CHEAP) 
 _item2 = new TieredItem("Dog food", 5, obj_dog_food, spr_dogfood_tiers, "Instances", tier.GOOD)
 _item3 = new TieredItem("Dog food", 5, obj_dog_food, spr_dogfood_tiers, "Instances", tier.ULTIMATE) 
 global.inventory.putItemInSlot(0, _item)

@@ -1,1 +1,1 @@
-hideObjectOutline(self, "bowl")
+layer_add_instance(_layer, self)
