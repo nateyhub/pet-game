@@ -3,9 +3,9 @@
 // 2. AND if the current hygiene value is less than 100 (the max value that hygiene can be)
 if global.pet_needs.hygiene.value < _initial_hygiene_amount + _bathe_amount and global.pet_needs.hygiene.value < 100 
 {
-	improveNeed("hygiene", 1)
-	improveNeed("fun",0.1)
-	drainNeed("energy",0.15)
+	improveNeed("hygiene", 0.4)
+	improveNeed("fun",0.05)
+	drainNeed("energy",0.1)
 	setAlarmInSeconds(actionAlarms.TAKE_BATH,0.05)
 } else {
 	//finished bathing

@@ -3,22 +3,38 @@ function pickUpItem() {
 		audio_play_sound(sfx_click,100,false,0.9)
 		_isBeingDragged = true
 		global.holdingAnItem = true
+		show_debug_message("current layer {0}", self.layer)
 	}
 }
 
 function putDownItem() {
-	if(place_empty(x,y)) 
+	if(place_empty(x,y) or (instance_place(x,y,obj_bedroom_switch))  and !instance_place(x,y,obj_collision))
 	{ 
 		_isBeingDragged = false
 		global.holdingAnItem = false
 		audio_play_sound(sfx_put_down,100,false,2)
+		
+		if instance_place(x,y,obj_bedroom_switch) {
+			show_debug_message("putting in bedroom")
+			_layer = layer_get_id("bedroom_instances")
+			//layer_add_instance("bedroom_instances", self.id)
+			
+			//show_debug_message("new layer {0}", self.layer)
+		}
+		else {
+			show_debug_message("putting in living room")
+			_layer = layer_get_id("living_room_instances")
+			//layer_add_instance("living_room_instances", self.id)
+			//show_debug_message("new layer {0}", self.layer)
+		}
 	}
 	else playErrorSound()
 }
 
 function handleDragging(_x_offset,_y_offset,grid_x,grid_y) {
 	//if the item is being held over an area it cannot be placed down at
-	if(!place_empty(x,y)) { 
+	var bedroom_switch_here = instance_place(x,y,obj_bedroom_switch)
+	if(!place_empty(x,y) and !bedroom_switch_here or instance_place(x,y,obj_collision)) { 
 		layer_add_instance("top_glow_layer_red", self.id)
 	} else {
 		layer_add_instance("top_glow_layer", self.id)
