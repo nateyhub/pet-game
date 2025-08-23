@@ -55,7 +55,7 @@ function useBath() {
 
 	if(global.pet_needs.hygiene.value <= 90) {
 		global.pet_needs.hygiene.change_direction = needChangeDirection.INCREASING
-		global.pet_needs.fun.change_direction = needChangeDirection.INCREASING
+		global.pet_needs.mood.change_direction = needChangeDirection.INCREASING
 		global.pet_needs.energy.change_direction = needChangeDirection.DECREASING
 		
 		
@@ -102,13 +102,13 @@ function eatFromBowl() {
 			//show_debug_message(string("CURRENT FOOD TIER: {0}", obj_dog_bowl.current_tier))
 			//if(obj_dog_bowl.current_tier == tier.GOOD) 
 			//{ 
-			//	improveNeed("fun", 5)
-			//	global.pet_needs.fun.change_direction = needChangeDirection.INCREASING
+			//	improveNeed("mood", 5)
+			//	global.pet_needs.mood.change_direction = needChangeDirection.INCREASING
 				
 			//}
 			//if(obj_dog_bowl.current_tier == tier.ULTIMATE) {
-			//	improveNeed("fun", 10)
-			//	global.pet_needs.fun.change_direction = needChangeDirection.INCREASING
+			//	improveNeed("mood", 10)
+			//	global.pet_needs.mood.change_direction = needChangeDirection.INCREASING
 			//}
 			//global.pet_needs.hunger.value = 100
 			//obj_dog_bowl.food_amount -= dog_bite_amount
@@ -159,7 +159,7 @@ function useBed() {
 		global.pet_needs.hunger.change_direction = needChangeDirection.DECREASING
 		global.pet_needs.bladder.change_direction = needChangeDirection.DECREASING
 		global.pet_needs.hygiene.change_direction = needChangeDirection.DECREASING
-		global.pet_needs.fun.change_direction = needChangeDirection.DECREASING_LOW
+		global.pet_needs.mood.change_direction = needChangeDirection.DECREASING_LOW
 		
 		//get the current energy level to set as an initial value
 		_initial_energy_amount = global.pet_needs.energy.value

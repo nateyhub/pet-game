@@ -25,9 +25,9 @@ if(!other._isMoving and !other._isBeingDragged)
 	}
 	
 	setAlarmInSeconds(actionAlarms.PLAY,1)
-	improveNeed("fun",10)
+	improveNeed("mood",10)
 	drainNeed("energy", 1)
-	global.pet_needs.fun.change_direction = needChangeDirection.INCREASING
+	global.pet_needs.mood.change_direction = needChangeDirection.INCREASING
 	global.pet_needs.energy.change_direction = needChangeDirection.DECREASING_LOW
 	
 }

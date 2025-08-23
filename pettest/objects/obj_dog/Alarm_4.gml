@@ -4,7 +4,7 @@
 if global.pet_needs.hygiene.value < _initial_hygiene_amount + obj_bath.hygiene_increase and global.pet_needs.hygiene.value < 100 
 {
 	improveNeed("hygiene", 0.4)
-	improveNeed("fun",0.05)
+	improveNeed("mood",0.05)
 	drainNeed("energy",0.1)
 	setAlarmInSeconds(actionAlarms.TAKE_BATH,0.05)
 } else {
@@ -21,5 +21,5 @@ if global.pet_needs.hygiene.value < _initial_hygiene_amount + obj_bath.hygiene_i
 	
 	global.pet_needs.hygiene.change_direction = needChangeDirection.NOT_CHANGING
 	global.pet_needs.energy.change_direction = needChangeDirection.NOT_CHANGING
-	global.pet_needs.fun.change_direction = needChangeDirection.NOT_CHANGING
+	global.pet_needs.mood.change_direction = needChangeDirection.NOT_CHANGING
 }

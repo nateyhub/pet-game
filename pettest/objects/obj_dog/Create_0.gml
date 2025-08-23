@@ -70,11 +70,11 @@ function emptyBladder(_voluntary) {
 	
 	global.pet_needs.bladder.change_direction = needChangeDirection.INCREASING
 	global.pet_needs.hygiene.change_direction = needChangeDirection.DECREASING_LOW
-	global.pet_needs.fun.change_direction = needChangeDirection.DECREASING_LOW
+	global.pet_needs.mood.change_direction = needChangeDirection.DECREASING_LOW
 	
-	show_debug_message("BLADDER {0} HYGIENE {1} FUN {2}", global.pet_needs.bladder.change_direction,
+	show_debug_message("BLADDER {0} HYGIENE {1} mood {2}", global.pet_needs.bladder.change_direction,
 	global.pet_needs.hygiene.change_direction,
-	global.pet_needs.fun.change_direction)
+	global.pet_needs.mood.change_direction)
 	
 	//execute alarm
 	setAlarmInSeconds(actionAlarms.EMPTY_BLADDER, 0.1)
@@ -90,7 +90,7 @@ function passOut() {
 	
 	global.pet_needs.energy.change_direction = needChangeDirection.INCREASING
 	global.pet_needs.health.change_direction = needChangeDirection.DECREASING_LOW
-	global.pet_needs.fun.change_direction = needChangeDirection.DECREASING_LOW
+	global.pet_needs.mood.change_direction = needChangeDirection.DECREASING_LOW
 	global.pet_needs.hygiene.change_direction = needChangeDirection.DECREASING_LOW
 	global.pet_needs.hunger.change_direction = needChangeDirection.DECREASING_LOW
 	global.pet_needs.bladder.change_direction = needChangeDirection.DECREASING_LOW

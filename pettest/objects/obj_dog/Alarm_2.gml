@@ -13,15 +13,15 @@ if isSleeping and ((isPassedOut and global.pet_needs.energy.value < nap_energy_g
 	drainNeed("hunger",1)
 	drainNeed("bladder",0.8)
 	if(isPassedOut) {
-		//passed out; more impact on hygiene and fun, and negative impact on health
+		//passed out; more impact on hygiene and mood, and negative impact on health
 		drainNeed("hygiene",0.6)
-		drainNeed("fun",0.6)
+		drainNeed("mood",0.6)
 		drainNeed("health",0.1)
 	} else {
-		//sleeping normally in a bed; less impact on hygiene/fun, improves health
+		//sleeping normally in a bed; less impact on hygiene/mood, improves health
 		show_debug_message(obj_dog_bed.increaseEnergyTo)
 		drainNeed("hygiene",0.5)
-		drainNeed("fun",0.5)
+		drainNeed("mood",0.5)
 		improveNeed("health",0.1)		
 	}
 	setAlarmInSeconds(actionAlarms.SLEEP,0.2)
@@ -38,7 +38,7 @@ else {
 	global.pet_needs.hunger.change_direction = needChangeDirection.NOT_CHANGING
 	global.pet_needs.bladder.change_direction = needChangeDirection.NOT_CHANGING
 	global.pet_needs.hygiene.change_direction = needChangeDirection.NOT_CHANGING
-	global.pet_needs.fun.change_direction = needChangeDirection.NOT_CHANGING
+	global.pet_needs.mood.change_direction = needChangeDirection.NOT_CHANGING
 	global.pet_needs.energy.change_direction = needChangeDirection.NOT_CHANGING
 	global.pet_needs.health.change_direction = needChangeDirection.NOT_CHANGING	
 }

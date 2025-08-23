@@ -17,11 +17,11 @@ if(_food_consumed < obj_dog_bowl.hunger_increase) {
 	
 	//if the Tier of the dog food is better than average, also improve the dog's mood
 	if(obj_dog_bowl.current_tier == tier.GOOD) {
-		improveNeed("fun", 0.25)
-		global.pet_needs.fun.change_direction = needChangeDirection.INCREASING_LOW
+		improveNeed("mood", 0.25)
+		global.pet_needs.mood.change_direction = needChangeDirection.INCREASING_LOW
 	} else if (obj_dog_bowl.current_tier == tier.ULTIMATE) {
-		improveNeed("fun", 0.4)
-		global.pet_needs.fun.change_direction = needChangeDirection.INCREASING_LOW
+		improveNeed("mood", 0.4)
+		global.pet_needs.mood.change_direction = needChangeDirection.INCREASING_LOW
 	}
 	
 	//decrease the amount of food left in the bowl
@@ -44,7 +44,7 @@ if(_food_consumed < obj_dog_bowl.hunger_increase) {
 	global.pet_needs.energy.change_direction = needChangeDirection.NOT_CHANGING
 	global.pet_needs.health.change_direction = needChangeDirection.NOT_CHANGING
 	global.pet_needs.bladder.change_direction = needChangeDirection.NOT_CHANGING
-	global.pet_needs.fun.change_direction = needChangeDirection.NOT_CHANGING
+	global.pet_needs.mood.change_direction = needChangeDirection.NOT_CHANGING
 	
 	//reset food consumed
 	_food_consumed = 0

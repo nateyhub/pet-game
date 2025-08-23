@@ -45,7 +45,7 @@ global.pet_needs = {
 	energy:		{ value: 24, x: 312, y: 46, change_direction: needChangeDirection.NOT_CHANGING },
 	hygiene:	{ value: 91, x: 312, y: 106, change_direction: needChangeDirection.NOT_CHANGING },
 	bladder:	{ value: 91, x: 446, y: 46, change_direction: needChangeDirection.NOT_CHANGING },
-	fun:		{ value: 88, x: 446, y: 106, change_direction: needChangeDirection.NOT_CHANGING },
+	mood:		{ value: 88, x: 446, y: 106, change_direction: needChangeDirection.NOT_CHANGING },
 }
 
 global.needs_critical = false

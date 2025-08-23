@@ -23,9 +23,9 @@ if _drainHungerAndBladderCounter >= 4 {
 	_drainHungerAndBladderCounter = 0
 }
 
-// drain FUN every 3 seconds
-if _drainFunCounter >= 3 {
-	drainNeed("fun", 2)
+// drain mood every 3 seconds
+if _drainFunCounter >= 3 and !obj_dog_toy._isMoving {
+	drainNeed("mood", 2)
 	_drainFunCounter = 0
 }
 
