@@ -58,7 +58,8 @@ function emptyBladder(_voluntary) {
 	isEmptyingBladder = true
 	
 	audio_play_sound(sfx_empty_bladder, 100, false)
-	instance_create_layer(x,y+16,obj_dog.layer,obj_puddle)
+	instance_create_depth(x,y+16,obj_dog.depth+200,obj_puddle)
+	//instance_create_layer(x,y+16,obj_dog.layer,obj_puddle)
 	sprite_index = spr_dog_emptying_bladder
 	
 	//if bladder was emptied due to bladder level being 0, impact health
@@ -106,8 +107,4 @@ _initial_hygiene_amount = 0
 
 _wait_to_empty_bladder = false
 _wait_to_sleep = false
-
-
-//TODO: put this in bath_obj
-_bathe_amount = 30
 

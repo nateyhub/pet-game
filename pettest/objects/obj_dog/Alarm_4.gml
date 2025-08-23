@@ -1,7 +1,7 @@
 //TWO CONDITIONS:
 // 1. if the current hygiene value is less than the initial value + whatever hygiene increase the bath gives
 // 2. AND if the current hygiene value is less than 100 (the max value that hygiene can be)
-if global.pet_needs.hygiene.value < _initial_hygiene_amount + _bathe_amount and global.pet_needs.hygiene.value < 100 
+if global.pet_needs.hygiene.value < _initial_hygiene_amount + obj_bath.hygiene_increase and global.pet_needs.hygiene.value < 100 
 {
 	improveNeed("hygiene", 0.4)
 	improveNeed("fun",0.05)

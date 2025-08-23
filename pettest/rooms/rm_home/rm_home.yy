@@ -94,9 +94,7 @@
           -51,1,-29,-2147483648,-51,1,-29,-2147483648,-51,1,-29,-2147483648,-51,1,-29,-2147483648,-51,1,-29,-2147483648,
           -51,1,-15,-2147483648,-65,1,-15,-2147483648,-65,1,-15,-2147483648,-65,1,-15,-2147483648,-354,1,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tileset_bgcol","path":"tilesets/tileset_bgcol/tileset_bgcol.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
-    {"$GMRTileLayer":"","%Name":"walkway","depth":600,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"walkway","properties":[
-        {"name":"g_TintCol","type":1,"value":"#FFFF4F6C",},
-      ],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":38,"SerialiseWidth":80,"TileCompressedData":[
+    {"$GMRTileLayer":"","%Name":"walkway","depth":600,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"walkway","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":38,"SerialiseWidth":80,"TileCompressedData":[
           -36,-2147483648,-33,0,-47,-2147483648,-33,0,-47,-2147483648,-33,0,-47,-2147483648,-33,0,-36,-2147483648,
           -55,0,-25,-2147483648,-55,0,-25,-2147483648,-55,0,-25,-2147483648,-55,0,-25,-2147483648,-55,0,-25,-2147483648,
           -55,0,-25,-2147483648,-55,0,-25,-2147483648,-55,0,-25,-2147483648,-55,0,-25,-2147483648,-55,0,-25,-2147483648,
@@ -118,12 +116,10 @@
         {"$GMRInstance":"v2","%Name":"inst_4EFD4381","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4EFD4381","objectId":{"name":"obj_bath","path":"objects/obj_bath/obj_bath.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":64.0,},
         {"$GMRInstance":"v2","%Name":"inst_D571461","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_D571461","objectId":{"name":"obj_dog_toy","path":"objects/obj_dog_toy/obj_dog_toy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":912.0,"y":400.0,},
       ],"layers":[],"name":"living_room_instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRInstanceLayer":"","%Name":"bedroom_instances","depth":900,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+    {"$GMRInstanceLayer":"","%Name":"bedroom_instances","depth":900,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_6442A5FE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6442A5FE","objectId":{"name":"obj_dog_bed","path":"objects/obj_dog_bed/obj_dog_bed.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":448.0,},
         {"$GMRInstance":"v2","%Name":"inst_5FFE94AD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5FFE94AD","objectId":{"name":"obj_bedroom_switch","path":"objects/obj_bedroom_switch/obj_bedroom_switch.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.5,"scaleY":2.25,"x":416.0,"y":416.0,},
-      ],"layers":[],"name":"bedroom_instances","properties":[
-        {"name":"g_TintCol","type":1,"value":"#FFFF4F6C",},
-      ],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+      ],"layers":[],"name":"bedroom_instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":1000,"effectEnabled":true,"effectType":"none","gridX":16,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_7E8DAF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7E8DAF","objectId":{"name":"obj_global_game_manager","path":"objects/obj_global_game_manager/obj_global_game_manager.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
         {"$GMRInstance":"v2","%Name":"inst_BF9D82D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_BF9D82D","objectId":{"name":"obj_gui_controller","path":"objects/obj_gui_controller/obj_gui_controller.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":32.0,},
@@ -171,9 +167,7 @@
           6,6,7,0,-27,-2147483648,-8,0,4,5,6,6,7,-28,-2147483648,-8,0,4,5,6,6,7,-28,-2147483648,-8,0,4,9,10,10,
           11,-252,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tileset_carpet1","path":"tilesets/tileset_carpet1/tileset_carpet1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"$GMRTileLayer":"","%Name":"bedroom_walls","depth":1500,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"bedroom_walls","properties":[
-        {"name":"g_TintCol","type":1,"value":"#FFFF4F6C",},
-      ],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":38,"SerialiseWidth":80,"TileCompressedData":[
+    {"$GMRTileLayer":"","%Name":"bedroom_walls","depth":1500,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"bedroom_walls","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":38,"SerialiseWidth":80,"TileCompressedData":[
           -24,-2147483648,-48,0,-32,-2147483648,-48,0,-32,-2147483648,-48,0,-32,-2147483648,-48,0,-32,-2147483648,
           -48,0,-32,-2147483648,-48,0,-32,-2147483648,-48,0,-32,-2147483648,-48,0,-32,-2147483648,-48,0,-32,-2147483648,
           -48,0,-32,-2147483648,-48,0,-32,-2147483648,-48,0,-32,-2147483648,-48,0,-32,-2147483648,-48,0,-32,-2147483648,
@@ -191,9 +185,7 @@
           -14,0,-32,-2147483648,-12,0,1,481,-20,0,1,792,-14,0,-32,-2147483648,-12,0,1,481,-20,0,1,792,-14,0,-32,
           -2147483648,-12,0,1,721,-20,722,1,840,-14,0,-32,-2147483648,-48,0,-20,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tileset_walls_new","path":"tilesets/tileset_walls_new/tileset_walls_new.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"$GMRTileLayer":"","%Name":"bedroom_floor","depth":1600,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"bedroom_floor","properties":[
-        {"name":"g_TintCol","type":1,"value":"#FFFF4F6C",},
-      ],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":38,"SerialiseWidth":80,"TileCompressedData":[
+    {"$GMRTileLayer":"","%Name":"bedroom_floor","depth":1600,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"bedroom_floor","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":38,"SerialiseWidth":80,"TileCompressedData":[
           -2105,0,20,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,-60,0,20,7,8,9,10,11,7,8,9,10,11,7,8,9,10,11,7,8,
           9,10,11,-60,0,20,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,-60,0,20,7,8,9,10,11,7,8,9,10,11,7,8,9,10,11,
           7,8,9,10,11,-60,0,20,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,-60,0,20,7,8,9,10,11,7,8,9,10,11,7,8,9,
