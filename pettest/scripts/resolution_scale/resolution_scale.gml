@@ -12,11 +12,13 @@ function resolution_scale(scale) {
 	}
 	
 	// Set the view port size based on the window size and scale
+	//show_debug_message("{0}x{1}", window_get_width(), window_get_height())
+	
 	var w, h
-	if window_get_width() > 0 w = window_get_width()
-	else w = 1920
-	if window_get_height() > 0 h = window_get_height()
-	else h = 1080
+	if window_get_width() > 0 and window_get_width() > MINIMUM_WINDOW_WIDTH w = window_get_width()
+	else w = MINIMUM_WINDOW_WIDTH
+	if window_get_height() > 0 and window_get_height() > MINIMUM_WINDOW_HEIGHT h = window_get_height()
+	else h = MINIMUM_WINDOW_HEIGHT
 
 	// Get the camera for the first view (main view)
 	var cam = view_get_camera(0);

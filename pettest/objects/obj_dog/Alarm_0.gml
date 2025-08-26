@@ -24,9 +24,11 @@ if _drainHungerAndBladderCounter >= 4 {
 }
 
 // drain mood every 3 seconds
-if _drainFunCounter >= 3 and !obj_dog_toy._isMoving {
-	drainNeed("mood", 2)
-	_drainFunCounter = 0
+if _drainFunCounter >= 3 {
+	if !instance_exists(obj_dog_toy) or !obj_dog_toy._isMoving {
+		drainNeed("mood", 2)
+		_drainFunCounter = 0
+	}
 }
 
 // drain HYGIENE every 5 seconds
@@ -42,7 +44,7 @@ if(isSprinting and (_xinput != 0 or _yinput != 0)) {
 }
 
 //drain hygiene if standing in a puddle
-if(place_meeting(x,y,obj_puddle)) drainNeed("hygiene", 1)
+if(instance_exists(obj_puddle) and place_meeting(x,y,obj_puddle)) drainNeed("hygiene", 1)
 
 //reset the alarm
 setAlarmInSeconds(needAlarms.NEEDS, 1)

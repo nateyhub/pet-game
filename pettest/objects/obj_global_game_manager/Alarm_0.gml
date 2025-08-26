@@ -10,6 +10,6 @@ if global.needs_critical {
 	global.pet_needs.health.change_direction = needChangeDirection.DECREASING_LOW
 	show_debug_message("Draining health! New value:" + string(global.pet_needs.health))
 } else {
-	global.pet_needs.health.change_direction = needChangeDirection.NOT_CHANGING
+	if (!obj_dog.isSleeping and !obj_dog.isEating) global.pet_needs.health.change_direction = needChangeDirection.NOT_CHANGING
 }
 setAlarmInSeconds(DRAIN_HEALTH_ALARM, 1)

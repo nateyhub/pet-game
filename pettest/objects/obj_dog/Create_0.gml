@@ -57,6 +57,8 @@ _food_consumed = 0
 function emptyBladder(_voluntary) {
 	isEmptyingBladder = true
 	
+	global.new_tc.hideTip(tip_indices.EMPTY_BLADDER)
+	
 	audio_play_sound(sfx_empty_bladder, 100, false)
 	instance_create_depth(x,y+16,obj_dog.depth+200,obj_puddle)
 	//instance_create_layer(x,y+16,obj_dog.layer,obj_puddle)

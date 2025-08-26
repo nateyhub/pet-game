@@ -1,9 +1,16 @@
 #macro UNSELECTED 0
 #macro SELECTED 1
 
+enum bar_outline {
+	NORMAL = 0,
+	INCREASING = 1,
+	DECREASING = 2
+}
 
 _x = 24
 _y = 284
+
+_slide_y_offset = 200
 
 window_set_cursor(cr_none)
 cursor_sprite = spr_cursor

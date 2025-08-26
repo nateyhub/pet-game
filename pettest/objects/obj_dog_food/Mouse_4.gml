@@ -16,12 +16,15 @@ if (!_isBeingDragged)
 			audio_play_sound(sfx_pour_dog_food, 100, false, 1.5)
 			switch(item_tier) {
 				case tier.CHEAP:
+					obj_dog_bowl.hunger_increase = 40
 					obj_dog_bowl.food_amount = 80
 					break
 				case tier.GOOD:
+					obj_dog_bowl.hunger_increase = 60
 					obj_dog_bowl.food_amount = 100
 					break
 				case tier.ULTIMATE:
+					obj_dog_bowl.hunger_increase = 80
 					obj_dog_bowl.food_amount = 120
 					break
 			}

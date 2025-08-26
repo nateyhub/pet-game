@@ -47,7 +47,8 @@ if _nearby_interactable {
 			if !isSleeping and !isUsingMop 
 			{ 
 				//global.tipsContainer.createTip("Space", "Sleep")
-				global.new_tc.showTip(tip_indices.SLEEP)
+				if global.pet_needs.energy >= 30 global.new_tc.showTip(tip_indices.SLEEP)
+				else global.new_tc.showTip(tip_indices.NAP)
 				if(keyboard_check_pressed(vk_space)) useBed()
 			}
 			else 

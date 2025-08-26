@@ -4,6 +4,12 @@
 #macro INCREASE_TIME_ALARM 2
 
 
+//set the minimum width & height of the game window
+#macro MINIMUM_WINDOW_WIDTH 1366
+#macro MINIMUM_WINDOW_HEIGHT 768
+window_set_min_width(MINIMUM_WINDOW_WIDTH)
+window_set_min_height(MINIMUM_WINDOW_HEIGHT)
+
 
 //ParticleSystem1
 //global._ps = part_system_create();
@@ -40,13 +46,18 @@ enum needChangeDirection {
 
 //pet needs struct (globally accessible)
 global.pet_needs = {
-	health:		{ value: 90, x: 178, y: 46, change_direction: needChangeDirection.NOT_CHANGING },
-	hunger:		{ value: 93, x: 178, y: 106, change_direction: needChangeDirection.NOT_CHANGING },
-	energy:		{ value: 24, x: 312, y: 46, change_direction: needChangeDirection.NOT_CHANGING },
-	hygiene:	{ value: 91, x: 312, y: 106, change_direction: needChangeDirection.NOT_CHANGING },
-	bladder:	{ value: 91, x: 446, y: 46, change_direction: needChangeDirection.NOT_CHANGING },
-	mood:		{ value: 88, x: 446, y: 106, change_direction: needChangeDirection.NOT_CHANGING },
+	health:		{ value: 90, x: 212, y: 98, icon_subimage: 0, change_direction: needChangeDirection.NOT_CHANGING },
+	energy:		{ value: 24, x: 212, y: 68, icon_subimage: 2, change_direction: needChangeDirection.NOT_CHANGING },
+	hunger:		{ value: 93, x: 212, y: 38, icon_subimage: 1, change_direction: needChangeDirection.NOT_CHANGING },
+	
+	hygiene:	{ value: 91, x: 366, y: 98, icon_subimage: 3, change_direction: needChangeDirection.NOT_CHANGING },
+	bladder:	{ value: 91, x: 366, y: 68, icon_subimage: 4, change_direction: needChangeDirection.NOT_CHANGING },
+	mood:		{ value: 88, x: 366, y: 38, icon_subimage: 5, change_direction: needChangeDirection.NOT_CHANGING },
 }
+
+
+global.pet_name = "nate"
+global.pet_name_length = string_length(global.pet_name)
 
 global.needs_critical = false
 global.needs_can_be_drained = true

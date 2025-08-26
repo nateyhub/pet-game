@@ -137,6 +137,7 @@ function eatFromBowl() {
 function useBed() {
 	//global.tipsContainer.removeTip("Sleep")
 	global.new_tc.hideTip(tip_indices.SLEEP)
+	global.new_tc.hideTip(tip_indices.NAP)
 	
 	with(obj_global_game_manager) {
 		alarm[2] = 1
@@ -147,7 +148,7 @@ function useBed() {
 	y = obj_dog_bed.y
 	
 	//only sleep if the pet is tired enough
-	if(global.pet_needs.energy.value <= 30) {
+	//if(global.pet_needs.energy.value <= 30) {
 		//start sleeping
 		isSleeping = true
 		sprite_index = spr_dog_sleep
@@ -165,10 +166,10 @@ function useBed() {
 		_initial_energy_amount = global.pet_needs.energy.value
 		//execute the SLEEP alarm
 		event_perform(ev_alarm, actionAlarms.SLEEP)
-	} else {
+	//} else {
 		//too much energy to sleep
-		playErrorSound()
-		show_debug_message(string("Too much energy to sleep: {0}", global.pet_needs.energy.value))
-	}
+		//playErrorSound()
+		//show_debug_message(string("Too much energy to sleep: {0}", global.pet_needs.energy.value))
+	//}
 	
 }

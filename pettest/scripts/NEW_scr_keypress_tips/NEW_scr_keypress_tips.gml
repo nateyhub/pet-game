@@ -3,14 +3,15 @@
 enum tip_indices {
 	TAKE_BATH = 0,
 	SLEEP = 1,
-	EAT_FOOD = 2,
-	PICK_UP = 3,
-	MOP_FLOOR = 4,
-	PUT_DOWN_MOP = 5,
-	BARK = 6,
-	GO_OUTSIDE = 7,
-	WAKE_UP = 8,
-	EMPTY_BLADDER = 9
+	NAP = 2,
+	EAT_FOOD = 3,
+	PICK_UP = 4,
+	MOP_FLOOR = 5,
+	PUT_DOWN_MOP = 6,
+	BARK = 7,
+	GO_OUTSIDE = 8,
+	WAKE_UP = 9,
+	EMPTY_BLADDER = 10
 }
 
 function NewTipsContainer() constructor {
@@ -38,6 +39,7 @@ function NewTipsContainer() constructor {
 		
 	generateTip(keys.Space, "Take a bath", false)
 	generateTip(keys.Space, "Sleep", false)
+	generateTip(keys.Space, "Nap", false)
 	generateTip(keys.Space, "Eat", false)
 	generateTip(keys.Space, "Pick up", false)
 	generateTip(keys.E, "Hold: Mop floor", false)

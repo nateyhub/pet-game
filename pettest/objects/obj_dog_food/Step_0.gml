@@ -13,3 +13,5 @@ if(_isBeingDragged) {
 	//snap position to 16x16 grid spaces
 	move_snap(16,16)
 }
+
+//depth = obj_dog_bowl.depth - 1

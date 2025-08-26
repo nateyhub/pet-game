@@ -1,7 +1,6 @@
 //if the current amount of food consumed by the dog is less than what's allowed by the dog bowl
 if(_food_consumed < obj_dog_bowl.hunger_increase) {
 	//improve and drain needs accordingly
-	improveNeed("hunger", 1)
 	improveNeed("energy", 0.5)
 	improveNeed("health", 0.1)
 	drainNeed("bladder", 0.5)
@@ -18,15 +17,22 @@ if(_food_consumed < obj_dog_bowl.hunger_increase) {
 	//if the Tier of the dog food is better than average, also improve the dog's mood
 	if(obj_dog_bowl.current_tier == tier.GOOD) {
 		improveNeed("mood", 0.25)
+		improveNeed("hunger", 2)
+		_food_consumed += 2
 		global.pet_needs.mood.change_direction = needChangeDirection.INCREASING_LOW
 	} else if (obj_dog_bowl.current_tier == tier.ULTIMATE) {
 		improveNeed("mood", 0.4)
+		improveNeed("hunger", 3)
+		_food_consumed += 3
 		global.pet_needs.mood.change_direction = needChangeDirection.INCREASING_LOW
+	} else {
+		improveNeed("hunger", 1)
+		_food_consumed++
 	}
 	
 	//decrease the amount of food left in the bowl
-	obj_dog_bowl.food_amount--
-	_food_consumed++
+	obj_dog_bowl.food_amount -= 0.25
+	
 	
 	//repeat the alarm
 	setAlarmInSeconds(actionAlarms.EAT, 0.1)
