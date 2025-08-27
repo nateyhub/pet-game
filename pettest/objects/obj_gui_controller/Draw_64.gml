@@ -1,27 +1,16 @@
-_x = window_get_width() / 2 - (sprite_get_width(spr_inv_slot) * 1.5 + 100)
-_y = window_get_height() - 100
+_ww = window_get_width()
+_wh = window_get_height()
+_draw_tip = undefined
 
-if slide_in {
-	
-	draw_sprite_stretched(spr_new_gui_holder,0,0,camera_get_view_height(0)-124+_slide_y_offset,514,140)
-	draw_sprite_stretched(spr_new_gui_portrait,0,-10,camera_get_view_height(0)-212+_slide_y_offset, sprite_get_width(spr_new_gui_portrait)+20, sprite_get_height(spr_new_gui_portrait)+20)
-	
-	for (var i = 0; i < 6; i++) {
-		// get each key (eg health)
-		var key = global.needs_keys[i]
-		var current_need = global.pet_needs[$ key]
-		//draw need bar
-		draw_sprite(spr_need_bar,0,current_need.x,	camera_get_view_height(0)-current_need.y+_slide_y_offset)
-		//draw need icon
-		draw_sprite(spr_all_needs_icons, current_need.icon_subimage, current_need.x-28,camera_get_view_height(0)-current_need.y-1+_slide_y_offset)
-		
-	}
-	
-	_slide_y_offset -= 6
-	
-	if _slide_y_offset <= 0 slide_in = false
-	return;
+if (_ww >= 2560 or _wh >= 1440) {
+	if display_get_gui_width() != 1366 display_set_gui_size(1366,768)	
+	_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) + 100)
+} else {
+	if display_get_gui_width() != 1920 display_set_gui_size(1920,1080)
+	_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) * 1.5 + 100)
 }
+
+_y = display_get_gui_height() - 100
 
 
 #region draw brightness according to the time of day
@@ -63,52 +52,60 @@ if slide_in {
 #endregion
 
 //portrait and gui in bottom left
-draw_sprite_stretched(spr_new_gui_holder,0,0,camera_get_view_height(0)-124,514,140)
+draw_sprite_stretched(spr_new_gui_holder,0,0,display_get_gui_height()-124+ _slide_y_offset,514,140)
+draw_sprite_stretched(spr_new_gui_holder,0,0,display_get_gui_height()-124+_slide_y_offset,514,140)
 
 //TODO: scale up entire interface for 2K resolution?
-if window_get_width() >= 2560 and window_get_height() >= 1440 { 
-	show_debug_message("drawing new portrait")
-	draw_sprite_stretched(spr_new_gui_holder,0,0,camera_get_view_height(0)-(124*1.25),514*1.25,140*1.25)
-	draw_sprite_ext(spr_new_gui_portrait,0,-10,camera_get_view_height(0)-240,1.25,1.25,0,c_white,1)
-}
-else { 
-	draw_sprite_stretched(spr_new_gui_portrait,0,-10,camera_get_view_height(0)-212, sprite_get_width(spr_new_gui_portrait)+20, sprite_get_height(spr_new_gui_portrait)+20)
-}
+//if window_get_width() >= 2560 and window_get_height() >= 1440 { 
+//	show_debug_message("drawing new portrait")
+	
+//	//display_set_gui_size(1920,1080)
+//	draw_circle(200,200,200,false)
+	
+//	draw_sprite_stretched(spr_new_gui_holder,0,0,display_get_gui_height()-(124*1.25)+ _slide_y_offset,514*1.25,140*1.25)
+//	draw_sprite_stretched(spr_new_gui_portrait,0,-10,display_get_gui_height()-212+_slide_y_offset, sprite_get_width(spr_new_gui_portrait)+20, sprite_get_height(spr_new_gui_portrait)+20)
+//	draw_sprite_ext(spr_new_gui_portrait,0,-10,display_get_gui_height()-240+ _slide_y_offset,1.25,1.25,0,c_white,1)
+//}
+//else { 
+//	//draw_sprite_stretched(spr_new_gui_portrait,0,-10,camera_get_view_height(0)-212, sprite_get_width(spr_new_gui_portrait)+20, sprite_get_height(spr_new_gui_portrait)+20)
+
+//}
+	draw_sprite_stretched(spr_new_gui_portrait,0,-10,display_get_gui_height()-212+_slide_y_offset, sprite_get_width(spr_new_gui_portrait)+20, sprite_get_height(spr_new_gui_portrait)+20)
 
 
 
 //draw calendar and day
-draw_sprite_stretched(spr_calendar,0,camera_get_view_width(0)-200,10,180,180)
+draw_sprite_stretched(spr_calendar,0,display_get_gui_width()-200,10,180,180)
 draw_set_color(c_black)
 draw_set_halign(fa_center)
 draw_set_font(fnt_calendar_day_text)
-draw_text(camera_get_view_width(0)-110, 56, string("Day"))
+draw_text(display_get_gui_width()-110, 56, string("Day"))
 
 draw_set_color(c_ltgray)
 draw_set_font(fnt_calendar_day_number)
-draw_text(camera_get_view_width(0)-104, 86, string("{0}", global.current_game_day))
+draw_text(display_get_gui_width()-104, 86, string("{0}", global.current_game_day))
 
 draw_set_color(c_black)
-draw_text(camera_get_view_width(0)-108, 82, string("{0}", global.current_game_day))
+draw_text(display_get_gui_width()-108, 82, string("{0}", global.current_game_day))
 
 //draw clock and time
 draw_set_font(fnt_clock)
 draw_set_halign(fa_center)
-draw_sprite_stretched(spr_clock_and_points,0,camera_get_view_width(0)-200,180,180,64)
-draw_text(camera_get_view_width(0)-110, 196, global.current_time_string)
+draw_sprite_stretched(spr_clock_and_points,0,display_get_gui_width()-200,180,180,64)
+draw_text(display_get_gui_width()-110, 196, global.current_time_string)
 draw_set_color(c_white)
 draw_set_font(fnt_gui)
 draw_set_halign(fa_left)
 
 //draw the number of points the player has
-draw_sprite_stretched(spr_clock_and_points,0,camera_get_view_width(0)-200,230,180,64)
-draw_sprite(spr_coin, 0, camera_get_view_width(0)-188,248)
+draw_sprite_stretched(spr_clock_and_points,0,display_get_gui_width()-200,230,180,64)
+draw_sprite(spr_coin, 0, display_get_gui_width()-188,248)
 draw_set_colour(_colours.text)
 draw_set_font(fnt_clock)
-draw_text(camera_get_view_width(0)-150,246,string(global.points))
+draw_text(display_get_gui_width()-150,246,string(global.points))
 
 //draw the current number of needs that are at an Ultimate level
-if global.ultimateNeedsCount > 0 draw_text(camera_get_view_width(0)-64,246,string("+{0}", global.ultimateNeedsCount))
+if global.ultimateNeedsCount > 0 draw_text(display_get_gui_width()-64,246,string("+{0}", global.ultimateNeedsCount))
 
 
 // draw grey background
@@ -149,9 +146,9 @@ for (var i = 0; i < 6; i++) {
 	if current_need.value > 0 {
 		draw_rectangle(
 			current_need.x+4,
-			camera_get_view_height(0) - current_need.y,
+			display_get_gui_height() - current_need.y + _slide_y_offset,
 			current_need.x+4 + (current_need.value),
-			camera_get_view_height(0) - current_need.y + _need_bar_height_px-1,
+			display_get_gui_height() - current_need.y + _need_bar_height_px-1 + _slide_y_offset,
 			false
 		)
 		
@@ -160,11 +157,24 @@ for (var i = 0; i < 6; i++) {
 		// draw shading bar
 		draw_rectangle(
 			current_need.x+4,
-			camera_get_view_height(0) - current_need.y + (_need_bar_shading_px) + 2,
+			display_get_gui_height() - current_need.y + (_need_bar_shading_px) + 2 + _slide_y_offset,
 			current_need.x+4 + (current_need.value),
-			camera_get_view_height(0) - current_need.y + _need_bar_height_px-1,
+			display_get_gui_height() - current_need.y + _need_bar_height_px-1 + _slide_y_offset,
 			false
 		)
+		
+		//if mouse is hovering over a need, show the need's name and value
+		if(device_mouse_x_to_gui(0) >= current_need.x and device_mouse_x_to_gui(0) <= current_need.x + sprite_get_width(spr_need_bar))
+		{
+			if device_mouse_y_to_gui(0) >= display_get_gui_height() - current_need.y and device_mouse_y_to_gui(0) <= display_get_gui_height() - current_need.y + sprite_get_height(spr_need_bar) {
+				_draw_tip = {
+					_x: current_need.x,
+					_y: current_need.y,
+					_key: key,
+					_value: current_need.value
+				}
+			}
+		}
 		
 		var stripes_ind = spr_decrease
 		var draw_stripes = false
@@ -203,17 +213,19 @@ for (var i = 0; i < 6; i++) {
 		//if the INCREASING/DECREASING stripes should be drawn
 		if draw_stripes 
 		{ 
-			draw_sprite(stripes_ind,image_index/2,current_need.x, camera_get_view_height(0)-current_need.y+4)
+			draw_sprite(stripes_ind,image_index/2,current_need.x, display_get_gui_height()-current_need.y+4)
 		}
 	} else {
 		_bar_outline = bar_outline.DECREASING
 	}
 	
 	//draw the need bar
-	draw_sprite(spr_need_bar,_bar_outline,current_need.x,camera_get_view_height(0)-current_need.y)
+	//draw_sprite(spr_need_bar,_bar_outline,current_need.x,camera_get_view_height(0)-current_need.y)
+	draw_sprite(spr_need_bar,0,current_need.x,	display_get_gui_height()-current_need.y+_slide_y_offset)
 	
 	//draw the icon for the current need (e.g. health = heart icon) to the left of the bar
-	draw_sprite(spr_all_needs_icons, current_need.icon_subimage,current_need.x-28,camera_get_view_height(0)-current_need.y-1)
+	//draw_sprite(spr_all_needs_icons, current_need.icon_subimage,current_need.x-28,camera_get_view_height(0)-current_need.y-1)
+	draw_sprite(spr_all_needs_icons, current_need.icon_subimage, current_need.x-28,display_get_gui_height()-current_need.y-1+_slide_y_offset)
 	
 	//TODO: maybe enlarge the icons?
 	//draw_sprite_ext(spr_all_needs_icons, current_need.icon_subimage, current_need.x-28,camera_get_view_height(0)-current_need.y-1+_slide_y_offset, 1.5, 1.5, 0, c_white, 1)
@@ -223,10 +235,10 @@ for (var i = 0; i < 6; i++) {
 
 //draw the pet name
 //draw_sprite(spr_dog_bone_1, 0, 134, camera_get_view_height(0)-183)
-draw_sprite_stretched(spr_dog_bone_1, 0, 152, camera_get_view_height(0)-170, sprite_get_width(spr_dog_bone)+(global.pet_name_length*12)+10, sprite_get_height(spr_dog_bone)+18)
+draw_sprite_stretched(spr_dog_bone_1, 0, 152, display_get_gui_height()-170, sprite_get_width(spr_dog_bone)+(global.pet_name_length*12)+10, sprite_get_height(spr_dog_bone)+18)
 draw_set_colour(_colours.text)
 draw_set_font(fnt_nametag)
-draw_text(220,camera_get_view_height(0)-162,global.pet_name)
+draw_text(220,display_get_gui_height()-162,global.pet_name)
 
 #region HANDLE INVENTORY SLOTS
 
@@ -320,3 +332,17 @@ for(var i = 0; i < 3; i++)
 }
 
 #endregion
+
+_slide_y_offset = _slide_y_offset > 0 ? _slide_y_offset - 6 : 0
+
+//if the player is hovering over a need bar, draw the need and its current value (e.g. "Hunger: 100")
+if !is_undefined(_draw_tip) {
+		
+	draw_sprite_stretched(spr_hint, 0, _draw_tip._x, display_get_gui_height() - _draw_tip._y - 24, sprite_get_width(spr_need_bar), sprite_get_height(spr_hint))
+	draw_set_color(c_white)
+	draw_set_font(fnt_hint)
+	draw_set_halign(fa_center)
+	draw_text(_draw_tip._x + (sprite_get_width(spr_need_bar) / 2),display_get_gui_height() - _draw_tip._y - 25, string("{0}: {1}", _draw_tip._key, round(_draw_tip._value)))
+	draw_set_halign(fa_left)
+	//draw_text(_draw_tip._x + (sprite_get_width(spr_need_bar) / 2),  display_get_gui_height() - _draw_tip._y - 24, string("{0}: {1}", _draw_tip["key"], _draw_tip["value"]))	
+}

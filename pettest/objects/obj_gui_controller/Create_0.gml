@@ -10,7 +10,16 @@ enum bar_outline {
 _x = 24
 _y = 284
 
+_ww = window_get_width()
+_wh = window_get_height()
+
 _slide_y_offset = 200
+
+_draw_tip = undefined
+//function drawTip(_x, _y, _key, _value) {
+	
+//}
+
 
 window_set_cursor(cr_none)
 cursor_sprite = spr_cursor
