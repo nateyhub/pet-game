@@ -1,8 +1,9 @@
 if i < array_length(_current_dialogue)
 { 
 	if _current_task.dialogue_stage != DialogueStage.POST_COMPLETION {
-		_dialogue_string = _current_dialogue[i]
+		_dialogue_string = _current_dialogue[i].text
 		_dialogue_string_length = string_length(_dialogue_string)
+		_current_speaker = _current_dialogue[i].speaker
 		_current_letter = 1
 		_current_string = ""
 		i++ 
@@ -36,8 +37,9 @@ switch(_current_task.dialogue_stage) {
 		break
 }
 
-_dialogue_string = _current_dialogue[i]
+_dialogue_string = _current_dialogue[i].text
 _dialogue_string_length = string_length(_dialogue_string)
+_current_speaker = _current_dialogue[i].speaker
 _current_letter = 1
 _current_string = ""
 i++ 

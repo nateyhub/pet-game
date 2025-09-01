@@ -185,6 +185,7 @@
     {"id":{"name":"spr_decrease_low","path":"sprites/spr_decrease_low/spr_decrease_low.yy",},},
     {"id":{"name":"spr_decrease","path":"sprites/spr_decrease/spr_decrease.yy",},},
     {"id":{"name":"spr_dialogue_container","path":"sprites/spr_dialogue_container/spr_dialogue_container.yy",},},
+    {"id":{"name":"spr_dialogue_controller","path":"sprites/spr_dialogue_controller/spr_dialogue_controller.yy",},},
     {"id":{"name":"spr_dialogue_next_arrow","path":"sprites/spr_dialogue_next_arrow/spr_dialogue_next_arrow.yy",},},
     {"id":{"name":"spr_dog_bark_idle","path":"sprites/spr_dog_bark_idle/spr_dog_bark_idle.yy",},},
     {"id":{"name":"spr_dog_bed_cheap","path":"sprites/spr_dog_bed_cheap/spr_dog_bed_cheap.yy",},},
