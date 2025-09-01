@@ -1,0 +1,1 @@
+audio_play_sound(sfx_dog_bark,10,false,2)

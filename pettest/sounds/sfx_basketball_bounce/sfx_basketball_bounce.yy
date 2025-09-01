@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sfx_basketball_bounce",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.42628118,
+  "name":"sfx_basketball_bounce",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_basketball_bounce.wav",
+  "type":0,
+  "volume":1.0,
+}

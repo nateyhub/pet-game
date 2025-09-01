@@ -1,0 +1,1 @@
+needNameStr = get_string_async("Enter need name and value (e.g. hunger 100):","")

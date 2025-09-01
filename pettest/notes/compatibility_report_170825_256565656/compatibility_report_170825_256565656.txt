@@ -1,0 +1,7 @@
+Converting GML script: C:\Users\Admin\AppData\Local\GameMakerStudio2\GMS2TEMP\ProjectTool\mvc\1404721468_Draw_Text_Outlined_b613f454\mvc\scripts\draw_text_outline\draw_text_outline.gml
+Converted description /// @description draw_text_outline(x,y,str,outwidth,outcol,outfidelity)/// @param x
+/// @param y
+/// @param str
+/// @param outwidth
+/// @param outcol
+/// @param outfidelity

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"outline",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"outline",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
