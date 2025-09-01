@@ -13,3 +13,8 @@ if(place_meeting(x,y,obj_mop)) {
 		global.new_tc.showTip(tip_indices.PUT_DOWN_MOP)
 	}
 }
+else if place_meeting(x,y,obj_dialog_tester) {
+	with (obj_dialogue_controller) {
+		event_user(0)
+	}
+}

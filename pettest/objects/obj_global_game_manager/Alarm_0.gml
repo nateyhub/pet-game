@@ -1,5 +1,5 @@
 //can't drain health if the dog is sleeping
-if obj_dog.isSleeping 
+if obj_dog.isSleeping or global.showing_dialogue
 { 
 	setAlarmInSeconds(DRAIN_HEALTH_ALARM, 1)
 	return;

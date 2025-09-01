@@ -55,6 +55,8 @@ global.pet_needs = {
 	mood:		{ value: 88, x: 366, y: 38, icon_subimage: 5, change_direction: needChangeDirection.NOT_CHANGING },
 }
 
+global.showing_dialogue = false
+
 
 global.pet_name = "nate"
 global.pet_name_length = string_length(global.pet_name)

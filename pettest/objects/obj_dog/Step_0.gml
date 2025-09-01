@@ -1,3 +1,5 @@
+if global.showing_dialogue return;
+
 // assign keycodes to variables
 var _right = keyboard_check(vk_right) || keyboard_check(ord("D"))
 var _left = keyboard_check(vk_left) || keyboard_check(ord("A"))

@@ -1,15 +1,20 @@
+if global.showing_dialogue return;
+
 _ww = window_get_width()
 _wh = window_get_height()
 _draw_tip = undefined
 
-if (_ww >= 2560 or _wh >= 1440) {
-	if display_get_gui_width() != 1366 display_set_gui_size(1366,768)	
-	_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) + 100)
-} else {
-	if display_get_gui_width() != 1920 display_set_gui_size(1920,1080)
-	_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) * 1.5 + 100)
-}
+//if (_ww >= 2560 or _wh >= 1440) {
+//	//if display_get_gui_width() != 1366 display_set_gui_size(1366,768)	
+//	if display_get_gui_width() != 1280 display_set_gui_size(1280,720)	
+//	//if display_get_gui_width() != 1366 display_set_gui_size(2560,1440)	
+//	_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) + 100) + 200
+//} else {
+//	if display_get_gui_width() != 1920 display_set_gui_size(1920,1080)
+//	_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) * 1.5 + 100)
+//}
 
+_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) * 1.5 + 100)
 _y = display_get_gui_height() - 100
 
 
@@ -337,12 +342,10 @@ _slide_y_offset = _slide_y_offset > 0 ? _slide_y_offset - 6 : 0
 
 //if the player is hovering over a need bar, draw the need and its current value (e.g. "Hunger: 100")
 if !is_undefined(_draw_tip) {
-		
 	draw_sprite_stretched(spr_hint, 0, _draw_tip._x, display_get_gui_height() - _draw_tip._y - 24, sprite_get_width(spr_need_bar), sprite_get_height(spr_hint))
 	draw_set_color(c_white)
 	draw_set_font(fnt_hint)
 	draw_set_halign(fa_center)
 	draw_text(_draw_tip._x + (sprite_get_width(spr_need_bar) / 2),display_get_gui_height() - _draw_tip._y - 25, string("{0}: {1}", _draw_tip._key, round(_draw_tip._value)))
 	draw_set_halign(fa_left)
-	//draw_text(_draw_tip._x + (sprite_get_width(spr_need_bar) / 2),  display_get_gui_height() - _draw_tip._y - 24, string("{0}: {1}", _draw_tip["key"], _draw_tip["value"]))	
 }

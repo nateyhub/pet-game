@@ -1,0 +1,64 @@
+{
+  "tasks": [
+    {
+      "id": "lost_cat",
+      "title": "Find the neighbour's lost cat",
+      "description": "Your neighbour has lost their brand new cat. Last seen at central park. Find their cat and bring it back to them.",
+      "status": "not_started",
+      "dialogue": {
+        "intro": [
+          "Help, please help! I've lost my dearest cat",
+          "Do you think you can find him?"
+        ],
+        "details": ["I last saw him at the park"],
+        "in_progress": ["Have you found my cat yet?"],
+        "completed": ["Thank you so much! Here's a reward for your trouble"],
+        "post_completion": [
+          "Great day for a trip to the park!",
+          "My cat has been doing great lately"
+        ]
+      },
+      "requirements": {
+        "find_item": "obj_cat"
+      },
+      "reward": {
+        "coins": 100,
+        "items": [
+          null
+        ]
+      }
+    },
+    {
+      "id": "pest_control",
+      "title": "Chase neighbour's pests away",
+      "description": "Your neighbour has rodents invading her apartment. Help them by scaring these pets away",
+      "status": "in_progress",
+      "dialogue": {
+        "intro": [
+          "These damn rats keep chewing through my apartment walls!",
+          "I've laid traps but need help getting rid of them for good",
+          "Can you help?"
+        ],
+        "details": [
+          "You could come over and scare them right out the door",
+          "Once they know there's a dog around, they'll be too afraid to ever come back"
+        ],
+        "in_progress": ["How's my apartment looking? Rat-free?"],
+        "completed": ["Lifesaver! Here's a little something to say thanks"],
+        "post_completion": [
+          "Can't remember the last time my apartment had only me for a tenant",
+          "It's nice to pour cereal for breakfast and not see some additional brown bits"
+        ]
+      },
+      "requirements": {
+        "chase_rodents": 6
+      },
+      "reward": {
+        "coins": 50,
+        "items": [
+          "dog_food"
+        ]
+      }
+    }
+  ]
+}

@@ -4,7 +4,7 @@ setAlarmInSeconds(INCREASE_POINTS_ALARM, 2)
 global.ultimateNeedsCount = 0
 
 // if none of the needs are in a critical state
-if(!global.needs_critical) {
+if(!global.needs_critical and !global.showing_dialogue) {
 	// go through each need's current value
 	for (var i = 0; i < array_length(global.needs_keys); i++) {
 		var key = global.needs_keys[i]
