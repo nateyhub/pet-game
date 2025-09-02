@@ -1,4 +1,4 @@
-_draw = true
+//_draw = true
 global.showing_dialogue = true
 switch(_current_task.dialogue_stage) {
 	case DialogueStage.INTRO:
@@ -16,6 +16,10 @@ switch(_current_task.dialogue_stage) {
 	case DialogueStage.POST_COMPLETION:
 	default:
 		_current_dialogue = _current_task.dialogue.post_completion
-		i = floor(random_range(0, array_length(_current_dialogue)))
+		_random_dialogue = floor(random_range(0, array_length(_current_dialogue)))
+		while (_random_dialogue == i) {
+			_random_dialogue = floor(random_range(0, array_length(_current_dialogue)))
+		}
+		i = _random_dialogue
 		break
 }

@@ -11,7 +11,8 @@ enum tip_indices {
 	BARK = 7,
 	GO_OUTSIDE = 8,
 	WAKE_UP = 9,
-	EMPTY_BLADDER = 10
+	EMPTY_BLADDER = 10,
+	TALK_TO_MARY = 11
 }
 
 function NewTipsContainer() constructor {
@@ -48,11 +49,12 @@ function NewTipsContainer() constructor {
 	generateTip(keys.Space, "Go outside", false)
 	generateTip(keys.X, "Wake up", false)
 	generateTip(keys.C, "Empty bladder", false)
+	generateTip(keys.Space, "Talk to Mary", false)
 	
 	
 	static hideTip = function(_tip_index) {
 		if(all_tips[_tip_index].should_be_visible) {
-			//show_debug_message("Hiding {0}: {1}", _tip_index, all_tips[_tip_index].should_be_visible) 
+			show_debug_message("Hiding {0}: {1}", _tip_index, all_tips[_tip_index].should_be_visible) 
 			all_tips[_tip_index].should_be_visible = false
 			//instance_deactivate_object(all_tips[_tip_index])
 			drawTips()

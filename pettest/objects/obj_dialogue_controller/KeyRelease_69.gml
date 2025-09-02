@@ -1,3 +1,6 @@
+show_debug_message("E pressed")
+if array_length(_current_choices) > 0 return;
+
 if i < array_length(_current_dialogue)
 { 
 	if _current_task.dialogue_stage != DialogueStage.POST_COMPLETION {
@@ -6,14 +9,20 @@ if i < array_length(_current_dialogue)
 		_current_speaker = _current_dialogue[i].speaker
 		_current_letter = 1
 		_current_string = ""
+		if struct_exists(_current_dialogue[i], "choices") { 
+			_current_choices = struct_get(_current_dialogue[i], "choices");
+		}
 		i++ 
 		return; 
 	}
 
 } 
 
-global.showing_dialogue = false
-_draw = false
+_current_choices = []
+
+if _current_task.dialogue_stage != DialogueStage.INTRO{
+	global.showing_dialogue = false
+}
 
 i = 0
 _current_task.dialogue_stage = min(_current_task.dialogue_stage + 1, DialogueStage.POST_COMPLETION)

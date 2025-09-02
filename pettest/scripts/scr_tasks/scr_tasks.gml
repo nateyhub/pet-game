@@ -12,6 +12,10 @@ enum DialogueStage {
 	POST_COMPLETION
 }
 
+enum DialogueType {
+	
+}
+
 enum Emotion {
 	NEUTRAL,
 	HAPPY,
@@ -46,7 +50,8 @@ global.tasks =
 		        {
 			        "speaker": "Mary",
 			        "expression": Emotion.SAD,
-			        "text": "Do you think you can find her for me?"
+			        "text": "Do you think you can find her for me?",
+					"choices": ["Sure!", "Not right now"]
 		        }
 		    ],
 		    "details": [

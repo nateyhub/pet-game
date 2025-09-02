@@ -71,6 +71,11 @@ if _nearby_interactable {
 				global.new_tc.hideTip(tip_indices.GO_OUTSIDE)
 			}
 			break
+		case obj_dialog_tester.id:
+			if !global.showing_dialogue {
+				global.new_tc.showTip(tip_indices.TALK_TO_MARY)
+			}
+			break
 	}
 } else {
 	//global.tipsContainer.clearAllTips()

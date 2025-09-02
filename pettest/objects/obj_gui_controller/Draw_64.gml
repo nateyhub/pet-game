@@ -14,7 +14,7 @@ _draw_tip = undefined
 //	_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) * 1.5 + 100)
 //}
 
-_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) * 1.5 + 100)
+_x = display_get_gui_width() / 2 - (sprite_get_width(spr_inv_slot) * 1.5 + 50)
 _y = display_get_gui_height() - 100
 
 
