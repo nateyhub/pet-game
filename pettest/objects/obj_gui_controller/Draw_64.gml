@@ -4,6 +4,8 @@ _ww = window_get_width()
 _wh = window_get_height()
 _draw_tip = undefined
 
+
+
 //if (_ww >= 2560 or _wh >= 1440) {
 //	//if display_get_gui_width() != 1366 display_set_gui_size(1366,768)	
 //	if display_get_gui_width() != 1280 display_set_gui_size(1280,720)	
@@ -226,7 +228,8 @@ for (var i = 0; i < 6; i++) {
 	
 	//draw the need bar
 	//draw_sprite(spr_need_bar,_bar_outline,current_need.x,camera_get_view_height(0)-current_need.y)
-	draw_sprite(spr_need_bar,0,current_need.x,	display_get_gui_height()-current_need.y+_slide_y_offset)
+	//draw_sprite(spr_need_bar,0,current_need.x,	display_get_gui_height()-current_need.y+_slide_y_offset)
+	draw_sprite(spr_need_bar,_bar_outline,current_need.x,	display_get_gui_height()-current_need.y+_slide_y_offset)
 	
 	//draw the icon for the current need (e.g. health = heart icon) to the left of the bar
 	//draw_sprite(spr_all_needs_icons, current_need.icon_subimage,current_need.x-28,camera_get_view_height(0)-current_need.y-1)
@@ -320,7 +323,7 @@ for(var i = 0; i < 3; i++)
 			//draw the second (index 1) frame of the inventory slot to show it's being hovered over
 			draw_sprite_stretched(spr_inv_slot,SELECTED,_x,_y,80,80)
 			
-			if (device_mouse_check_button_pressed(MOUSE, mb_left)) {
+			if (device_mouse_check_button_pressed(MOUSE, mb_left) and place_empty(mouse_x, mouse_y)) {
 				//add item to empty slot
 				show_debug_message(string("Selected item: {0}", global.selectedItem.item_details))
 				global.inventory.putItemInSlot(i, global.selectedItem.item_details)

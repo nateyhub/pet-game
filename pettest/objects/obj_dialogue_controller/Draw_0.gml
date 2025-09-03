@@ -1,1 +1,1 @@
-//keep but leave empty so GUi is drawn but not the sprite
+//keep but leave empty so GUI is drawn but not the sprite

@@ -54,6 +54,7 @@
     {"id":{"name":"Draw_Text_Outlined","path":"extensions/Draw_Text_Outlined/Draw_Text_Outlined.yy",},},
     {"id":{"name":"fnt_calendar_day_number","path":"fonts/fnt_calendar_day_number/fnt_calendar_day_number.yy",},},
     {"id":{"name":"fnt_calendar_day_text","path":"fonts/fnt_calendar_day_text/fnt_calendar_day_text.yy",},},
+    {"id":{"name":"fnt_clock_new","path":"fonts/fnt_clock_new/fnt_clock_new.yy",},},
     {"id":{"name":"fnt_clock","path":"fonts/fnt_clock/fnt_clock.yy",},},
     {"id":{"name":"fnt_dialogue","path":"fonts/fnt_dialogue/fnt_dialogue.yy",},},
     {"id":{"name":"fnt_gui","path":"fonts/fnt_gui/fnt_gui.yy",},},

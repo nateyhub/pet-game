@@ -17,7 +17,7 @@ _current_speaker = _current_dialogue[0].speaker
 _current_letter = 1
 _current_string = ""
 
-i = 1
+_i = 1
 
 
 _current_choices = []
@@ -42,5 +42,7 @@ function exit_dialogue() {
 	_dialogue_string = _current_dialogue[0].text
 	_current_speaker = _current_dialogue[0].speaker
 	_dialogue_string_length = string_length(_dialogue_string)
-	i = 1
+	
+	
+	_i = 1
 }

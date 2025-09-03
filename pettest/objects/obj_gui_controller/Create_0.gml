@@ -7,6 +7,8 @@ enum bar_outline {
 	DECREASING = 2
 }
 
+display_set_gui_size(1366,768)
+
 _x = 24
 _y = 284
 

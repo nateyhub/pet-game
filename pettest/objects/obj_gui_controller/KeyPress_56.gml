@@ -1,1 +1,1 @@
-display_set_gui_size(display_get_gui_width()*0.75,display_get_gui_height()*0.75)
+display_set_gui_size(display_get_gui_width()*1.25,display_get_gui_height()*1.25)
